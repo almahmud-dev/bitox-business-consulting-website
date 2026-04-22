@@ -1,5 +1,7 @@
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/Navbar";
+import Footer from "@/components/common/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
@@ -15,7 +17,8 @@ const dmSans = DM_Sans({
 
 export const metadata = {
   title: "Bitox - Business Consulting & Finance",
-  description: "Bitox is a global business consulting and finance firm helping companies achieve measurable growth and long-term strategic success.",
+  description:
+    "Bitox is a global business consulting and finance firm helping companies achieve measurable growth and long-term strategic success.",
 };
 
 export default function RootLayout({ children }) {
@@ -24,7 +27,11 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${spaceGrotesk.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
