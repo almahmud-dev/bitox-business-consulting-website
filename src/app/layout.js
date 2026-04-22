@@ -4,11 +4,13 @@ import "./globals.css";
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-heading",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-paragraph",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata = {

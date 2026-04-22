@@ -6,6 +6,8 @@
   --color-bg-secondaryOne: #faf7ef;
   --color-bg-secondaryTwo: #ffffff;
   --color-bg-secondaryThree: #02090f;
+  --font-heading: var(--font-heading);
+  --font-paragraph: var(--font-paragraph);
 }
 
 @layer base {
