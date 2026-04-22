@@ -19,7 +19,7 @@ const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 export default function Footer() {
   const pathname = usePathname();
 
-  // Consulting Agency page এ footer দেখাবে না
+  // Consulting Agency page e footer dekhabe na
   if (pathname === "/consulting-agency") return null;
 
   return (
@@ -87,13 +87,22 @@ export default function Footer() {
 
         {/* Bottom Links */}
         <div className="flex items-center gap-6">
-          <Link href="#" className="text-base text-white/60 hover:text-secondary transition-colors duration-300">
+          <Link
+            href="#"
+            className="text-base text-white/60 hover:text-secondary transition-colors duration-300"
+          >
             Privacy Policy
           </Link>
-          <Link href="#" className="text-base text-white/60 hover:text-secondary transition-colors duration-300">
+          <Link
+            href="#"
+            className="text-base text-white/60 hover:text-secondary transition-colors duration-300"
+          >
             Terms and Conditions
           </Link>
-          <Link href="#" className="text-base text-white/60 hover:text-secondary transition-colors duration-300">
+          <Link
+            href="#"
+            className="text-base text-white/60 hover:text-secondary transition-colors duration-300"
+          >
             Support
           </Link>
         </div>
