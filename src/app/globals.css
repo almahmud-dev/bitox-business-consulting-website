@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  /* for color */
-
   --color-primary: #02090f;
   --color-secondary: #ff5101;
   --color-bg-secondaryOne: #faf7ef;
   --color-bg-secondaryTwo: #ffffff;
   --color-bg-secondaryThree: #02090f;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  body, p, span, a, li, button {
+    font-family: var(--font-paragraph);
+  }
 }
 
 /* for typography */
