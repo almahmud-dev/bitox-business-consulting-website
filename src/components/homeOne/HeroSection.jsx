@@ -1,6 +1,7 @@
 import React from "react";
 import Container from "../ui/Container";
 import RotatingBadge from "../ui/RotatingBadge";
+import Button from "../ui/Button";
 
 const HeroSection = () => {
   return (
@@ -21,7 +22,9 @@ const HeroSection = () => {
           </h1>
         </div>
       </Container>
+      
     </section>
+    
   );
 };
 
