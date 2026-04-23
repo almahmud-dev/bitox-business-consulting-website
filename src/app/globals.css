@@ -11,12 +11,27 @@
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 
-  body, p, span, a, li, button {
+  body,
+  p,
+  span,
+  a,
+  li,
+  button {
     font-family: var(--font-paragraph);
+  }
+
+  /* for home page heading animation */
+  .animate-spin-slow {
+    animation: spin 15s linear infinite;
   }
 }
 
