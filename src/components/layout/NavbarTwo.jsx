@@ -64,7 +64,7 @@ function useNavbar() {
   };
 }
 
-// ─── UI ───────────────────────────────────────────────────────────────────────
+// UI
 
 export default function NavbarTwo() {
   const {
