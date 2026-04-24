@@ -1,3 +1,5 @@
+ import { useId } from "react";
+
 // ─── Design Tokens
 const tokens = {
   gap: {
@@ -16,37 +18,10 @@ const tokens = {
   },
 };
 
-// ─── Grid 
-/**
- * Responsive.Grid — তিনটা mode
- *
- * ┌─────────────────────────────────────────────────────────────┐
- * │ MODE 1: AUTO-FIT                                            │
- * │ cols prop নেই, min দাও                                      │
- * │ সব device এ automatically কাজ করে                         │
- * │                                                             │
- * │ <Responsive.Grid min="280px" gap="lg">                      │
- * │   <Card /> <Card /> <Card />                                │
- * │ </Responsive.Grid>                                          │
- * ├─────────────────────────────────────────────────────────────┤
- * │ MODE 2: BREAKPOINT COLS (সবচেয়ে professional)               │
- * │ cols={{ base: 1, sm: 2, md: 3, lg: 4 }}                     │
- * │ প্রতিটা breakpoint এ আলাদা column count                      │
- * │                                                             │
- * │ <Responsive.Grid cols={{ base: 1, md: 2, lg: 3 }}>          │
- * │   <Card /> <Card /> <Card />                                │
- * │ </Responsive.Grid>                                          │
- * ├─────────────────────────────────────────────────────────────┤
- * │ MODE 3: CUSTOM STRING (Figma pixel perfect)                 │
- * │ cols="443px_1fr" | cols="40%_60%" | cols="1fr_2fr"          │
- * │ underscore = space                                          │
- * │ mobile এ auto single column হয়                             │
- * │                                                             │
- * │ <Responsive.Grid cols="443px_1fr" gap="lg">                 │
- * │   <Sidebar /> <Content />                                   │
- * │ </Responsive.Grid>                                          │
- * └─────────────────────────────────────────────────────────────┘
- */
+// ─── Breakpoints
+const bp = { sm: 640, md: 768, lg: 1024, xl: 1280, "2xl": 1536 };
+
+// ─── Grid
 function Grid({
   as: Tag = "div",
   children,
@@ -58,87 +33,86 @@ function Grid({
   className = "",
   style = {},
 }) {
+  const uid        = useId().replace(/:/g, "");
+  const gapVal     = tokens.gap[gap]         ?? gap;
+  const paddingVal = tokens.padding[padding]  ?? padding;
 
-  // ── MODE 2: cols object
+  // ── MODE 2: cols object → { base: 1, md: 2, lg: 3 }
   if (cols && typeof cols === "object") {
-    // Tailwind এর fixed class গুলো hardcode করতে হয় 
-    // dynamic string থেকে Tailwind class generate হয় না
-    const map = {
-      1: "grid-cols-1",
-      2: "grid-cols-2",
-      3: "grid-cols-3",
-      4: "grid-cols-4",
-      5: "grid-cols-5",
-      6: "grid-cols-6",
-      7: "grid-cols-7",
-      8: "grid-cols-8",
-      9: "grid-cols-9",
-      10: "grid-cols-10",
-      11: "grid-cols-11",
-      12: "grid-cols-12",
-    };
+    const id      = `rg-${uid}`;
+    const baseCol = cols.base ?? 1;
+    const smCol   = cols.sm;
+    const mdCol   = cols.md;
+    const lgCol   = cols.lg;
+    const xlCol   = cols.xl;
+    const xxlCol  = cols["2xl"];
 
-    const classes = [
-      cols.base && map[cols.base],
-      cols.sm && `sm:${map[cols.sm]}`,
-      cols.md && `md:${map[cols.md]}`,
-      cols.lg && `lg:${map[cols.lg]}`,
-      cols.xl && `xl:${map[cols.xl]}`,
-      cols["2xl"] && `2xl:${map[cols["2xl"]]}`,
-    ]
-      .filter(Boolean)
-      .join(" ");
+    const css = `
+      #${id} { grid-template-columns: repeat(${baseCol}, 1fr); }
+      ${smCol  ? `@media(min-width:${bp.sm}px)   { #${id} { grid-template-columns: repeat(${smCol},  1fr); } }` : ""}
+      ${mdCol  ? `@media(min-width:${bp.md}px)   { #${id} { grid-template-columns: repeat(${mdCol},  1fr); } }` : ""}
+      ${lgCol  ? `@media(min-width:${bp.lg}px)   { #${id} { grid-template-columns: repeat(${lgCol},  1fr); } }` : ""}
+      ${xlCol  ? `@media(min-width:${bp.xl}px)   { #${id} { grid-template-columns: repeat(${xlCol},  1fr); } }` : ""}
+      ${xxlCol ? `@media(min-width:${bp["2xl"]}px) { #${id} { grid-template-columns: repeat(${xxlCol}, 1fr); } }` : ""}
+    `;
 
     return (
-      <Tag
-        className={`grid w-full ${classes} ${className}`}
-        style={{
-          gap: tokens.gap[gap] ?? gap,
-          padding: tokens.padding[padding] ?? padding,
-          alignItems: align,
-          boxSizing: "border-box",
-          ...style,
-        }}
-      >
-        {children}
-      </Tag>
+      <>
+        <style>{css}</style>
+        <Tag
+          id={id}
+          className={`grid w-full ${className}`}
+          style={{
+            gap: gapVal,
+            padding: paddingVal,
+            alignItems: align,
+            boxSizing: "border-box",
+            ...style,
+          }}
+        >
+          {children}
+        </Tag>
+      </>
     );
   }
 
-  // ── MODE 3: custom string
+  // ── MODE 3: custom string → "443px_1fr"
   if (cols && typeof cols === "string") {
-    // "443px_1fr"  →  "443px 1fr"
-    // "40%_60%"    →  "40% 60%"
-    // "1fr_2fr_1fr" → "1fr 2fr 1fr"
     const templateColumns = cols.replaceAll("_", " ");
+    const id  = `rg-${uid}`;
+    const css = `
+      #${id} { grid-template-columns: 1fr; }
+      @media(min-width:${bp.md}px) { #${id} { grid-template-columns: ${templateColumns}; } }
+    `;
 
     return (
-      <Tag
-        className={`grid w-full grid-cols-1 md:[grid-template-columns:var(--gcols)] ${className}`}
-        style={{
-          "--gcols": templateColumns, // CSS variable দিয়ে pass
-          gap: tokens.gap[gap] ?? gap,
-          padding: tokens.padding[padding] ?? padding,
-          alignItems: align,
-          boxSizing: "border-box",
-          ...style,
-        }}
-      >
-        {children}
-      </Tag>
+      <>
+        <style>{css}</style>
+        <Tag
+          id={id}
+          className={`grid w-full ${className}`}
+          style={{
+            gap: gapVal,
+            padding: paddingVal,
+            alignItems: align,
+            boxSizing: "border-box",
+            ...style,
+          }}
+        >
+          {children}
+        </Tag>
+      </>
     );
   }
 
   // ── MODE 1: auto-fit
-  // column কখনো min এর ছোট হবে না — জায়গা না হলে নিচে নামবে
-  // সব device এ automatically কাজ করে, কোনো breakpoint লাগে না
   return (
     <Tag
       className={`grid w-full ${className}`}
       style={{
         gridTemplateColumns: `repeat(auto-fit, minmax(min(${min}, 100%), 1fr))`,
-        gap: tokens.gap[gap] ?? gap,
-        padding: tokens.padding[padding] ?? padding,
+        gap: gapVal,
+        padding: paddingVal,
         alignItems: align,
         boxSizing: "border-box",
         ...style,
@@ -150,29 +124,6 @@ function Grid({
 }
 
 // ─── Flex
-/**
- * Responsive.Flex
- *
- * Horizontal wrapping flex — navbar, tags, button groups
- *
- * Props:
- *   wrap    — true (default) wraps | false single line
- *   align   — alignItems    (default: "center")
- *   justify — justifyContent (default: "flex-start")
- *
- * Example:
- *   // Tag cloud
- *   <Responsive.Flex as="ul" gap="sm" style={{ listStyle: "none" }}>
- *     <li>React</li>
- *     <li>Next.js</li>
- *   </Responsive.Flex>
- *
- *   // Footer nav — দুই পাশে
- *   <Responsive.Flex justify="space-between" align="center">
- *     <Logo />
- *     <Nav />
- *   </Responsive.Flex>
- */
 function Flex({
   as: Tag = "div",
   children,
@@ -202,28 +153,6 @@ function Flex({
 }
 
 // ─── Stack
-/**
- * Responsive.Stack
- *
- * Vertical column — form, sidebar, article content
- *
- * Props:
- *   align — alignItems (default: "stretch" — সব item full width)
- *
- * Example:
- *   // Form
- *   <Responsive.Stack as="form" gap="md">
- *     <input type="text" />
- *     <input type="email" />
- *     <button type="submit">Send</button>
- *   </Responsive.Stack>
- *
- *   // Page section heading
- *   <Responsive.Stack gap="xs">
- *     <h2>Title</h2>
- *     <p>Subtitle</p>
- *   </Responsive.Stack>
- */
 function Stack({
   as: Tag = "div",
   children,
