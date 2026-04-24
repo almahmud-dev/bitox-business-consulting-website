@@ -32,7 +32,7 @@ export default function AboutSection() {
               </span>
             </div>
 
-            {/* h2, p, button — একটা div-এ */}
+            {/* h2, p, button — ekta div e */}
             <div className="flex flex-col gap-5">
               {/* Heading */}
               <h2
