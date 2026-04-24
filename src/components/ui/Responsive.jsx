@@ -1,5 +1,3 @@
-
-// ─── Design Tokens ────────────────────────────────────────────────────────────
 // ─── Design Tokens
 const tokens = {
   gap: {
@@ -60,7 +58,6 @@ function Grid({
   className = "",
   style = {},
 }) {
-  // ── MODE 2: cols object ───────────────────────────────────────────────────
 
   // ── MODE 2: cols object
   if (cols && typeof cols === "object") {
