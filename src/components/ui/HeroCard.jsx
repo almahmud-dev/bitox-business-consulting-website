@@ -29,7 +29,6 @@ const HeroCard = () => {
           height={50}
           className="absolute top-1/2 -translate-y-1/2  right-[3.5px]"
           alt="hero-card-images"
-          alt="Get consultation icon"
         />
       </button>
     </div>
@@ -37,4 +36,3 @@ const HeroCard = () => {
 };
 
 export default HeroCard;
-

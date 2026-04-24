@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Container from "@/components/ui/Container";
 import { CLIENTS } from "../helper/helpers";
 
 function OurClients() {
@@ -33,7 +32,7 @@ function OurClients() {
         {CLIENTS.map((client) => (
           <div key={client.id} className="flex flex-col">
             {/* Image box */}
-            <div className="border border-black/10 bg-white flex flex-col p-4 h-[180px] sm:h-[200px]">
+            <div className="border border-black/10 bg-white flex flex-col p-4 rounded-[10px] h-[180px] sm:h-[200px]">
               <span className="text-[12px] text-center text-primary">
                 ({client.id})
               </span>

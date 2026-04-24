@@ -1,30 +1,9 @@
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 
-// ─── Footer One Data
-
-export const FOOTER_ONE_DATA = {
-  email: "infocon@example.com",
-  phone: "(+00685689696)",
-  address:
-    "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
-  copyright: "Copyright © 2026 Bitox, All Rights Reserved.",
-  socials: [
-    { label: "Instagram", href: "#" },
-    { label: "Behance", href: "#" },
-    { label: "Dribbble", href: "#" },
-    { label: "LinkedIn", href: "#" },
-    { label: "Facebook", href: "#" },
-    { label: "You Tube", href: "#" },
-  ],
-  bottomLinks: [
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Terms and Conditions", href: "/terms" },
-    { label: "Support", href: "/support" },
-  ],
-};
-
-// ─── Utils 
+//============================
+// Utils 
+//============================
 
 export function isActiveLink(href, pathname) {
   if (href === "/") return pathname === "/";
@@ -34,8 +13,9 @@ export function isActiveLink(href, pathname) {
 export function hasActiveChild(children, pathname) {
   return children?.some((child) => isActiveLink(child.href, pathname));
 }
-
-// ─── Nav Data 
+//==============================
+// Nav Data 
+//==============================
 
 export const NAV_LINKS = [
   {
@@ -78,8 +58,9 @@ export const NAV_LINKS = [
     href: "/contact",
   },
 ];
-
-// ─── Nav Components
+// =================================
+// Nav Components
+// =================================
 
 export function DropdownMenu({
   children,
@@ -248,8 +229,9 @@ export function MobileNavItem({
     </Link>
   );
 }
-
-// hero section arry object
+// =================================
+// HomeOne - Hero Section Array Object
+// =================================
 export const heroSections = [
   {
     id: 1,
@@ -277,8 +259,34 @@ export const heroSections = [
     slug: "risk-management",
   },
 ];
+
+// ============================
+// HomeOne Footer One Data
+// ============================
+
+export const FOOTER_ONE_DATA = {
+  email: "infocon@example.com",
+  phone: "(+00685689696)",
+  address:
+    "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
+  copyright: "Copyright © 2026 Bitox, All Rights Reserved.",
+  socials: [
+    { label: "Instagram", href: "#" },
+    { label: "Behance", href: "#" },
+    { label: "Dribbble", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Facebook", href: "#" },
+    { label: "You Tube", href: "#" },
+  ],
+  bottomLinks: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms and Conditions", href: "/terms" },
+    { label: "Support", href: "/support" },
+  ],
+};
+
 //==============================================
-// Hometwo - Our Clients
+// HomeTwo - Our Clients
 //==============================================
 export const CLIENTS = [
   {
@@ -322,5 +330,34 @@ export const CLIENTS = [
     name: "Loreipsum",
     description: "Lorem ipsum dolor sit amet, consectetur.",
     logo: "/images/home2_Client/client7.png",
+  },
+];
+//===================================
+// Hometwo - Core Features
+//===================================
+export const features = [
+  {
+    number: "01.",
+    title: "Information",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    number: "02.",
+    title: "Planning",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    number: "03.",
+    title: "Strategy",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    number: "04.",
+    title: "Analysis",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
   },
 ];

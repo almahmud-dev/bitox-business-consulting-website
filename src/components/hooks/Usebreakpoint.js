@@ -1,12 +1,8 @@
-
-
-
-  
   "use client";
 
 import { useEffect, useState } from "react";
 
-// ─── Breakpoint definitions (Tailwind-compatible) ──────────────────────────
+// ─── Breakpoint definitions (Tailwind-compatible)
 const BREAKPOINTS = {
   sm:  640,
   md:  768,
