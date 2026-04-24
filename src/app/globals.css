@@ -9,6 +9,7 @@
   --color-bg-secondaryThree: #02090f;
   --font-heading: var(--font-heading);
   --font-paragraph: var(--font-paragraph);
+   --font-display: var(--font-display);
 
   /* for custom responsive break point */
   --breakpoint-laptop: 1180px;
