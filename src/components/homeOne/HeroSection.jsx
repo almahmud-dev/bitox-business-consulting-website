@@ -1,13 +1,17 @@
 import React from "react";
-import Container from "../ui/Container";
 import RotatingBadge from "../ui/RotatingBadge";
-import Button from "../ui/Button";
+import Container from "../ui/Container";
+import HeroCard from "../ui/HeroCard";
+import Image from "next/image";
+import allImages from "../helper/imageProvider";
 
 const HeroSection = () => {
+  const { heroBanner } = allImages;
+
   return (
     <section className="pt-[180px] pb-[120px] bg-bg-secondaryOne">
       <Container size="2xl">
-        <div>
+        <div className="relative">
           <h1 className="font-heading headingOne  uppercase tracking-tight ">
             <span className="block font-extrabold ">
               <span className="flex items-center">
@@ -18,13 +22,18 @@ const HeroSection = () => {
                 />
               </span>
             </span>
-            <span className="block font-medium pl-[450px]">Strategy</span>
+            <span className="block font-medium pl-[520px]">Strategy</span>
           </h1>
+          <div className="absolute top-[100%] translate-y-[-13.5%] left-0 ">
+            <HeroCard />
+          </div>
         </div>
+        
       </Container>
-      
+      <div className="mt-[90px] mb-[20px]">
+          <Image src={heroBanner} />
+        </div>
     </section>
-    
   );
 };
 
