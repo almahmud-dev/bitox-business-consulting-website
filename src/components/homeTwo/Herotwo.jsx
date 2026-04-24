@@ -85,10 +85,10 @@ const Herotwo = () => {
 
         {/* CONSULTANT — top left */}
         <h1
-          className="absolute left-4 sm:left-[75px] font-black text-white uppercase leading-none tracking-tighter"
+          className="absolute left-4 sm:left-[75px] font-bold text-white uppercase leading-none tracking-tighter"
           style={{
             fontSize: "clamp(36px, 10.5vw, 200px)",
-            top: "clamp(40px, 8vm, 160px)",
+            top: "clamp(40px, 8vw, 160px)",
           }}
         >
           CONSULTANT
@@ -96,10 +96,10 @@ const Herotwo = () => {
 
         {/* AGENCY_ — bottom right */}
         <div
-          className="absolute right-4 sm:right-[75px] font-black text-white uppercase leading-none tracking-tighter items-baseline flex gap-2 lg:gap-3"
+          className="absolute right-4 sm:right-[75px] font-bold text-white uppercase leading-none tracking-tighter items-baseline flex gap-2 lg:gap-3"
           style={{
             fontSize: "clamp(36px, 10.5vw, 200px)",
-            bottom: "clamp(20px, 8vm, 200px)",
+            bottom: "clamp(20px, 8vw, 200px)",
           }}
         >
           <span>AGENCY</span>
