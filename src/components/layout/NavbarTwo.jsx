@@ -7,7 +7,7 @@ import Image from "next/image";
 import { Phone, X, Menu } from "lucide-react";
 import { NAV_LINKS, DesktopNavItem, MobileNavItem } from "@/components/helper/helpers";
 
-// ─── Logic ────────────────────────────────────────────────────────────────────
+// --- Logic ---
 
 function useNavbar() {
   const pathname = usePathname();
@@ -114,7 +114,7 @@ export default function NavbarTwo() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
+          <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
             <Phone size={18} className="text-white" />
           </div>
           <span className="text-base font-semibold text-primary tracking-wide">

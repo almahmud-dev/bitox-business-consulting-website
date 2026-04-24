@@ -259,3 +259,4 @@ function Stack({
 // ─── Compound export ───────────────────────────────────────────────────────
 const Responsive = { Grid, Flex, Stack };
 export default Responsive;
+export { Grid, Flex, Stack };

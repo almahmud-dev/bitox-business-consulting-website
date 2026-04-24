@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Plus } from "lucide-react";
+import ButtonThree from "../ui/ButtonThree";
 
 const PLUS_POSITIONS = [
   // Top row
@@ -49,7 +52,6 @@ const Herotwo = () => {
 
       {/* Max width container */}
       <div className="relative z-10 max-w-[1770px] mx-auto h-full px-4 sm:px-[75px]">
-
         {/* Plus icons — hide on mobile */}
         {PLUS_POSITIONS.map((position, index) => (
           <Plus
@@ -61,13 +63,15 @@ const Herotwo = () => {
         ))}
 
         {/* Est. year — top right */}
-        <span className="
+        <span
+          className="
         absolute top-[16px] text-white leading-[90px] tracking-tight
         sm:top-[30px] right-[16px] sm:right-[82px] 
         text-[25px]
         md:text-[50px]
         xl:text-[90px]
-        ">
+        "
+        >
           (Est. 2010)
         </span>
 
@@ -99,7 +103,7 @@ const Herotwo = () => {
           className="absolute right-4 sm:right-[75px] font-bold text-white uppercase leading-none tracking-tighter items-baseline flex gap-2 lg:gap-3"
           style={{
             fontSize: "clamp(36px, 10.5vw, 200px)",
-            bottom: "clamp(20px, 8vw, 200px)",
+            bottom: "clamp(20px, 50vw, 200px)",
           }}
         >
           <span>AGENCY</span>
@@ -123,14 +127,30 @@ const Herotwo = () => {
             <br />
             into measurable success
           </p>
-          <button className="self-start flex items-center gap-2 bg-white text-black font-medium rounded-full px-4 py-2 sm:px-6 sm:py-3 text-[clamp(10px,1.1vw,15px)] hover:bg-white/90 transition-colors group">
-            Get started now
+          <div
+            className="self-start flex items-center gap-2 bg-bg-secondaryOne text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group"
+            onClick={() => console.log("clicked")}
+          >
+            <ButtonThree
+              frontText="Get started now"
+              backText="Let's Talk."
+              backgroundColor="transparent"
+              textColor="#02090F"
+              fontSize={14}
+              paddingTop={0}
+              paddingBottom={0}
+              paddingLeft={0}
+              paddingRight={0}
+            />
             <span className="inline-block transition-transform group-hover:translate-x-1">
-              <svg width="9" height="12" viewBox="0 0 9 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z" fill="#02090F"/>
+              <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
+                <path
+                  d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z"
+                  fill="#02090F"
+                />
               </svg>
             </span>
-          </button>
+          </div>
         </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ export const FOOTER_ONE_DATA = {
   ],
 };
 
-// ─── Utils ────────────────────────────────────────────────────────────────────
+// ─── Utils 
 
 export function isActiveLink(href, pathname) {
   if (href === "/") return pathname === "/";
@@ -34,7 +34,7 @@ export function hasActiveChild(children, pathname) {
   return children?.some((child) => isActiveLink(child.href, pathname));
 }
 
-// ─── Nav Data ─────────────────────────────────────────────────────────────────
+// ─── Nav Data 
 
 export const NAV_LINKS = [
   {
@@ -78,7 +78,7 @@ export const NAV_LINKS = [
   },
 ];
 
-// ─── Nav Components ───────────────────────────────────────────────────────────
+// ─── Nav Components
 
 export function DropdownMenu({ children, isOpen, onClose, pathname, style = "rounded" }) {
   const base = `absolute top-full left-0 w-52 bg-white py-2 z-50 transition-all duration-200 ${
@@ -99,7 +99,7 @@ export function DropdownMenu({ children, isOpen, onClose, pathname, style = "rou
           key={child.href}
           href={child.href}
           onClick={onClose}
-          className={`block px-5 py-2.5 text-sm transition-colors duration-200 ${
+          className={`block px-5 py-2.5 text-[16px] transition-colors duration-200 ${
             isActiveLink(child.href, pathname)
               ? "text-secondary font-medium bg-secondary/5"
               : "text-primary hover:text-secondary hover:bg-secondary/5"
@@ -136,7 +136,7 @@ export function DesktopNavItem({
         onMouseLeave={onLeave}
       >
         <button
-          className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 cursor-pointer ${activeClass}`}
+          className={`flex items-center gap-1 text-[16px] font-bold transition-colors duration-200 cursor-pointer ${activeClass}`}
         >
           {link.label}
           <ChevronDown
@@ -162,7 +162,7 @@ export function DesktopNavItem({
     <div className={heightClass}>
       <Link
         href={link.href}
-        className={`text-sm font-medium transition-colors duration-200 ${activeClass}`}
+        className={`text-[16px] font-bold transition-colors duration-200 ${activeClass}`}
       >
         {link.label}
       </Link>
@@ -185,7 +185,7 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
           onClick={() => onToggle(link.label)}
           className={`flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
         >
-          <span className="text-base font-heading font-medium">{link.label}</span>
+          <span className="text-[16px] font-heading font-medium">{link.label}</span>
           <ChevronDown
             size={16}
             className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -203,7 +203,7 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
                 key={child.href}
                 href={child.href}
                 onClick={onClose}
-                className={`py-2 text-sm transition-colors duration-200 ${
+                className={`py-2 text-[16px] transition-colors duration-200 ${
                   isActiveLink(child.href, pathname)
                     ? "text-secondary font-medium"
                     : "text-primary/70 hover:text-secondary"
@@ -222,7 +222,7 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
     <Link
       href={link.href}
       onClick={onClose}
-      className={`py-3.5 text-base font-heading font-medium border-b border-primary/10 block transition-colors duration-200 ${activeClass}`}
+      className={`py-3.5 text-[16px] font-heading font-medium border-b border-primary/10 block transition-colors duration-200 ${activeClass}`}
     >
       {link.label}
     </Link>
