@@ -52,9 +52,6 @@ const HeroSection = () => {
           ))}
         </Responsive.Flex>
       </div>
-      <div className="mt-[90px] mb-[20px]">
-          <Image src={heroBanner} alt="Hero banner" />
-        </div>
     </section>
   );
 };
