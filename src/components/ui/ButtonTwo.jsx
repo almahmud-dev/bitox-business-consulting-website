@@ -1,13 +1,19 @@
 "use client";
-
+ 
 import { useState } from "react";
-
-const ButtonTwo = ({ frontText, backText = "Let's Talk.", paddingX = 25 }) => {
+ 
+const ButtonTwo = ({
+  frontText,
+  backText = "Let's Talk.",
+  paddingLeft = 25,   // left side padding in px, default 25
+  paddingRight = 25,  // right side padding in px, default 25
+}) => {
   const [hovered, setHovered] = useState(false);
-
+ 
   const resolvedBackText = backText ?? frontText;
-  const sizerText = frontText.length >= resolvedBackText.length ? frontText : resolvedBackText;
-
+  const sizerText =
+    frontText.length >= resolvedBackText.length ? frontText : resolvedBackText;
+ 
   const style = {
     wrapper: {
       display: "inline-flex",
@@ -18,8 +24,8 @@ const ButtonTwo = ({ frontText, backText = "Let's Talk.", paddingX = 25 }) => {
       backgroundColor: "#02090F",
       paddingTop: "15px",
       paddingBottom: "15px",
-      paddingLeft: `${paddingX}px`,
-      paddingRight: `${paddingX}px`,
+      paddingLeft: `${paddingLeft}px`,
+      paddingRight: `${paddingRight}px`,
       cursor: "pointer",
       border: "none",
       outline: "none",
@@ -52,27 +58,22 @@ const ButtonTwo = ({ frontText, backText = "Let's Talk.", paddingX = 25 }) => {
       whiteSpace: "nowrap",
     },
   };
-
+ 
   return (
     <button
       style={style.wrapper}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* invisible sizer — takes the wider text so button never shrinks */}
       <span style={style.sizer}>{sizerText}</span>
-
-      {/* front text */}
       <span style={{ ...style.textBase, ...style.front }}>{frontText}</span>
-
-      {/* back text — slides in from bottom on hover */}
       <span style={{ ...style.textBase, ...style.back }}>{resolvedBackText}</span>
     </button>
   );
 };
-
+ 
 export default ButtonTwo;
-
+ 
 
 // ---------- USAGE ----------
 //
