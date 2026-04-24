@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "../ui/Container";
 import RotatingBadge from "../ui/RotatingBadge";
-import Button from "../ui/Button";
+import Container from "../ui/Container";
+import HeroCard from "../ui/HeroCard";
 
 const HeroSection = () => {
   return (
@@ -20,11 +20,12 @@ const HeroSection = () => {
             </span>
             <span className="block font-medium pl-[450px]">Strategy</span>
           </h1>
+          <div>
+            <HeroCard />
+          </div>
         </div>
       </Container>
-      
     </section>
-    
   );
 };
 
