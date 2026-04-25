@@ -1,5 +1,5 @@
 import { Lightbulb, Users, Search, ShieldCheck } from "lucide-react";
- 
+
 // =================================
 // HomeOne - Hero Section Array Object
 // =================================
@@ -58,8 +58,6 @@ export const aboutStats = [
 // HomeOne - Service Section Array Object
 // ===============================================
 
-
-
 const SHARED_DESCRIPTION =
   "We're a creative branding and communications company of creative thinkers, strategists, digital innovators.";
 
@@ -71,7 +69,7 @@ const SHARED_FEATURES = [
 ];
 
 export const serviceCards = [
-  { 
+  {
     id: 1,
     icon: "/images/home01/services/service-icon1.png",
     title: "Strategy & Planning",
@@ -95,7 +93,7 @@ export const serviceCards = [
   },
   {
     id: 3,
-     icon: "/images/home01/services/service-icon3.png",
+    icon: "/images/home01/services/service-icon3.png",
     title: "Research & Analysis",
     description: SHARED_DESCRIPTION,
     features: SHARED_FEATURES,
@@ -106,7 +104,7 @@ export const serviceCards = [
   },
   {
     id: 4,
-     icon: "/images/home01/services/service-icon4.png",
+    icon: "/images/home01/services/service-icon4.png",
     title: "Risk Management",
     description: SHARED_DESCRIPTION,
     features: SHARED_FEATURES,
@@ -115,4 +113,85 @@ export const serviceCards = [
     href: "/services/risk-management",
     highlighted: false,
   },
+];
+
+// ===============================================
+// HomeOne - TestimonialsSection Section Array Object
+// ===============================================
+
+export const testimonialsData = [
+  {
+    id: 1,
+    quote:
+      "From discovery to execution, every step was handled professionally. Their insights growth opportunities we hadn't considered before & either strategic guidance",
+    name: "Cameron Diaz",
+    role: "Co-Founder",
+    image: "/images/home01/testimonial/tesmonial1.png",
+    stats: [
+      { id: 1, percentage: "85%", label: "Process Improvement" },
+      { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
+    ],
+  },
+  {
+    id: 2,
+    quote:
+      "From discovery to execution, every step was handled professionally. Their insights growth opportunities we hadn't considered before & either strategic guidance",
+    name: "Taylor Brooks",
+    role: "Web Designer",
+    image: "/images/home01/testimonial/tesmonial2.png",
+    stats: [
+      { id: 1, percentage: "85%", label: "Process Improvement" },
+      { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
+    ],
+  },
+  {
+    id: 3,
+    quote:
+      "From discovery to execution, every step was handled professionally. Their insights growth opportunities we hadn't considered before & either strategic guidance",
+    name: "Alex Morgan",
+    role: "Co-Founder",
+    image: "/images/home01/testimonial/tesmonial3.png",
+    stats: [
+      { id: 1, percentage: "85%", label: "Process Improvement" },
+      { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
+    ],
+  },
+  
+  {
+    id: 4,
+    quote:
+      "From discovery to execution, every step was handled professionally. Their insights growth opportunities we hadn't considered before & either strategic guidance",
+    name: "Cameron Diaz",
+    role: "Co-Founder",
+    image: "/images/home01/testimonial/tesmonial1.png",
+    stats: [
+      { id: 1, percentage: "85%", label: "Process Improvement" },
+      { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
+    ],
+  },
+  {
+    id: 5,
+    quote:
+      "From discovery to execution, every step was handled professionally. Their insights growth opportunities we hadn't considered before & either strategic guidance",
+    name: "Taylor Brooks",
+    role: "Web Designer",
+    image: "/images/home01/testimonial/tesmonial2.png",
+    stats: [
+      { id: 1, percentage: "85%", label: "Process Improvement" },
+      { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
+    ],
+  },
+  {
+    id: 6,
+    quote:
+      "From discovery to execution, every step was handled professionally. Their insights growth opportunities we hadn't considered before & either strategic guidance",
+    name: "Alex Morgan",
+    role: "Co-Founder",
+    image: "/images/home01/testimonial/tesmonial3.png",
+    stats: [
+      { id: 1, percentage: "85%", label: "Process Improvement" },
+      { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
+    ],
+  },
+  
 ];
