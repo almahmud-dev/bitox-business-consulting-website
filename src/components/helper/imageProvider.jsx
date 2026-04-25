@@ -11,6 +11,8 @@ import HomeBrandFour from "../../../public/images/home01/brand/brand4.png";
 import HomeBrandFive from "../../../public/images/home01/brand/brand5.png";
 import HomeBrandSix from "../../../public/images/home01/brand/brand6.png";
 import Plus from "../../../public/images/home01/services/plus.png";
+import VideoShowcase from "../../../public/images/home01/videoshowcase/service-banner.png";
+
 
 const allImages = {
   heroIocns: HeroImage,
@@ -31,7 +33,8 @@ const allImages = {
     { id: 5, img: HomeBrandFive },
     { id: 6, img: HomeBrandSix },
   ],
-  plus: Plus
+  plus: Plus,
+  videoShowcase: VideoShowcase
 };
 
 export default allImages;
