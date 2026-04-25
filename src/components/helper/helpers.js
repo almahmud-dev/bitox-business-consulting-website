@@ -51,6 +51,7 @@ export const NAV_LINKS = [
       { label: "Blog Details", href: "/blog/details" },
       { label: "Pricing", href: "/pricing" },
       { label: "FAQ", href: "/faq" },
+      { label: "404", href: "/not-found" },
     ],
   },
   {
