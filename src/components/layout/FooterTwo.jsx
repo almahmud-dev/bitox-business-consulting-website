@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonThree from "../ui/ButtonThree";
 import Container from "../ui/Container";
 import { Flex, Grid, Stack } from "../ui/Responsive";
 
@@ -23,14 +24,24 @@ function HeroCTA() {
   return (
     <Container size="md">
       <Stack gap="lg" align="center" className="py-16 text-center">
-        <p className="headingTwo font-heading font-semibold text-primary max-w-xl underline underline-offset-4">
+        <p className="text-[28px] sm:text-[36px] md:text-[42px] font-bold text-primary max-w-[625px] underline underline-offset-[4px]">
           Have an idea in your mind? Let&apos;s make something great together
         </p>
         <div
           className="inline-flex items-center gap-2.5 border border-primary text-primary text-sm font-medium rounded-[90px] px-7 py-3.5 cursor-pointer hover:bg-black/5 transition-colors group"
           onClick={() => console.log("clicked")}
         >
-          <span>Let&apos;s build together</span>
+          <ButtonThree
+            frontText="Let's build together"
+            backText="Let's Talk."
+            backgroundColor="transparent"
+            textColor="#02090F"
+            fontSize={14}
+            paddingTop={0}
+            paddingBottom={0}
+            paddingLeft={0}
+            paddingRight={0}
+          />
           <span className="inline-block transition-transform group-hover:translate-x-1">
             <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
               <path
@@ -74,7 +85,17 @@ function ContactCard() {
           className="self-start inline-flex items-center gap-2.5 bg-secondary text-white text-sm font-medium rounded-[90px] px-6 py-3 cursor-pointer hover:bg-secondary/90 transition-colors group"
           onClick={() => console.log("send message")}
         >
-          <span>Send message</span>
+          <ButtonThree
+            frontText="Send Message"
+            backText="Let's Talk."
+            backgroundColor="transparent"
+            textColor="#ffffff"
+            fontSize={14}
+            paddingTop={0}
+            paddingBottom={0}
+            paddingLeft={0}
+            paddingRight={0}
+          />
           <span className="inline-block transition-transform group-hover:translate-x-1">
             <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
               <path
@@ -109,14 +130,9 @@ function FooterDark() {
   return (
     <div className="bg-bg-secondaryThree text-white">
       {/* Hours + Appointment bar */}
-      <Flex
-        align="stretch"
-        justify="space-between"
-        gap="none"
-        className="border-b border-white/10"
-      >
-        {/* LEFT: orange bg — text centered vertically & horizontally */}
-        <div className="bg-secondary flex-1 flex items-center justify-center px-8 py-4">
+      <div className="flex flex-col sm:flex-row border-b border-white/10">
+        {/* LEFT: orange bg */}
+        <div className="bg-secondary flex items-center justify-center px-8 py-4 sm:flex-1">
           <p className="text-sm text-white font-medium text-center">
             Saturday – Thursday : 8:30 am – 10:45 pm
           </p>
@@ -124,20 +140,30 @@ function FooterDark() {
 
         {/* RIGHT: appointment CTA */}
         <div
-          className="px-8 py-4 flex items-center gap-3 cursor-pointer group hover:opacity-80 transition-opacity shrink-0"
-          onClick={() => console.log("appointment")}
+          className="flex items-center justify-center gap-2.5 px-7 py-4 cursor-pointer hover:bg-white/5 transition-colors group border-t border-white/10 sm:border-t-0 sm:border-l sm:border-white/10"
+          onClick={() => console.log("clicked")}
         >
-          <p className="text-sm text-white/80">Call for an appointment</p>
+          <ButtonThree
+            frontText="Call for an appointment"
+            backText="Let's Talk."
+            backgroundColor="transparent"
+            textColor="#ffffff"
+            fontSize={14}
+            paddingTop={0}
+            paddingBottom={0}
+            paddingLeft={0}
+            paddingRight={0}
+          />
           <span className="inline-block transition-transform group-hover:translate-x-1">
             <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
               <path
                 d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z"
-                fill="white"
+                fill="#ffffff"
               />
             </svg>
           </span>
         </div>
-      </Flex>
+      </div>
 
       {/* Footer links + newsletter */}
       <Container size="md">
@@ -191,10 +217,10 @@ function FooterDark() {
               <input
                 type="email"
                 placeholder="Enter Your Email"
-                className="flex-1 bg-white/10 border border-white/20 rounded-l-full px-4 py-2.5 text-sm text-white placeholder:text-white/40 outline-none focus:border-secondary transition-colors"
+                className="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-l-full px-4 py-2.5 text-sm text-white placeholder:text-white/40 outline-none focus:border-secondary transition-colors"
               />
               <button
-                className="bg-white/10 border border-l-0 border-white/20 rounded-r-full px-4 py-2.5 hover:bg-secondary hover:border-secondary transition-colors"
+                className="bg-white/10 border border-l-0 border-white/20 rounded-r-full px-4 py-2.5 hover:bg-secondary hover:border-secondary transition-colors shrink-0"
                 onClick={() => console.log("subscribe")}
               >
                 <svg
@@ -221,14 +247,9 @@ function FooterDark() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <Container size="md">
-          <Flex
-            align="center"
-            justify="space-between"
-            gap="sm"
-            className="py-5"
-          >
-            {/* Left: legal links */}
-            <Flex gap="md" align="center" wrap={false}>
+          <div className="flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+            {/* Legal links */}
+            <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center md:justify-start">
               {["Privacy Policy", "Terms and Conditions", "Support"].map(
                 (item) => (
                   <a
@@ -238,13 +259,13 @@ function FooterDark() {
                   >
                     {item}
                   </a>
-                )
+                ),
               )}
-            </Flex>
+            </div>
 
-            {/* Center: social icons */}
-            <Flex gap="sm" align="center" justify="center">
-              {/* Facebook — always bg-secondary (orange), no hover change */}
+            {/* Social icons */}
+            <div className="flex gap-3 items-center justify-center">
+              {/* Facebook */}
               <a
                 href="#"
                 className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -257,7 +278,7 @@ function FooterDark() {
                 </svg>
               </a>
 
-              {/* X / Twitter — white/10 bg, hover white/20 */}
+              {/* X / Twitter */}
               <a
                 href="#"
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -270,7 +291,7 @@ function FooterDark() {
                 </svg>
               </a>
 
-              {/* Instagram — white/10 bg, hover white/20 */}
+              {/* Instagram */}
               <a
                 href="#"
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -296,7 +317,7 @@ function FooterDark() {
                 </svg>
               </a>
 
-              {/* Dribbble — white/10 bg, hover white/20 */}
+              {/* Dribbble */}
               <a
                 href="#"
                 className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
@@ -323,13 +344,13 @@ function FooterDark() {
                   />
                 </svg>
               </a>
-            </Flex>
+            </div>
 
-            {/* Right: copyright */}
-            <p className="text-sm text-white/50 whitespace-nowrap">
+            {/* Copyright */}
+            <p className="text-sm text-white/50 text-center md:text-right whitespace-nowrap">
               Copyright © 2026 Bitox. All Rights Reserved.
             </p>
-          </Flex>
+          </div>
         </Container>
       </div>
     </div>
@@ -343,13 +364,27 @@ export default function BusinessFooterSection() {
       <MarqueeHeading />
       <HeroCTA />
 
-      {/* Contact card overlapping dark footer */}
+      {/* 
+        ContactCard overlapping dark footer — RESPONSIVE APPROACH:
+        - Mobile/tablet (< lg): Card sits ABOVE the dark footer, normal flow, no overlap
+        - Desktop (≥ lg): Card floats with absolute positioning, overlapping the dark footer
+        The dark footer gets padding-top on desktop to compensate for the overlap
+      */}
       <div className="relative">
-        <Container size="md">
-          <div className="absolute -top-20 left-4 sm:left-6 md:left-10 lg:left-16 2xl:left-20 z-10">
-            <ContactCard />
-          </div>
-        </Container>
+        {/* Mobile: card in normal flow, centered */}
+        <div className="lg:hidden px-4 pb-0 flex justify-center">
+          <ContactCard />
+        </div>
+
+        {/* Desktop: card absolutely positioned, overlapping footer */}
+        <div className="hidden lg:block">
+          <Container size="md">
+            <div className="absolute -top-20 left-4 sm:left-6 md:left-10 lg:left-16 2xl:left-20 z-10">
+              <ContactCard />
+            </div>
+          </Container>
+        </div>
+
         <FooterDark />
       </div>
     </section>
