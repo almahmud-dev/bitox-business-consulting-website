@@ -12,6 +12,8 @@ import HomeBrandFive from "../../../public/images/home01/brand/brand5.png";
 import HomeBrandSix from "../../../public/images/home01/brand/brand6.png";
 import Plus from "../../../public/images/home01/services/plus.png";
 import VideoShowcase from "../../../public/images/home01/videoshowcase/service-banner.png";
+import Quote from "../../../public/images/home01/testimonial/quote.png";
+import Test1 from "../../../public/images/home01/testimonial/tesmonial1.png";
 
 
 const allImages = {
@@ -34,7 +36,10 @@ const allImages = {
     { id: 6, img: HomeBrandSix },
   ],
   plus: Plus,
-  videoShowcase: VideoShowcase
+  videoShowcase: VideoShowcase,
+  quote: Quote,
+  test1: Test1,
+
 };
 
 export default allImages;
