@@ -1,9 +1,50 @@
-import React from 'react'
+import React from "react";
+import Container from "../ui/Container";
+import ProjectCard from "../ui/ProjectCard";
+import Responsive from "../ui/Responsive";
+import allImages from "../helper/imageProvider";
 
 const PortfolioSection = () => {
+  const { projectImages } = allImages;
   return (
-    <div>PortfolioSection</div>
-  )
-}
+    <section className="py-[120px]">
+      <Container size={"lg"}>
+        <h2 className="headingTwo max-w-[950px]  text-primary font-bold text-center mx-auto">
+          Real Challenges. Real Solutions. Real Impact.
+        </h2>
+        <div className="py-[60px] space-y-[30px]">
+          <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
+            {projectImages[0].map((items, index) => {
+              return (
+                <ProjectCard
+                  image={items.img}
+                  key={index}
+                  mainClass={"w-full h-[510px]"}
+                  title={items.title}
+                  subtitleOne={items.subtitleOne}
+                  subtitleTwo={items.subtitleTwo}
+                />
+              );
+            })}
+          </Responsive.Grid>
+          <Responsive.Grid cols={{ base: 1, lg: 3 }} gap="lg">
+            {projectImages[1].map((items, index) => {
+              return (
+                <ProjectCard
+                  image={items.img}
+                  key={index}
+                  mainClass={"w-full h-[510px]"}
+                  title={items.title}
+                  subtitleOne={items.subtitleOne}
+                  subtitleTwo={items.subtitleTwo}
+                />
+              );
+            })}
+          </Responsive.Grid>
+        </div>
+      </Container>
+    </section>
+  );
+};
 
-export default PortfolioSection
+export default PortfolioSection;

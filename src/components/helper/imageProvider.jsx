@@ -13,8 +13,11 @@ import HomeBrandSix from "../../../public/images/home01/brand/brand6.png";
 import Plus from "../../../public/images/home01/services/plus.png";
 import VideoShowcase from "../../../public/images/home01/videoshowcase/service-banner.png";
 import Quote from "../../../public/images/home01/testimonial/quote.png";
-import Test1 from "../../../public/images/home01/testimonial/tesmonial1.png";
-
+import ProjetctOne from "../../../public/images/home01/portfolioSection/portfolio1.png";
+import projectTwo from "../../../public/images/home01/portfolioSection/portfolio2.png";
+import ProjetctThree from "../../../public/images/home01/portfolioSection/portfolio3.png";
+import projectFour from "../../../public/images/home01/portfolioSection/portfolio4.png";
+import projectFive from "../../../public/images/home01/portfolioSection/portfolio5.png";
 
 const allImages = {
   heroIocns: HeroImage,
@@ -38,8 +41,47 @@ const allImages = {
   plus: Plus,
   videoShowcase: VideoShowcase,
   quote: Quote,
-  test1: Test1,
-
+  projectImages: [
+    [
+      {
+        id: 1,
+        img: ProjetctOne,
+        title: "Brand Identity",
+        subtitleOne: "Branding",
+        subtitleTwo: "(2024)",
+      },
+      {
+        id: 2,
+        img: projectTwo,
+        title: "E-Commerce Platform",
+        subtitleOne: "Web Design",
+        subtitleTwo: "(2024)",
+      },
+    ],
+    [
+      {
+        id: 1,
+        img: ProjetctThree,
+        title: "Social Media Campaign",
+        subtitleOne: "Marketing",
+        subtitleTwo: "(2023)",
+      },
+      {
+        id: 2,
+        img: projectFour,
+        title: "Mobile App UI",
+        subtitleOne: "UI/UX",
+        subtitleTwo: "(2025)",
+      },
+      {
+        id: 3,
+        img: projectFive,
+        title: "SEO Strategy",
+        subtitleOne: "Digital Marketing",
+        subtitleTwo: "(2025)",
+      },
+    ],
+  ],
 };
 
 export default allImages;

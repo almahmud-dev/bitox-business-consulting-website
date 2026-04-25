@@ -5,10 +5,8 @@ import React from "react";
 const layout = ({ children }) => {
   return (
     <>
-      <NavbarOne/>
-      <main className="bg-bg-secondaryOne">
-        {children}
-      </main>
+      <NavbarOne />
+      <main className="bg-bg-secondaryOne">{children}</main>
       <FooterOne />
     </>
   );
