@@ -7,8 +7,8 @@ import Container from "../ui/Container";
 import HeroCard from "../ui/HeroCard";
 import Image from "next/image";
 import allImages from "../helper/imageProvider";
-import { heroSections } from "../helper/helpers";
 import Responsive from "../ui/Responsive";
+import { heroSections } from "../helper/homeOnehelper";
 
 const HeroSection = () => {
   const { heroBanner } = allImages;
