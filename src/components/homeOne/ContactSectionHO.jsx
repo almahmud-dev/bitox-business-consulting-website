@@ -9,14 +9,26 @@ const ContactSectionHO = () => {
   return (
     <section>
       <Container size={"lg"}>
-        <div className="w-full !h-[690px] relative ">
+        <div className="w-full !h-[690px] relative hidden lg:block  rounded-[6px] overflow-hidden">
           <Image
             fill
             src={contactImage}
-            className="object-cover"
+            className="object-cover "
             alt="contact-page-images"
           />
           <div className="absolute top-1/2 translate-y-[-50%] left-[35px]">
+            <ContactForm />
+          </div>
+        </div>
+        <div className=" block lg:hidden  r">
+          <Image
+            src={contactImage}
+            height={690}
+            width={1600}
+            className="object-cover  rounded-[6px] overflow-hidden"
+            alt="contact-page-images"
+          />
+          <div className="mt-10">
             <ContactForm />
           </div>
         </div>

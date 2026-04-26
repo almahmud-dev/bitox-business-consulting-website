@@ -2,7 +2,7 @@ import ButtonThree from "./ButtonThree";
 
 const ContactForm = () => {
   return (
-    <div className=" h-[620px]  max-w-[478px] bg-bg-secondaryTwo rounded-[6px] p-[35px] flex flex-col gap-[48px] ">
+    <div className=" lg:h-[620px] w-full lg:max-w-[478px] bg-bg-secondaryTwo rounded-[6px] p-[35px] flex flex-col gap-[48px] ">
       <div className="flex flex-col gap-[25px]">
         <h2 className="headingFour font-bold text-primary">
           Start your project with bitox growth partners
