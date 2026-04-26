@@ -1,6 +1,7 @@
 import AboutSectionHO from "@/components/homeOne/AboutSectionHO";
 import BlogSectionHO from "@/components/homeOne/BlogSectionHO";
 import BrandLogos from "@/components/homeOne/BrandLogos";
+import ContactSectionHO from "@/components/homeOne/ContactSectionHO";
 import FeaturesRound from "@/components/homeOne/FeaturesRound";
 import HeroSection from "@/components/homeOne/HeroSection";
 import PortfolioSection from "@/components/homeOne/PortfolioSection";
@@ -23,6 +24,7 @@ const Home1 = () => {
       <PortfolioSection/>
       <ProcessSteps/>
       <BlogSectionHO/>
+      <ContactSectionHO/>
     </>
   );
 };

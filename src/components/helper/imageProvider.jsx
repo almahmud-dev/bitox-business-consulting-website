@@ -20,6 +20,7 @@ import projectFour from "../../../public/images/home01/portfolioSection/portfoli
 import projectFive from "../../../public/images/home01/portfolioSection/portfolio5.png";
 import PlusWhite from "../../../public/images/home01/services/plusWhite.png";
 import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png"
+import ContactImage from "../../../public/images/home01/contact/contact-img.png"
 
 
 const allImages = {
@@ -87,6 +88,7 @@ const allImages = {
   ],
   plusImages: PlusWhite,
   processImage: ProcessOne,
+  contactImage: ContactImage
 };
 
 export default allImages;
