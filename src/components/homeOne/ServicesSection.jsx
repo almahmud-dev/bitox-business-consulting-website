@@ -11,7 +11,7 @@ export default function ServicesSection() {
           {" "}
           Get the most valuable expert service now
         </h2>
-        <div className="">
+        <div className="rounded-[6px] overflow-hidden">
           <Responsive.Grid cols={{ base: 1, lg:2 }} gap="none">
             {serviceCards.map((card) => (
               <ServiceCard key={card.id} card={card} />
