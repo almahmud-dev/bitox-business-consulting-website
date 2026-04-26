@@ -2,12 +2,13 @@ import React from "react";
 import Container from "../ui/Container";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
+import ButtonTwo from "../ui/ButtonTwo";
 
 const FeaturesRound = () => {
   const { featureRound } = allImages;
 
   return (
-    <section className=" overflow-hidden py-[120px] ">
+    <section className=" overflow-hidden  mb-[60px] lg:mb-0 lg:py-[120px] ">
       <div className="relative  max-w-[932px]  mx-auto">
         <Image
           src={featureRound[1].img}
@@ -21,6 +22,9 @@ const FeaturesRound = () => {
           We are a strategic consulting firm focused on delivering measurable
           strategy, growth.
         </h2>
+        <div className="mt-[60px] flex justify-center">
+          <ButtonTwo frontText={"Learn about us"} />
+        </div>
         <Image
           src={featureRound[0].img}
           height={230}
@@ -30,7 +34,7 @@ const FeaturesRound = () => {
         />
       </div>
 
-      <div className=" whitespace-nowrap w-full mt-[120px]">
+      <div className=" whitespace-nowrap w-full mt-[80px] lg:mt-[120px]">
         <div className="inline-flex animate-marquee">
           {[...Array(6)].map((_, i) => (
             <h2
