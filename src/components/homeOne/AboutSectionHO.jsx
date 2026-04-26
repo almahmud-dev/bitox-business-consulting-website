@@ -13,9 +13,9 @@ const AboutSectionHO = () => {
   return (
     <section className="bg-secondary py-[60px]">
       <Container size="lg">
-        <div className="p-[35px]  bg-bg-secondaryTwo rounded-[6px]">
-          <Responsive.Grid gap="none" cols={{ base: 1, md: 2 }} align={"center"}>
-            <div className="relative rounded-[6px] h-[675px] overflow-hidden lg:mr-[35px]">
+        <div className=" p-[20px] md:p-[35px]  bg-bg-secondaryTwo rounded-[6px]">
+          <Responsive.Grid gap="none" cols={{ base: 1, lg: 2 }} >
+            <div className="relative rounded-[6px] mb-8 lg:mb-0  !h-[200px] md:!h-[500px] lg:!h-[675px] overflow-hidden lg:mr-[35px]">
               <Image
                 src={aboutsection[0].img}
                 alt="about-section"
@@ -66,7 +66,7 @@ const AboutSectionHO = () => {
           </Responsive.Grid>
           <Responsive.Grid
             gap="none"
-            cols={{ base: 1, md: 2 }}
+            cols={{ base: 1, lg: 2 }}
             align={"flex-start"}
           >
             <div className="lg:border-r border-[#0000001a] lg:pr-[35px] h-full  ">
@@ -86,7 +86,7 @@ const AboutSectionHO = () => {
                 <StatSectionHo stats={aboutStats} />
               </div>
             </div>
-            <div className="relative rounded-[6px] h-[675px] overflow-hidden lg: ml-[60px]">
+            <div className="relative rounded-[6px]  mt-8 lg:mt-0 md:!h-[500px] !h-[200px] lg:!h-[675px] overflow-hidden lg: lg:ml-[60px]">
               <Image
                 src={aboutsection[1].img}
                 alt="about-section"
