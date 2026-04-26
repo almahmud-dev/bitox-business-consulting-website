@@ -6,6 +6,7 @@ import CoreFeatures from '@/components/homeTwo/CoreFeatures'
 import TestimonialsClient from '@/components/homeTwo/TestimonialsClient'
 import PricingPlan from '@/components/homeTwo/PricingPlan'
 import OurExperts from '@/components/homeTwo/OurExperts'
+import OurTeam from '@/components/homeTwo/OurTeam'
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
       <TestimonialsClient/>
       <PricingPlan/>
       <OurExperts/>
+      <OurTeam/>
     </>
   )
 }

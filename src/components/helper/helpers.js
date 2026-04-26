@@ -380,3 +380,23 @@ export const PLANS = [
     tagline: "Ideal for clear, scoped design needs",
   },
 ];
+//=================================
+// HomeTwo — Our Team
+//=================================
+export const featuresteam = [
+  {
+    title: "Visual project management",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
+  },
+  {
+    title: "Team collaboration",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
+  },
+  {
+    title: "Connection to company",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the sustainable and long-term success.",
+  },
+];

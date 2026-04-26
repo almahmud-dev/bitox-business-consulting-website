@@ -29,7 +29,7 @@ import Home2Testimonials4 from "../../../public/images/home2_Testimonials/Michae
 import Home2OurExperts1 from "../../../public/images/home2_ourexperts/experts1.png";
 import Home2OurExperts2 from "../../../public/images/home2_ourexperts/experts2.png";
 import Home2OurExperts3 from "../../../public/images/home2_ourexperts/experts3.png";
-
+import ourteam from "../../../public/images/home2_ourteam/our_team.png";
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
@@ -112,6 +112,7 @@ const allImages = {
     { id: 2, img: Home2OurExperts2 },
     { id: 3, img: Home2OurExperts3 },
   ],
+  home2ourteam : ourteam,
 };
 
 export default allImages;

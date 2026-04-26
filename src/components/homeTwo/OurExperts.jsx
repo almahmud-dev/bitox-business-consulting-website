@@ -117,16 +117,16 @@ export default function OurExperts() {
                   className="object-cover"
                 />
               </div>
-              <div className="px-[80px] py-[30px] border-t border-neutral-200">
+              <div className="px-4 md:px-6 xl:px-[80px] py-[30px] border-t border-neutral-200">
                 <p className="text-[26px] font-bold text-center text-primary mb-4.5">
                   {experts[index]?.name}
                 </p>
-                <div className="flex items-center justify-center py-1 px-3.75 gap-2">
+                <div className="flex items-center justify-center gap-1.5 flex-wrap">
                   {socialLinks.map((link) => (
                     <a
                       key={link}
                       href="#"
-                      className="text-[10px] uppercase tracking-[0.06em] text-neutral-400 hover:text-neutral-700 transition-colors border border-black/10 rounded-[90px] py-1 px-3"
+                      className="text-[13px] uppercase tracking-[0.06em] text-neutral-400 hover:text-neutral-700 transition-colors border border-black/10 rounded-[90px] py-1 px-2.5 whitespace-nowrap"
                     >
                       {link}
                     </a>
