@@ -1,44 +1,97 @@
-// components/shared/RotatingBadge.jsx
 
-export default function RotatingBadge({ className = "" }) {
-  const text = "BEST SOLUTION    BEST SOLUTION    BEST SOLUTION    BEST SOLUTION • ";
+
+
+import React from "react";
+
+const RotatingBadge = ({ size = "lg" }) => {
+  const config = {
+    sm: {
+      outer: 80,
+      cx: 40,
+      r: 40,
+      pathR: 29,
+      fontSize: 5.5,
+      inner: 40,
+      plusSize: "18px",
+      text: "BEST SOLUTION BEST SOLUTION BEST SOLUTION",
+    },
+    md: {
+      outer: 110,
+      cx: 55,
+      r: 55,
+      pathR: 40,
+      fontSize: 6.5,
+      inner: 55,
+      plusSize: "24px",
+      text: "BEST SOLUTION BEST SOLUTION BEST SOLUTION",
+    },
+    lg: {
+      outer: 146,
+      cx: 73,
+      r: 73,
+      pathR: 55,
+      fontSize: 7.5,
+      inner: 73,
+      plusSize: "30px",
+      text: "BEST SOLUTION BEST SOLUTION BEST SOLUTION",
+    },
+  };
+
+  const c = config[size];
+  const pathId = `textCircle-${size}`;
+  const circumference = +(2 * Math.PI * c.pathR).toFixed(2);
 
   return (
-    <div className={`relative w-[120px] h-[120px] ${className}`}>
-      
-      {/* Outer Black Circle */}
-      <div className="absolute inset-0 rounded-full bg-black" />
-
-      {/* Rotating Text */}
+    <div
+      className="relative flex items-center justify-center"
+      style={{ width: c.outer, height: c.outer }}
+    >
+      {/* Rotating outer ring */}
       <svg
-        className="absolute inset-0 w-full h-full animate-spin-slow"
-        viewBox="0 0 120 120"
+        className="animate-[spin_12s_linear_infinite]"
+        width={c.outer}
+        height={c.outer}
+        viewBox={`0 0 ${c.outer} ${c.outer}`}
+        xmlns="http://www.w3.org/2000/svg"
       >
+        <circle cx={c.cx} cy={c.cx} r={c.r} fill="#1a1a1a" />
         <defs>
           <path
-            id="circle-path"
-            d="M 60,60 m -45,0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0"
+            id={pathId}
+            d={`M${c.cx},${c.cx} m-${c.pathR},0 a${c.pathR},${c.pathR} 0 1,1 ${c.pathR * 2},0 a${c.pathR},${c.pathR} 0 1,1 -${c.pathR * 2},0`}
           />
         </defs>
         <text
+          fontFamily="Arial Black, sans-serif"
+          fontSize={c.fontSize}
+          fontWeight="600"
           fill="white"
-          fontSize="8"
-          fontFamily="serif"
-          letterSpacing="1.5"
         >
-          <textPath href="#circle-path">
-            {text}
+          <textPath
+            href={`#${pathId}`}
+            startOffset="0%"
+            textLength={circumference}
+            lengthAdjust="spacing"
+          >
+            {c.text}
           </textPath>
         </text>
       </svg>
 
-      {/* Inner White Circle */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="w-[65px] h-[65px] rounded-full bg-white flex items-center justify-center">
-          <span className="text-black text-[30px] font-light ">+</span>
-        </div>
+      {/* Static inner circle */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F4F3F0] flex justify-center items-center shadow-md z-10"
+        style={{ width: c.inner, height: c.inner }}
+      >
+        <span
+          className="text-[#1a1a1a] font-bold leading-none"
+          style={{ fontSize: c.plusSize }}
+        >
+          +
+        </span>
       </div>
-
     </div>
   );
-}
+};
+
+export default RotatingBadge;
