@@ -156,7 +156,7 @@ export const testimonialsData = [
       { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
     ],
   },
-  
+
   {
     id: 4,
     quote:
@@ -193,5 +193,32 @@ export const testimonialsData = [
       { id: 2, percentage: "70%", label: "Revenue Growth in 6 Months" },
     ],
   },
-  
+];
+
+// ===============================================
+// HomeOne - BlogSectionHO Section Array Object
+// ===============================================
+export const blogData = [
+  {
+    batchName: "Business",
+    image: "/images/home01/blog/blog1.png",
+    itmeText: "6 min read",
+    dateText: "Mar 12, 2026",
+    description:
+      "Craft a fulfilling career and enjoy the comfort you truly deserve",
+  },
+  {
+    batchName: "Business",
+    image: "/images/home01/blog/blog2.png",
+    itmeText: "6 min read",
+    dateText: "Mar 12, 2026",
+    description: "Building a profitable and sustainable business model",
+  },
+  {
+    batchName: "Business",
+    image: "/images/home01/blog/blog3.png",
+    itmeText: "6 min read",
+    dateText: "Mar 12, 2026",
+    description: "Improving operational efficiency for higher profitability",
+  },
 ];
