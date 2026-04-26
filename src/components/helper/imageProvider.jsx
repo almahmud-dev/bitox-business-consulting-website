@@ -20,7 +20,10 @@ import projectFour from "../../../public/images/home01/portfolioSection/portfoli
 import projectFive from "../../../public/images/home01/portfolioSection/portfolio5.png";
 import PlusWhite from "../../../public/images/home01/services/plusWhite.png";
 import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png"
-
+import Home2Testimonials1 from "../../../public/images/home2_Testimonials/Sophia_Rahman.png";
+import Home2Testimonials2 from "../../../public/images/home2_Testimonials/videoimg.png";
+import Home2Testimonials3 from "../../../public/images/home2_Testimonials/Michael_Torres.png";
+import Home2Testimonials4 from "../../../public/images/home2_Testimonials/Michael_Hayes.png";
 
 const allImages = {
   heroIocns: HeroImage,
@@ -87,6 +90,12 @@ const allImages = {
   ],
   plusImages: PlusWhite,
   processImage: ProcessOne,
+  home2Testimonials: [
+    { id: 1, img: Home2Testimonials1 },
+    { id: 2, img: Home2Testimonials2 },
+    { id: 3, img: Home2Testimonials3 },
+    { id: 4, img: Home2Testimonials4 },
+  ],
 };
 
 export default allImages;
