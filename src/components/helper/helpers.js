@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { BarChart2, Bug, ChevronDown, FlaskConical, Headphones, ShieldCheck } from "lucide-react";
 import { FaDribbble, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
@@ -343,5 +343,40 @@ export const testimonials = [
     authorImg: imageProvider.home2Testimonials[3].img,
     authorName: "Michael Hayes,",
     authorRole: "CEO, TechNova",
+  },
+];
+//=================================
+// HomeTwo — Pricing Plans
+//=================================
+export const PLANS = [
+  {
+    id: "pay-per-project",
+    label: "Pay Per project",
+    price: "$3,399+",
+    perMonth: false,
+    variant: "light",
+    features: [
+      { icon: BarChart2, text: "All Analytics Features" },
+      { icon: ShieldCheck, text: "Upgrade Anytime Protection" },
+      { icon: FlaskConical, text: "40 Days Product Testing" },
+      { icon: Bug, text: "500 Malware Removal" },
+      { icon: Headphones, text: "24/7 Live Assistance" },
+    ],
+    tagline: "Ideal for clear, scoped design needs",
+  },
+  {
+    id: "monthly-retainer",
+    label: "Monthly Retainer",
+    price: "$4,399",
+    perMonth: true,
+    variant: "dark",
+    features: [
+      { icon: BarChart2, text: "All Analytics Features" },
+      { icon: ShieldCheck, text: "Upgrade Anytime Protection" },
+      { icon: FlaskConical, text: "40 Days Product Testing" },
+      { icon: Bug, text: "500 Malware Removal" },
+      { icon: Headphones, text: "24/7 Live Assistance" },
+    ],
+    tagline: "Ideal for clear, scoped design needs",
   },
 ];

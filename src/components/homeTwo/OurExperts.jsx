@@ -20,22 +20,88 @@ export default function OurExperts() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8 mb-10">
           {/* Left: eyebrow + heading */}
           <div className="max-w-[771px]">
-            <p className="inline-flex items-center border border-black/10 rounded-[4px] py-1 px-[15px] text-xs font-bold uppercase tracking-widest mb-2">
+            <p className="inline-flex items-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest mb-2">
               Meet our experts
             </p>
-            <h2 className="text-[28px] md:text-[36px] font-bold leading-[1.2] underline text-neutral-900">
+            <h2 className="text-[20px] md:text-[38px] xl:text-[42px] font-bold leading-8 lg:leading-14.5 underline text-primary underline-offset-4">
               Global business experts on stage worldwide today live
             </h2>
           </div>
 
           {/* Right: stat box */}
-          <div className="max-w-[392px] border border-neutral-300 p-4 shrink-0">
-            <p className="text-[40px] font-bold leading-none mb-2 text-neutral-900">
-              99%
-            </p>
-            <p className="text-[12px] text-neutral-500 leading-relaxed">
-              Worldwide client satisfaction through lasting partnerships
-            </p>
+          <div className="max-w-[392px] p-4 shrink-0 relative">
+            {/* Left double dashed border */}
+            <svg
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "6px",
+                height: "100%",
+                pointerEvents: "none",
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="1"
+                y1="0"
+                x2="1"
+                y2="100%"
+                stroke="#02090F"
+                strokeOpacity="0.2"
+                strokeDasharray="2 2"
+              />
+              <line
+                x1="5"
+                y1="0"
+                x2="5"
+                y2="100%"
+                stroke="#02090F"
+                strokeOpacity="0.2"
+                strokeDasharray="2 2"
+              />
+            </svg>
+
+            {/* Bottom double dashed border */}
+            <svg
+              style={{
+                position: "absolute",
+                bottom: 0,
+                left: 0,
+                width: "100%",
+                height: "6px",
+                pointerEvents: "none",
+              }}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                x1="0"
+                y1="1"
+                x2="100%"
+                y2="1"
+                stroke="#02090F"
+                strokeOpacity="0.2"
+                strokeDasharray="2 2"
+              />
+              <line
+                x1="0"
+                y1="5"
+                x2="100%"
+                y2="5"
+                stroke="#02090F"
+                strokeOpacity="0.2"
+                strokeDasharray="2 2"
+              />
+            </svg>
+
+            <div className="pl-3">
+              <p className="text-[20px] md:text-[38px] lg:text-[70px] font-bold leading-none mb-2 text-primary">
+                99%
+              </p>
+              <p className="text-[18px] lg:text-[20px] text-primary lg:leading-7">
+                Worldwide client satisfaction through lasting partnerships
+              </p>
+            </div>
           </div>
         </div>
 
@@ -51,16 +117,16 @@ export default function OurExperts() {
                   className="object-cover"
                 />
               </div>
-              <div className="px-5 py-4 border-t border-neutral-200">
-                <p className="text-[14px] font-semibold text-center text-neutral-900 mb-2">
+              <div className="px-[80px] py-[30px] border-t border-neutral-200">
+                <p className="text-[26px] font-bold text-center text-primary mb-4.5">
                   {experts[index]?.name}
                 </p>
-                <div className="flex justify-center gap-4">
+                <div className="flex items-center justify-center py-1 px-3.75 gap-2">
                   {socialLinks.map((link) => (
                     <a
                       key={link}
                       href="#"
-                      className="text-[10px] uppercase tracking-[0.06em] text-neutral-400 hover:text-neutral-700 transition-colors"
+                      className="text-[10px] uppercase tracking-[0.06em] text-neutral-400 hover:text-neutral-700 transition-colors border border-black/10 rounded-[90px] py-1 px-3"
                     >
                       {link}
                     </a>
