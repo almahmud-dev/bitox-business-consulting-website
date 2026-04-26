@@ -98,6 +98,7 @@
   100% { transform: translateX(-50%); }
 }
 
+
 .animate-marquee {
   display: flex;
   width: max-content;
