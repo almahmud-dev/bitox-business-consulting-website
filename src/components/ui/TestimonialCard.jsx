@@ -36,18 +36,22 @@ const TestimonialCard = ({
         </div>
       </div>
       <div className="border-y  border-[#0000001a]">
-        <div className=" p-[30px]  flex  justify-between ">
-          <div className=" ">
+        <div className=" p-[30px]  flex gap-x-[20px]  sm:gap-x-0 sm:justify-between ">
+          <div className="  ">
             <h6 className="headingSix font-bold text-primary">{tashNumOne}</h6>
             <p className="text-base pt-1   font-medium text-primary">
               {tashLabelOne}
             </p>
           </div>
-          <div>
-            <h6 className="headingSix font-bold text-primary">{tashNumTwo}</h6>
-            <p className="text-base pt-1   font-medium text-primary">
-              {tashLabelTwo}
-            </p>
+          <div className="text-end sm:text-start">
+            <div>
+              <h6 className="headingSix font-bold text-primary">
+                {tashNumTwo}
+              </h6>
+              <p className="text-base pt-1   font-medium text-primary">
+                {tashLabelTwo}
+              </p>
+            </div>
           </div>
         </div>
       </div>

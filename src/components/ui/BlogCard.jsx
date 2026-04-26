@@ -6,7 +6,7 @@ const BlogCard = ({ batchName, image, itmeText, dateText, description }) => {
   const { plus } = allImages;
   return (
     <article className="group   w-full">
-      <div className="relative !h-[340px]  !w-full ">
+      <div className="relative !h-[250px]  sm:!h-[340px]  !w-full ">
         <Image
           fill
           src={image}

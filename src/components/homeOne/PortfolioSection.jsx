@@ -7,7 +7,7 @@ import allImages from "../helper/imageProvider";
 const PortfolioSection = () => {
   const { projectImages } = allImages;
   return (
-    <section className="py-[120px]">
+    <section className="  py-[70px] md:py-[120px]">
       <Container size={"lg"}>
         <h2 className="headingTwo max-w-[950px]  text-primary font-bold text-center mx-auto">
           Real Challenges. Real Solutions. Real Impact.
@@ -19,7 +19,7 @@ const PortfolioSection = () => {
                 <ProjectCard
                   image={items.img}
                   key={index}
-                  mainClass={"w-full h-[510px]"}
+                  mainClass={"w-full !h-[400px] md:!h-[510px]"}
                   title={items.title}
                   subtitleOne={items.subtitleOne}
                   subtitleTwo={items.subtitleTwo}
@@ -33,7 +33,7 @@ const PortfolioSection = () => {
                 <ProjectCard
                   image={items.img}
                   key={index}
-                  mainClass={"w-full h-[510px]"}
+                  mainClass={"w-full !h-[400px] md:!h-[510px] "}
                   title={items.title}
                   subtitleOne={items.subtitleOne}
                   subtitleTwo={items.subtitleTwo}
@@ -43,7 +43,9 @@ const PortfolioSection = () => {
           </Responsive.Grid>
         </div>
         <div>
-          <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px  ]">See all case studies</button>
+          <button className="w-full cursor-pointer text-center py-5  text-primary font-medium text-base border border-[#0000001a] rounded-[6px  ]">
+            See all case studies
+          </button>
         </div>
       </Container>
     </section>

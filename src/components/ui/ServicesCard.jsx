@@ -20,7 +20,7 @@ export default function ServiceCard({ card }) {
   return (
     <div
       className={`
-        w-full border border-[#0000001a] last:border-b-0
+        w-full border border-[#0000001a] 
         ${highlighted ? "bg-color-bg-secondaryTwo" : "bg-color-bg-secondaryTwo"}
         group
       `}
@@ -40,9 +40,9 @@ export default function ServiceCard({ card }) {
               alt="services-icon"
               width={40}
               height={40}
-              className="!w-8 !h-8 lg:w-10 lg:h-10 shrink-0"
+              className="!w-8 !h-8 lg:w-10 lg:h-10 shrink-0 "
             />
-            <h3 className="headingSix font-semibold text-primary">{title}</h3>
+            <h3 className="headingSix font-semibold text-primary ">{title}</h3>
           </div>
         </div>
 
@@ -73,14 +73,14 @@ export default function ServiceCard({ card }) {
             {features.map((feature, i) => (
               <li
                 key={i}
-                className="flex items-center gap-2 lg:gap-[10px] para-lg font-normal"
+                className="flex items-center whitespace-nowrap gap-2 lg:gap-[10px] para-lg font-normal"
               >
                 <Image
                   src={plus}
                   width={16}
                   height={16}
                   alt="services-plus"
-                  className="shrink-0"
+                  className="shrink-0 "
                 />
                 {feature}
               </li>
@@ -99,7 +99,7 @@ export default function ServiceCard({ card }) {
               w-full h-[200px]
               sm:h-[240px]
               lg:w-[290px] lg:h-[260px]
-              object-cover
+              object-cover rounded-[6px]
             "
           />
         </div>

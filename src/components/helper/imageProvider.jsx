@@ -19,8 +19,8 @@ import ProjetctThree from "../../../public/images/home01/portfolioSection/portfo
 import projectFour from "../../../public/images/home01/portfolioSection/portfolio4.png";
 import projectFive from "../../../public/images/home01/portfolioSection/portfolio5.png";
 import PlusWhite from "../../../public/images/home01/services/plusWhite.png";
-import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png"
-import ContactImage from "../../../public/images/home01/contact/contact-img.png"
+import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png";
+import ContactImage from "../../../public/images/home01/contact/contact-img.png";
 
 import Home2Testimonials1 from "../../../public/images/home2_Testimonials/Sophia_Rahman.png";
 import Home2Testimonials2 from "../../../public/images/home2_Testimonials/videoimg.png";
@@ -48,6 +48,10 @@ const allImages = {
     { id: 4, img: HomeBrandFour },
     { id: 5, img: HomeBrandFive },
     { id: 6, img: HomeBrandSix },
+    { id: 7, img: HomeBrandOne },
+    { id: 8, img: HomeBrandTwo },
+    { id: 9, img: HomeBrandThree },
+    { id: 10, img: HomeBrandFour },
   ],
   plus: Plus,
   videoShowcase: VideoShowcase,
