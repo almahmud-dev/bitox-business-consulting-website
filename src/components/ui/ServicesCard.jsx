@@ -40,7 +40,7 @@ export default function ServiceCard({ card }) {
               alt="services-icon"
               width={40}
               height={40}
-              className="w-8 h-8 lg:w-10 lg:h-10 shrink-0"
+              className="!w-8 !h-8 lg:w-10 lg:h-10 shrink-0"
             />
             <h3 className="headingSix font-semibold text-primary">{title}</h3>
           </div>

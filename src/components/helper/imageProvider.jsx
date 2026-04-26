@@ -18,6 +18,9 @@ import projectTwo from "../../../public/images/home01/portfolioSection/portfolio
 import ProjetctThree from "../../../public/images/home01/portfolioSection/portfolio3.png";
 import projectFour from "../../../public/images/home01/portfolioSection/portfolio4.png";
 import projectFive from "../../../public/images/home01/portfolioSection/portfolio5.png";
+import PlusWhite from "../../../public/images/home01/services/plusWhite.png";
+import ProcessOne from "../../../public/images/home01/processStep/process-step-1.png"
+
 
 const allImages = {
   heroIocns: HeroImage,
@@ -82,6 +85,8 @@ const allImages = {
       },
     ],
   ],
+  plusImages: PlusWhite,
+  processImage: ProcessOne,
 };
 
 export default allImages;
