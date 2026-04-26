@@ -5,8 +5,6 @@ import Image from "next/image";
 import Container from "../ui/Container";
 import { testimonials } from "../helper/helpers";
 
-
-
 function StarRating({ count = 5 }) {
   return (
     <div className="flex items-center gap-1">
