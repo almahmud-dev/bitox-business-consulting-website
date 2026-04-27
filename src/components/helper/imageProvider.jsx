@@ -34,6 +34,9 @@ import Home2Blog1 from "../../../public/images/home2_blog/blog1.png";
 import Home2Blog2 from "../../../public/images/home2_blog/blog2.png";
 import Home2Blog3 from "../../../public/images/home2_blog/blog3.png";
 import Home2Blog4 from "../../../public/images/home2_blog/blog4.png";
+import Home2Section1 from "../../../public/images/home2_services/business_consultancy.png";
+import Home2Section2 from "../../../public/images/home2_services/financial_planning.png";
+import Home2Section3 from "../../../public/images/home2_services/vat&tax.png";
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
@@ -122,6 +125,11 @@ const allImages = {
     { id: 2, img: Home2Blog2 },
     { id: 3, img: Home2Blog3 },
     { id: 4, img: Home2Blog4 },
+  ],
+  home2Section: [
+    { id: 1, img: Home2Section1 },
+    { id: 2, img: Home2Section2 },
+    { id: 3, img: Home2Section3 },
   ],
 };
 

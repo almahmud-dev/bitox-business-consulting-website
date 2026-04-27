@@ -470,3 +470,36 @@ export const clipStyles = {
     objectFit: "cover",
   },
 };
+//=================================
+// HomeTwo — Services
+//=================================
+export const services = [
+  {
+    number: "01",
+    category: "Consultancy",
+    title: "Business Consultancy",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
+  },
+  {
+    number: "02",
+    category: "Planning",
+    title: "Financial Planning",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: [
+      "Investment planning",
+      "Education planning",
+      "Growth forecasting",
+    ],
+  },
+  {
+    number: "03",
+    category: "Tax & Vat",
+    title: "Vat & Tax Consultancy",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
+  },
+];

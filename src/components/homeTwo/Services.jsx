@@ -1,55 +1,26 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Container from "../ui/Container"
-import { Stack } from "../ui/Responsive"
-const services = [
-  {
-    number: "01",
-    category: "Consultancy",
-    title: "Business Consultancy",
-    description:
-      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
-    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
-    image: "/images/home2_services/business_consultancy.png",
-  },
-  {
-    number: "02",
-    category: "Planning",
-    title: "Financial Planning",
-    description:
-      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
-    features: ["Investment planning", "Education planning", "Growth forecasting"],
-    image: "/images/home2_services/business_consultancy.png",
-  },
-  {
-    number: "03",
-    category: "Tax & Vat",
-    title: "Vat & Tax Consultancy",
-    description:
-      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
-    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
-    image: "/images/home2_services/business_consultancy.png",
-  },
-]
-
+import { useState } from "react";
+import Container from "../ui/Container";
+import { Stack } from "../ui/Responsive";
+import allImages from "../helper/imageProvider";
+import Image from "next/image";
+import { services } from "../helper/helpers";
 const ServiceCard = ({ service, index }) => {
-  const [isHovered, setIsHovered] = useState(false)
-
+const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="flex flex-col md:flex-row w-full">
       {/* Left: Image */}
       <div className="w-full md:w-1/2 shrink-0">
-        <img
-          src={service.image}
+        <Image
+          src={allImages.home2Section[index].img}
           alt={service.title}
-          className="w-full h-[260px] sm:h-[340px] md:h-[465px] object-cover md:rounded-tl-[6px] md:rounded-bl-[6px]"
+          className="w-full h-65 sm:h-85 md:h-[465px] object-cover md:rounded-tl-md md:rounded-bl-md transition-transform duration-300 transform-gpu hover:scale-102"
         />
       </div>
-
       {/* Right: Text Content */}
       <div
-        className="w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-10 md:py-14 transition-colors duration-300 cursor-pointer"
+        className="w-full md:w-1/2 flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-10 md:py-15 transition-colors duration-300 cursor-pointer"
         style={{ backgroundColor: isHovered ? "#FF5101" : "#ffffff" }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -96,8 +67,8 @@ const ServiceCard = ({ service, index }) => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Services = () => {
   return (
@@ -110,7 +81,7 @@ const Services = () => {
         </Stack>
       </Container>
     </section>
-  )
-}
+  );
+};
 
-export default Services
+export default Services;
