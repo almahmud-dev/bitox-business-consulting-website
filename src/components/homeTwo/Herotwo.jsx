@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Plus } from "lucide-react";
 import ButtonThree from "../ui/ButtonThree";
+import allImages from "../helper/imageProvider";
 
 const PLUS_POSITIONS = [
   // Top row
@@ -28,7 +29,7 @@ const Herotwo = () => {
     <section className="relative h-[420px] sm:h-[600px] md:h-[750px] xl:h-[950px] w-full overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/hero/hero2.png"
+        src={allImages.home2heroBanner}
         alt="Hero Background"
         fill
         priority
