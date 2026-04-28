@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 import { FOOTER_ONE_DATA } from "@/components/helper/helpers";
 
-// ─── Scroll To Top ────────────────────────────────────────────────────────────
+// ─── Scroll To Top
 
 function ScrollToTop() {
   const handleClick = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -21,17 +21,15 @@ function ScrollToTop() {
   );
 }
 
-// ─── Main Footer ──────────────────────────────────────────────────────────────
+// ─── Main Footer
 
 export default function FooterOne() {
   return (
     <footer className="bg-primary text-white">
-
       {/* ── Top Section */}
       <div className="px-10 pt-16 pb-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 border-b border-white/10">
-
         {/* Logo */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <Image
             src="/images/logo/Foot_logo.png"
             alt="Bitox"
@@ -80,12 +78,8 @@ export default function FooterOne() {
 
       {/* ── Bottom Bar */}
       <div className="px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-white/50">
-          {FOOTER_ONE_DATA.copyright}
-        </p>
-
+        <p className="text-sm text-white/50">{FOOTER_ONE_DATA.copyright}</p>
         <ScrollToTop />
-
         <div className="flex items-center gap-6">
           {FOOTER_ONE_DATA.bottomLinks.map((link) => (
             <Link
@@ -98,7 +92,6 @@ export default function FooterOne() {
           ))}
         </div>
       </div>
-
     </footer>
   );
 }

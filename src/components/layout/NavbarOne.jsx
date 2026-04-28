@@ -5,9 +5,14 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, X, Menu } from "lucide-react";
-import { NAV_LINKS, DesktopNavItem, MobileNavItem } from "@/components/helper/helpers";
+import {
+  NAV_LINKS,
+  DesktopNavItem,
+  MobileNavItem,
+} from "@/components/helper/helpers";
+import ButtonThree from "../ui/ButtonThree";
 
-// ─── Logic ────────────────────────────────────────────────────────────────────
+// ─── Logic
 
 function useNavbar() {
   const pathname = usePathname();
@@ -31,7 +36,9 @@ function useNavbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const handleMouseEnter = useCallback((label) => {
@@ -47,7 +54,10 @@ function useNavbar() {
     setOpenMobileDropdown((prev) => (prev === label ? null : label));
   }, []);
 
-  const toggleMobileMenu = useCallback(() => setMobileOpen((prev) => !prev), []);
+  const toggleMobileMenu = useCallback(
+    () => setMobileOpen((prev) => !prev),
+    [],
+  );
   const closeMobileMenu = useCallback(() => setMobileOpen(false), []);
 
   return {
@@ -64,7 +74,7 @@ function useNavbar() {
   };
 }
 
-// ─── UI ───────────────────────────────────────────────────────────────────────
+// ─── UI
 
 export default function NavbarOne() {
   const {
@@ -97,7 +107,6 @@ export default function NavbarOne() {
             priority
           />
         </Link>
-
         <nav className="flex items-center gap-8" aria-label="Main navigation">
           {NAV_LINKS.map((link) => (
             <DesktopNavItem
@@ -111,19 +120,27 @@ export default function NavbarOne() {
             />
           ))}
         </nav>
-
         <div className="flex items-center gap-4">
           <button
             aria-label="Search"
-            className="text-primary hover:text-secondary transition-colors duration-200 cursor-pointer"
+            className="text-primary hover:text-secondary border border-black/10 rounded-md py-[14px] px-[15px] transition-colors duration-200 cursor-pointer"
           >
             <Search size={20} />
           </button>
           <Link
             href="/contact"
-            className="px-6 py-2.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-secondary transition-colors duration-300"
+            className="px-6.25 py-3.75 bg-primary text-white text-sm font-medium rounded-md hover:bg-secondary transition-colors duration-300"
           >
-            Let&apos;s Talk.
+            <ButtonThree
+              frontText="Let's Talk."
+              backText="Get started now"
+              backgroundColor="transparent"
+              fontSize={14}
+              paddingTop={0}
+              paddingBottom={0}
+              paddingLeft={0}
+              paddingRight={0}
+            />
           </Link>
         </div>
       </header>
@@ -147,7 +164,7 @@ export default function NavbarOne() {
         <div className="flex items-center gap-3">
           <button
             aria-label="Search"
-            className="text-primary hover:text-secondary transition-colors duration-200 cursor-pointer"
+            className="text-primary border border-black/10 rounded-md py-3.25 px-3.25 transition-colors duration-200 cursor-pointer"
           >
             <Search size={18} />
           </button>
@@ -194,7 +211,7 @@ export default function NavbarOne() {
           <Link
             href="/contact"
             onClick={closeMobileMenu}
-            className="mt-6 w-full text-center px-6 py-3 bg-primary text-white text-base font-medium rounded-full hover:bg-secondary transition-colors duration-300 block"
+            className="mt-6 w-full text-center px-6 py-3 bg-primary text-white text-base font-medium rounded-md hover:bg-secondary transition-colors duration-300 block"
           >
             Let&apos;s Talk.
           </Link>

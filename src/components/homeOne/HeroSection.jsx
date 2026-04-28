@@ -1,6 +1,3 @@
-
-
-
 import RotatingBadge from "../ui/RotatingBadge";
 import Container from "../ui/Container";
 import HeroCard from "../ui/HeroCard";
@@ -55,7 +52,7 @@ const HeroSection = () => {
       <div className=" mt-[50px] lg:mt-[90px] mb-[20px] px-3">
         <Image src={heroBanner} alt="herobanner -images" className="w-full" />
       </div>
- {/* for lg */}
+      {/* for lg */}
       <div className="px-3 hidden lg:block">
         <Responsive.Flex
           as="ul"
@@ -99,7 +96,11 @@ const HeroSection = () => {
           {heroSections.map((items, index) => (
             <li
               key={index}
-              className="   py-[19px] px-[77px] lg:py-[16px] lg:px-[77px] md:py-[13px] md:px-[30px] sm:py-[10px] sm:px-[15px] border border-[#0000001a] text-primary font-medium rounded-[6px]"
+              className="py-[19px] px-[77px] border border-[#0000001a] text-primary font-medium rounded-[6px]
+              lg:py-[16px] lg:px-[77px]
+              md:py-[13px] md:px-[30px]
+              sm:py-[10px] sm:px-[15px]
+              "
             >
               {items.title}
             </li>
