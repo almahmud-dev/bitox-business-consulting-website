@@ -1,14 +1,13 @@
 "use client";
 
 import Image from "next/image";
-
 const WhyChooseUs = () => {
   return (
     <section className="pt-10 lg:pt-[120px] bg-black overflow-hidden">
-      {/* এই দুইটা container এর ভেতরে থাকবে */}
+      {/* ai 2ta container er vitore thakbe */}
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <p className="text-white text-base lg:text-lg leading-relaxed underline underline-offset-2">
+        <div className="text-center max-w-[935px] mx-auto mb-16">
+          <p className="text-white text-base lg:text-[31px] lg:leading-[44px] underline underline-offset-4">
             Empowering your financial journey with expertise integrity and
             tailored solutions. The Consult Agency team provides continuous
             support to help your business with confidence and success your
@@ -17,7 +16,7 @@ const WhyChooseUs = () => {
         </div>
 
         <div className="flex justify-center mb-16">
-          <div className="relative w-[120px] h-[120px]">
+          <div className="relative w-[280px] h-[315px]">
             <Image
               src="/images/home2_whychoose/whychoose1.png"
               alt="Why Choose Us Icon"
@@ -27,8 +26,7 @@ const WhyChooseUs = () => {
           </div>
         </div>
       </div>
-
-      {/* Image section container এর বাইরে — full width পাবে */}
+      {/* Image section container er bahire — full width pabe */}
       <div className="relative mx-auto w-full h-[620px]">
         <Image
           src="/images/home2_whychoose/whychoose2.png"
@@ -37,7 +35,6 @@ const WhyChooseUs = () => {
           className="object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
-
         {/* Floating Card */}
         <div className="absolute top-[68%] -translate-y-1/2 right-[80px] xl:right-[150px] w-full max-w-[380px] bg-white flex flex-col shadow-2xl z-10">
           <div className="py-[45px] pl-[35px] pr-[54px]">
@@ -60,7 +57,6 @@ const WhyChooseUs = () => {
               </p>
             </div>
           </div>
-
           <button className="flex items-center justify-between w-full bg-red-500 hover:bg-red-600 transition-colors text-white px-6 py-4 text-sm font-medium">
             <span>
               Book your
