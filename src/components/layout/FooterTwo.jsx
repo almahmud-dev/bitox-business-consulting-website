@@ -5,8 +5,6 @@ import {
   EmailIcon,
   BUSINESS_HOURS,
   COPYRIGHT_TEXT,
-  MARQUEE_REPEAT_COUNT,
-  MARQUEE_TEXT,
   companyLinks,
   legalLinks,
   serviceLinks,
@@ -16,7 +14,7 @@ import ButtonThree from "../ui/ButtonThree";
 import Container from "../ui/Container";
 import { Flex, Stack } from "../ui/Responsive";
 
-// ─── Shared CTA Button used across multiple sections
+// ─── Shared CTA Button
 function CTAButton({ frontText, backText, textColor = "#02090F", onClick }) {
   return (
     <div
@@ -38,40 +36,6 @@ function CTAButton({ frontText, backText, textColor = "#02090F", onClick }) {
         <ArrowIcon color={textColor === "#ffffff" ? "#ffffff" : "#02090F"} />
       </span>
     </div>
-  );
-}
-
-// ─── Marquee Heading
-function MarqueeHeading() {
-  return (
-    <div className="overflow-hidden">
-      <div className="animate-marquee py-4">
-        <span className="headingOne font-heading font-black text-primary whitespace-nowrap tracking-tight">
-          {MARQUEE_TEXT.repeat(MARQUEE_REPEAT_COUNT)}
-        </span>
-      </div>
-    </div>
-  );
-}
-
-// ─── Hero CTA Section
-function HeroCTA() {
-  return (
-    <Container size="md">
-      <Stack align="center" className="pt-[35px] text-center">
-        <p className="text-[28px] sm:text-[36px] md:text-[42px] font-bold text-primary max-w-[625px] underline underline-offset-[4px]">
-          Have an idea in your mind? Let&apos;s make something great together
-        </p>
-        <div className="border border-primary rounded-[90px] px-7 py-3.5 hover:bg-black/5 transition-colors mb-10 lg:mb-[140px]">
-          <CTAButton
-            frontText="Let's build together"
-            backText="Let's Talk."
-            textColor="#02090F"
-            onClick={() => console.log("clicked")}
-          />
-        </div>
-      </Stack>
-    </Container>
   );
 }
 
@@ -116,7 +80,7 @@ function ContactCard() {
   );
 }
 
-// ─── Footer Links Column (Company / Service)
+// ─── Footer Links Column
 function FooterLinksColumn({ title, links }) {
   return (
     <Stack gap="sm">
@@ -158,92 +122,82 @@ function NewsletterColumn() {
   );
 }
 
-// ─── Dark Footer Section
-function FooterDark() {
+// ─── Main Export
+export default function FooterTwo() {
   return (
-    <div className="bg-bg-secondaryThree text-white rounded-tl-[15px]">
-      {/* Hours + Appointment Bar */}
-      <div className="w-full border-b border-white/10">
-        <div className="mx-auto max-w-[1265px] flex flex-col sm:flex-row">
-          <div className="bg-secondary flex items-center justify-center px-8 py-4 sm:flex-1 lg:pl-[480px] xl:pl-[500px]">
-            <p className="text-sm text-white font-medium text-center">
-              {BUSINESS_HOURS}
-            </p>
-          </div>
-          <div className="flex items-center justify-between gap-2.5 px-7 py-4 hover:bg-white/5 transition-colors border-t border-white/10 sm:border-t-0 sm:border-l sm:border-white/10 sm:flex-1">
-            <CTAButton
-              frontText="Call for an appointment"
-              backText="Let's Talk."
-              textColor="#ffffff"
-              onClick={() => console.log("appointment")}
-            />
-          </div>
-        </div>
+    <div className="relative">
+      {/* Mobile: card in normal flow */}
+      <div className="lg:hidden flex justify-center px-4 pb-0">
+        <ContactCard />
       </div>
 
-      {/* Footer Links + Newsletter */}
-      <Container size="">
-        <div className="py-8 lg:py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:pl-[460px] xl:pl-[480px]">
-            <FooterLinksColumn title="Company" links={companyLinks} />
-            <FooterLinksColumn title="Service Link" links={serviceLinks} />
-            <NewsletterColumn />
+      <div className="bg-bg-secondaryThree text-white rounded-tl-[15px]">
+        {/* Hours + Appointment Bar */}
+        <div className="w-full border-b border-white/10">
+          <div className="mx-auto max-w-[1265px] flex flex-col sm:flex-row">
+            <div className="bg-secondary flex items-center justify-center px-8 py-4 sm:flex-1 lg:pl-[480px] xl:pl-[500px]">
+              <p className="text-sm text-white font-medium text-center">
+                {BUSINESS_HOURS}
+              </p>
+            </div>
+            <div className="flex items-center justify-between gap-2.5 px-7 py-4 hover:bg-white/5 transition-colors border-t border-white/10 sm:border-t-0 sm:border-l sm:border-white/10 sm:flex-1">
+              <CTAButton
+                frontText="Call for an appointment"
+                backText="Let's Talk."
+                textColor="#ffffff"
+                onClick={() => console.log("appointment")}
+              />
+            </div>
           </div>
         </div>
-      </Container>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-white/10">
+        {/* Footer Links + Newsletter */}
         <Container size="">
-          <div className="flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
-            {/* Legal Links */}
-            <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center md:justify-start">
-              {legalLinks.map((item) => (
-                <a
-                  key={item}
-                  href="#"
-                  className="text-[16px] text-white hover:text-secondary transition-colors whitespace-nowrap"
-                >
-                  {item}
-                </a>
-              ))}
+          <div className="py-8 lg:py-16">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:pl-[460px] xl:pl-[480px]">
+              <FooterLinksColumn title="Company" links={companyLinks} />
+              <FooterLinksColumn title="Service Link" links={serviceLinks} />
+              <NewsletterColumn />
             </div>
-
-            {/* Social Icons */}
-            <div className="flex gap-3 items-center justify-center">
-              {socialLinks.map(({ icon: Icon, href }, i) => (
-                <a
-                  key={i}
-                  href={href}
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-secondary hover:text-white hover:border-transparent transition-all duration-300"
-                >
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
-
-            {/* Copyright */}
-            <p className="text-[16px] text-white text-center md:text-right whitespace-nowrap">
-              {COPYRIGHT_TEXT}
-            </p>
           </div>
         </Container>
-      </div>
-    </div>
-  );
-}
 
-// ─── Main Export
-export default function BusinessFooterSection() {
-  return (
-    <section className="w-full bg-bg-secondaryTwo overflow-hidden pt-10 lg:pt-[120px]">
-      <MarqueeHeading />
-      <HeroCTA />
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10">
+          <Container size="">
+            <div className="flex flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+              {/* Legal Links */}
+              <div className="flex flex-wrap gap-x-4 gap-y-2 justify-center md:justify-start">
+                {legalLinks.map((item) => (
+                  <a
+                    key={item}
+                    href="#"
+                    className="text-[16px] text-white hover:text-secondary transition-colors whitespace-nowrap"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
 
-      <div className="relative">
-        {/* Mobile: card in normal flow */}
-        <div className="lg:hidden flex justify-center px-4 pb-0">
-          <ContactCard />
+              {/* Social Icons */}
+              <div className="flex gap-3 items-center justify-center">
+                {socialLinks.map(({ icon: Icon, href }, i) => (
+                  <a
+                    key={i}
+                    href={href}
+                    className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-secondary hover:text-white hover:border-transparent transition-all duration-300"
+                  >
+                    <Icon size={18} />
+                  </a>
+                ))}
+              </div>
+
+              {/* Copyright */}
+              <p className="text-[16px] text-white text-center md:text-right whitespace-nowrap">
+                {COPYRIGHT_TEXT}
+              </p>
+            </div>
+          </Container>
         </div>
 
         {/* Desktop: card overlapping footer */}
@@ -252,9 +206,7 @@ export default function BusinessFooterSection() {
             <ContactCard />
           </div>
         </div>
-
-        <FooterDark />
       </div>
-    </section>
+    </div>
   );
 }

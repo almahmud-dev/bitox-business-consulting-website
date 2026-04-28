@@ -12,7 +12,7 @@ const ProjectsPage = () => {
 
   return (
     <main>
-      <section className="py-[70px] md:py-[120px] bg-bg-secondaryOne">
+      <section className="py-17.5 md:py-30 bg-bg-secondaryOne">
         <Container size={"lg"}>
           <div className="flex justify-center">
             <span className="inline-flex items-center justify-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase mb-3">
@@ -22,9 +22,8 @@ const ProjectsPage = () => {
           <h2 className="headingTwo max-w-[950px] text-primary font-bold text-center mx-auto">
             Real Challenges. Real Solutions. Real Impact.
           </h2>
-
-          <div className="py-[60px] space-y-[30px]">
-            {/* Row 1 — 2-col (homeOne এর same ২টা image) */}
+          <div className="py-15 space-y-7.5">
+            {/* Row 1 — 2-col (homeOne er same 2 ta image) */}
             <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
               {projectImages[0].map((item, index) => (
                 <ProjectCard
@@ -38,7 +37,7 @@ const ProjectsPage = () => {
               ))}
             </Responsive.Grid>
 
-            {/* Row 2 — 3-col (homeOne এর same ৩টা image) */}
+            {/* Row 2 — 3-col (homeOne er same 3 ta image) */}
             <Responsive.Grid cols={{ base: 1, lg: 3 }} gap="lg">
               {projectImages[1].map((item, index) => (
                 <ProjectCard
@@ -52,7 +51,7 @@ const ProjectsPage = () => {
               ))}
             </Responsive.Grid>
 
-            {/* Row 3 — 2-col (নতুন ২টা image) */}
+            {/* Row 3 — 2-col (new 2ta image) */}
             {extraImages.length > 0 && (
               <Responsive.Grid cols={{ base: 1, lg: 2 }} gap="lg">
                 {extraImages.map((item, index) => (
@@ -69,7 +68,7 @@ const ProjectsPage = () => {
             )}
           </div>
 
-          <button className="w-full cursor-pointer text-center py-5 text-primary font-medium text-base border border-[#0000001a] rounded-[6px]">
+          <button className="w-full cursor-pointer text-center py-5 text-primary font-medium text-base border border-[#0000001a] rounded-md">
             See all case studies
           </button>
         </Container>

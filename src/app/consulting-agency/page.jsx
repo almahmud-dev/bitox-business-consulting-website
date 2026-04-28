@@ -11,6 +11,7 @@ import OurExperts from "@/components/homeTwo/OurExperts";
 import OurTeam from "@/components/homeTwo/OurTeam";
 import BlogInsight from "@/components/homeTwo/BlogInsight";
 import ThemeInitializer from "@/components/helper/ThemeInitializer";
+import MarqueeHeroCTA from "@/components/homeTwo/MarqueeHeroCTA";
 
 const page = () => {
   return (
@@ -27,6 +28,7 @@ const page = () => {
       <OurExperts />
       <OurTeam />
       <BlogInsight />
+      <MarqueeHeroCTA/>
     </>
   );
 };
