@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
               <h2 className="text-[90px] font-bold text-black leading-none">
                 2k+
               </h2>
-              <p className="text-primary text-[17px] leading-[28px]">
+              <p className="text-primary text-[17px] leading-7">
                 Serving happy customers worldwide with trusted excellence
               </p>
             </div>
