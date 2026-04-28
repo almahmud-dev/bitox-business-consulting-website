@@ -87,7 +87,7 @@ const InnerPageHero = ({
               lg:top-[330px]  lg:-translate-x-[unset] lg:left-1/2
             "
           >
-            <p className="flex gap-x-3 text-sm uppercase font-bold">
+            <p className=" border border-[#ffffff1a] rounded-[4px] px-[15px]  py-[5px] w-fit flex gap-x-3 text-sm uppercase font-bold">
               <Link href={"/"}>
                 <span className="text-bg-secondaryTwo">home</span>
               </Link>
