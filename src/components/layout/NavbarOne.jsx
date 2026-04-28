@@ -94,7 +94,7 @@ export default function NavbarOne() {
     <>
       {/* ── Desktop Navbar */}
       <header
-        className={`fixed left-5 right-5 top-5 z-50 hidden lg:flex items-center justify-between px-8 h-[70px] rounded-full transition-all duration-300 ${
+        className={`fixed left-5 right-5 top-5 z-50 hidden lg:flex items-center justify-between px-8 h-[70px] rounded-md transition-all duration-300 ${
           scrolled ? "bg-white shadow-lg" : "bg-white/90 backdrop-blur-md"
         }`}
       >
@@ -147,7 +147,7 @@ export default function NavbarOne() {
 
       {/* ── Mobile Navbar */}
       <header
-        className={`fixed left-4 right-4 top-4 z-50 flex lg:hidden items-center justify-between px-5 h-[60px] rounded-full transition-all duration-300 ${
+        className={`fixed left-4 right-4 top-4 z-50 flex lg:hidden items-center justify-between px-5 h-[60px] rounded-md transition-all duration-300 ${
           scrolled ? "bg-white shadow-lg" : "bg-white/90 backdrop-blur-md"
         }`}
       >
