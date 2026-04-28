@@ -26,6 +26,8 @@ import Home2Testimonials1 from "../../../public/images/home2_Testimonials/Sophia
 import Home2Testimonials2 from "../../../public/images/home2_Testimonials/videoimg.png";
 import Home2Testimonials3 from "../../../public/images/home2_Testimonials/Michael_Torres.png";
 import Home2Testimonials4 from "../../../public/images/home2_Testimonials/Michael_Hayes.png";
+import CommonHeroImages from "../../../public/images/common_images/common-hero-banner.png";
+
 import Home2OurExperts1 from "../../../public/images/home2_ourexperts/experts1.png";
 import Home2OurExperts2 from "../../../public/images/home2_ourexperts/experts2.png";
 import Home2OurExperts3 from "../../../public/images/home2_ourexperts/experts3.png";
@@ -114,6 +116,7 @@ const allImages = {
     { id: 3, img: Home2Testimonials3 },
     { id: 4, img: Home2Testimonials4 },
   ],
+  commonHeroImages: CommonHeroImages,
   home2OurExperts: [
     { id: 1, img: Home2OurExperts1 },
     { id: 2, img: Home2OurExperts2 },
