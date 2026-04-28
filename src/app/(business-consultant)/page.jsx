@@ -1,3 +1,4 @@
+import ThemeInitializer from "@/components/helper/ThemeInitializer";
 import AboutSectionHO from "@/components/homeOne/AboutSectionHO";
 import BlogSectionHO from "@/components/homeOne/BlogSectionHO";
 import BrandLogos from "@/components/homeOne/BrandLogos";
@@ -15,18 +16,19 @@ import React from "react";
 const Home1 = () => {
   return (
     <>
+      <ThemeInitializer pathName={"business-consultant"} />
       <HeroSection />
       <FeaturesRound />
       <AboutSectionHO />
       <BrandLogos />
       <ServicesSection />
       <VideoShowcase />
-      <TestimonialsSection/>
-      <PortfolioSection/>
-      <ProcessSteps/>
-      <BlogSectionHO/>
-      <ContactSectionHO/>
-      <InnerPageHero/>
+      <TestimonialsSection />
+      <PortfolioSection />
+      <ProcessSteps />
+      <BlogSectionHO />
+      <ContactSectionHO />
+      <InnerPageHero />
     </>
   );
 };
