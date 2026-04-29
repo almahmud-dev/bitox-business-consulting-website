@@ -44,6 +44,11 @@ import FAQSection1 from "../../../public/images/faq/laptop.png";
 import FAQSection2 from "../../../public/images/faq/discuss.png";
 import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
+// for about us pages images
+import AboutUsBanner from "../../../public/images/aboutUs/aboutVideo.png"
+
+
+
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
@@ -169,6 +174,8 @@ FaqSection: {
     { id: 2, img: Home2Section2 },
     { id: 3, img: Home2Section3 },
   ],
+  // about us pages images 
+  aboutUsBanner: AboutUsBanner
 };
 
 export default allImages;
