@@ -14,6 +14,7 @@
 
   /* for custom responsive break point */
   --breakpoint-laptop: 1180px;
+  --breakpoint-3xl: 120rem;
 }
 
 @layer base {
