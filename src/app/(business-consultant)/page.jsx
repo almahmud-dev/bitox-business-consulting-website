@@ -28,7 +28,6 @@ const Home1 = () => {
       <ProcessSteps />
       <BlogSectionHO />
       <ContactSectionHO />
-      <InnerPageHero />
     </>
   );
 };
