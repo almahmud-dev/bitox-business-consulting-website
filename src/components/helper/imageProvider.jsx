@@ -43,6 +43,7 @@ import Home2Blog4 from "../../../public/images/home2_blog/blog4.png";
 import Home2Section1 from "../../../public/images/home2_services/business_consultancy.png";
 import Home2Section2 from "../../../public/images/home2_services/financial_planning.png";
 import Home2Section3 from "../../../public/images/home2_services/vat&tax.png";
+import Home2Section4 from "../../../public/images/home2_services/market-analysis.png";
 import FAQSection1 from "../../../public/images/faq/laptop.png";
 import FAQSection2 from "../../../public/images/faq/discuss.png";
 import FAQSection3 from "../../../public/images/faq/faq_bg.png";
@@ -178,6 +179,7 @@ const allImages = {
     { id: 1, img: Home2Section1 },
     { id: 2, img: Home2Section2 },
     { id: 3, img: Home2Section3 },
+    { id: 4, img: Home2Section4 },
   ],
   // about us pages images
   aboutUsBanner: AboutUsBanner,
