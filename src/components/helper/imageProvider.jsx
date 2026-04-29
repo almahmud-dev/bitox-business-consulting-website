@@ -46,6 +46,8 @@ import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
 // for about us pages images
 import AboutUsBanner from "../../../public/images/aboutUs/aboutVideo.png"
+// for aboutUsVideo pages images
+import AboutUsVideo from "../../../public/images/aboutVideo/aboutvideo-Image.png"
 
 
 
@@ -175,7 +177,9 @@ FaqSection: {
     { id: 3, img: Home2Section3 },
   ],
   // about us pages images 
-  aboutUsBanner: AboutUsBanner
+  aboutUsBanner: AboutUsBanner,
+   // about us video pages images 
+  aboutUsVideo: AboutUsVideo,
 };
 
 export default allImages;
