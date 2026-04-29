@@ -6,7 +6,9 @@ import Button from "./Button";
 import Image from "next/image";
 
 const ContactForm = () => {
-  const [form, setForm] = useState({
+
+  
+ const [form, setForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -14,12 +16,52 @@ const ContactForm = () => {
     message: "",
   });
 
+  const [errors, setErrors] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+
+  const validate = () => {
+    const newErrors = {};
+
+    if (!form.firstName.trim())
+      newErrors.firstName = "First name is required";
+
+    if (!form.lastName.trim())
+      newErrors.lastName = "Last name is required";
+
+    if (!form.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Enter a valid email";
+    }
+
+    if (!form.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (!/^\+?[0-9\s\-()]{7,15}$/.test(form.phone)) {
+      newErrors.phone = "Enter a valid phone number";
+    }
+
+    if (!form.message.trim())
+      newErrors.message = "Message is required";
+
+    return newErrors;
+  };
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
+    if (errors[e.target.name]) {
+      setErrors({ ...errors, [e.target.name]: "" });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const validationErrors = validate();
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+    setErrors({});
+    setSubmitted(true);
     console.log(form);
   };
 
@@ -40,53 +82,110 @@ const ContactForm = () => {
               <Image width={391} height={117} alt="Bitox" src={contact_logo} />
             </div>
             <div>
-              <form className="bg-white py-15 px-15 rounded-[15px] mb-7.5">
-                <div className="flex flex-col gap-7.5 ">
-                  <div className="flex gap-[30px] ">
-                    <input
-                      type="text"
-                      name="firstName"
-                      placeholder="First Name*"
-                      value={form.firstName}
-                      onChange={handleChange}
-                      className="w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary r"
-                    />
-                    <input
-                      type="text"
-                      name="lastName"
-                      placeholder="Last Name*"
-                      value={form.lastName}
-                      onChange={handleChange}
-                      className="w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary "
-                    />
+              <form
+                onSubmit={handleSubmit}
+                className="bg-white py-15 px-15 rounded-[15px] mb-7.5"
+              >
+                <div className="flex flex-col gap-7.5">
+
+                  {submitted && (
+                    <p className="text-sm font-medium text-center text-green-500">
+                      Message sent successfully!
+                    </p>
+                  )}
+
+                  <div className="flex gap-[30px]">
+                    <div className="flex flex-col gap-1">
+                      <input
+                        type="text"
+                        name="firstName"
+                        placeholder="First Name*"
+                        value={form.firstName}
+                        onChange={handleChange}
+                        className={`w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary ${
+                          errors.firstName ? "ring-1 ring-red-400" : ""
+                        }`}
+                      />
+                      {errors.firstName && (
+                        <p className="pl-1 text-xs text-red-400">
+                          {errors.firstName}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                      <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last Name*"
+                        value={form.lastName}
+                        onChange={handleChange}
+                        className={`w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary ${
+                          errors.lastName ? "ring-1 ring-red-400" : ""
+                        }`}
+                      />
+                      {errors.lastName && (
+                        <p className="pl-1 text-xs text-red-400">
+                          {errors.lastName}
+                        </p>
+                      )}
+                    </div>
                   </div>
 
-                  <div className="flex gap-[30px] ">
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Your Email ID"
-                      value={form.email}
-                      onChange={handleChange}
-                      className="w-[458px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary "
-                    />
-                    <input
-                      type="text"
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={form.phone}
-                      onChange={handleChange}
-                      className="w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary "
-                    />
+                  <div className="flex gap-[30px]">
+                    <div className="flex flex-col gap-1">
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your Email ID"
+                        value={form.email}
+                        onChange={handleChange}
+                        className={`w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary ${
+                          errors.email ? "ring-1 ring-red-400" : ""
+                        }`}
+                      />
+                      {errors.email && (
+                        <p className="pl-1 text-xs text-red-400">
+                          {errors.email}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="flex flex-col gap-1">
+                      <input
+                        type="text"
+                        name="phone"
+                        placeholder="Phone Number"
+                        value={form.phone}
+                        onChange={handleChange}
+                        className={`w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary ${
+                          errors.phone ? "ring-1 ring-red-400" : ""
+                        }`}
+                      />
+                      {errors.phone && (
+                        <p className="pl-1 text-xs text-red-400">
+                          {errors.phone}
+                        </p>
+                      )}
+                    </div>
                   </div>
 
-                  <textarea
-                    name="message"
-                    placeholder="Write your message"
-                    value={form.message}
-                    onChange={handleChange}
-                    className="w-[946px] h-[176px] py-5  px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary"
-                  />
+                  <div className="flex flex-col gap-1">
+                    <textarea
+                      name="message"
+                      placeholder="Write your message"
+                      value={form.message}
+                      onChange={handleChange}
+                      className={`w-[946px] h-[176px] py-5 px-6.25 bg-[#F5F5F5] rounded-md border-none outline-none text-md font-regular text-tarnary ${
+                        errors.message ? "ring-1 ring-red-400" : ""
+                      }`}
+                    />
+                    {errors.message && (
+                      <p className="pl-1 text-xs text-red-400">
+                        {errors.message}
+                      </p>
+                    )}
+                  </div>
 
                   <div className="flex justify-center">
                     <Button
@@ -96,58 +195,62 @@ const ContactForm = () => {
                       showIcon={true}
                     />
                   </div>
+
                 </div>
               </form>
+
+              
               <div className="flex gap-[30px]">
                 {/* Address */}
-                <div className="w-[335px] p-[35px] bg-white rounded-md">
-                  <h4 className="font-bold text-base text-[#02090F] mb-3">
+                <div className="w-[335px] py-[35px] pl-8.75 pr-4  bg-white rounded-md">
+                  <h4 className="mb-5 font-bold leading-8.5  text-2xl  text-primary">
                     Address
                   </h4>
-                  <p className="text-sm leading-relaxed text-gray-500">
-                    Valentin, Street Road 24, New York, USA – 67452
+                  <p className="text-lg text-tarnary  font-normal leading-6.5">
+                    Valentin, Street Road 24, New York, USA - 67452
                   </p>
                 </div>
 
                 {/* Phone / Message */}
-                <div className="w-[335px] p-[35px] bg-white rounded-md">
-                  <h4 className="font-bold text-base text-[#02090F] mb-3">
+                <div className="w-[335px] py-[35px] pl-8.75 pr-4 bg-white rounded-md">
+                  <h4 className="mb-5 font-bold leading-8.5  text-2xl  text-primary">
                     Phone / Message
                   </h4>
-                  <p className="text-sm leading-relaxed text-gray-500">
+                  <p className="text-lg text-tarnary  font-normal leading-6.5">
                     supportdomin@example.com
                   </p>
-                  <p className="text-sm leading-relaxed text-gray-500">
+                  <p className="text-lg text-tarnary  font-normal leading-6.5">
                     (251) 854-6308
                   </p>
                 </div>
 
                 {/* Working Hours */}
-                <div className="w-[335px] p-[35px] bg-white rounded-md">
-                  <h4 className="font-bold text-base text-[#02090F] mb-3">
+                <div className="w-[335px] py-[35px] pl-8.75 pr-4  bg-white rounded-md">
+                  <h4 className="mb-5 font-bold leading-8.5  text-2xl  text-primary">
                     Working Hours
                   </h4>
-                  <p className="text-sm leading-relaxed text-gray-500">
-                    Monday to Friday 09:00 to 18:30
-                  </p>
-                  <p className="text-sm leading-relaxed text-gray-500">
-                    Saturday 15:30
+                  <p className="text-lg text-tarnary  font-normal leading-6.5">
+                    Monday to Friday 09:00 to 18:30 Saturday 15:30
                   </p>
                 </div>
               </div>
             </div>
           </div>
-          <div></div>
+          
         </div>
-        <div className="mx-auto w-400 h-[690px] bg-amber-300 mb-30">
-          {/* <GoogleMapsEmbed
-      apiKey="YOUR_API_KEY"
-      height={400}
-      width="100%"
-      mode="place"
-      q="Brooklyn+Bridge,New+York,NY"
-    /> */}
-        </div>
+        
+          <div className="w-400  h-[690px] rounded-md overflow-hidden mx-auto mb-30">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.036955468959!2d90.36556226218187!3d23.747049949764218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1777483156468!5m2!1sen!2sbd"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        
       </div>
     </>
   );
