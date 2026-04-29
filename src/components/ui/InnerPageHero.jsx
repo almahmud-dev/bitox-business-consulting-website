@@ -7,7 +7,7 @@ import Link from "next/link";
 const InnerPageHero = ({
   title = "Empowering Growth & Success",
   subtitle = "A reputed consultant agency we've spent 13+ year's",
-  hasOffset = false,
+  navVariant = "homeOne",
 }) => {
   const { commonHeroImages } = allImages;
 
@@ -22,7 +22,7 @@ const InnerPageHero = ({
       ?.replace(/\b\w/g, (c) => c.toUpperCase()) || "Home";
 
   return (
-    <section  className={hasOffset ? "pt-[100px]" : ""}>
+    <section className={navVariant === "homeTwo" ? "pt-[100px]" : "pt-[70px]"}>
       {/* 
         Height breakdown:
         320px  → h-[320px]
@@ -41,7 +41,6 @@ const InnerPageHero = ({
         />
 
         <div className="absolute z-[20] inset-0">
-
           {/* Title */}
           {/*
             320px  → top-[60px],  left-1/2, translate-x-[-50%],  max-w-[280px], text-center
@@ -99,7 +98,6 @@ const InnerPageHero = ({
               {subtitle}
             </p>
           </div>
-
         </div>
       </div>
     </section>
