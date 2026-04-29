@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import OurClients from "../homeTwo/OurClients";
 
 const TeamPartners = () => {
-  return (
-    <div>TeamPartners</div>
-  )
-}
+  return <OurClients />;
+};
 
-export default TeamPartners
+export default TeamPartners;
