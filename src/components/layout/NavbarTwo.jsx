@@ -8,7 +8,6 @@ import { Phone, X, Menu } from "lucide-react";
 import { NAV_LINKS, DesktopNavItem, MobileNavItem } from "@/components/helper/helpers";
 
 // --- Logic ---
-
 function useNavbar() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -63,9 +62,7 @@ function useNavbar() {
     closeMobileMenu,
   };
 }
-
 // UI
-
 export default function NavbarTwo() {
   const {
     pathname,
@@ -122,7 +119,6 @@ export default function NavbarTwo() {
           </span>
         </div>
       </header>
-
       {/* ── Mobile Navbar */}
       <header
         className={`fixed left-0 right-0 top-0 z-50 flex lg:hidden items-center justify-between px-5 h-[70px] bg-white transition-all duration-300 ${
@@ -138,7 +134,6 @@ export default function NavbarTwo() {
             priority
           />
         </Link>
-
         <button
           onClick={toggleMobileMenu}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
@@ -147,7 +142,6 @@ export default function NavbarTwo() {
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </header>
-
       {/* ── Mobile Backdrop */}
       <div
         onClick={closeMobileMenu}
@@ -157,7 +151,6 @@ export default function NavbarTwo() {
             : "opacity-0 pointer-events-none"
         }`}
       />
-
       {/* ── Mobile Drawer */}
       <div
         className={`fixed top-0 left-0 right-0 z-40 bg-white pt-24 px-6 pb-8 overflow-y-auto lg:hidden transition-all duration-300 max-h-screen ${
@@ -177,7 +170,6 @@ export default function NavbarTwo() {
               pathname={pathname}
             />
           ))}
-
           <div className="mt-6 flex items-center gap-3">
             <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center">
               <Phone size={16} className="text-white" />
