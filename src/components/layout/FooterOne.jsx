@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUp } from "lucide-react";
 import { FOOTER_ONE_DATA } from "@/components/helper/helpers";
+import footer_img from "../../../public/images/footer_one/footer_logo.png"
 
 // ─── Scroll To Top
 
@@ -31,10 +32,10 @@ export default function FooterOne() {
         {/* Logo */}
         <div className="shrink-0">
           <Image
-            src="/images/logo/Foot_logo.png"
+            src={footer_img}
             alt="Bitox"
-            width={220}
-            height={80}
+            width={1056}
+            height={318}
             priority
           />
         </div>
