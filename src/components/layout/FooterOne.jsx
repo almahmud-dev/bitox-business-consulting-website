@@ -13,7 +13,7 @@ function ScrollToTop() {
     <button
       onClick={handleClick}
       aria-label="Scroll to top"
-      className="bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors duration-300 cursor-pointer flex-shrink-0"
+      className="flex items-center justify-center flex-shrink-0 transition-colors duration-300 cursor-pointer bg-secondary hover:bg-secondary/80"
       style={{ width: "58px", height: "70px", borderRadius: "2px 2px 20px 20px" }}
     >
       <svg width="18" height="25" viewBox="0 0 18 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,7 +26,7 @@ function ScrollToTop() {
 // ─── Main Footer
 export default function FooterOne() {
   return (
-    <footer className="bg-primary text-white w-full">
+    <footer className="w-full text-white bg-primary">
 
       {/* ── Centered Container */}
       <div className="max-w-[1770px] mx-auto w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 3xl:px-0">
@@ -49,7 +49,7 @@ export default function FooterOne() {
           <div className="flex flex-col gap-3 w-full lg:w-[420px] xl:w-[500px] 2xl:w-[580px] 3xl:w-[654px] lg:mt-10 xl:mt-12 3xl:mt-16">
 
             {/* Email + Phone */}
-            <div className="flex flex-col sm:flex-row gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
               
               <a  href={`mailto:${FOOTER_ONE_DATA.email}`}
                 className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md
@@ -94,7 +94,7 @@ export default function FooterOne() {
                 text-sm md:text-[15px] 3xl:text-[16px]
                 py-2 px-5 sm:py-2.5 sm:px-7 3xl:py-2.5
                 w-full sm:w-auto sm:min-w-[160px] md:min-w-[200px] lg:min-w-[220px] 3xl:w-[278px]
-                text-white hover:text-white hover:border-white/50 transition-all duration-200 leading-7"
+                text-white hover:text-white hover:border-white/50 hover:bg-secondary hover:border-none  transition-all duration-200 leading-7"
             >
               {social.label}
             </a>
@@ -107,7 +107,7 @@ export default function FooterOne() {
             {FOOTER_ONE_DATA.copyright}
           </p>
           <ScrollToTop />
-          <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             {FOOTER_ONE_DATA.bottomLinks.map((link) => (
               <Link
                 key={link.label}

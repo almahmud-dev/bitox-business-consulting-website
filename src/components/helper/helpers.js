@@ -165,7 +165,7 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
           onClick={() => onToggle(link.label)}
           className={`flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
         >
-          <span className="text-base font-heading font-medium">{link.label}</span>
+          <span className="text-base font-medium font-heading">{link.label}</span>
           <ChevronDown
             size={16}
             className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -176,7 +176,7 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
             isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="pl-4 py-2 flex flex-col gap-1">
+          <div className="flex flex-col gap-1 py-2 pl-4">
             {link.children.map((child) => (
               <Link
                 key={child.href}
@@ -256,6 +256,44 @@ export const features = [
   { number: "03.", title: "Strategy",   description: "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success." },
   { number: "04.", title: "Analysis",   description: "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success." },
 ];
+
+
+
+//===============================
+// Contact Info Cards
+//===============================
+
+// Contact Form Inputs
+export const CONTACT_INPUTS = [
+  { name: "firstName", placeholder: "First Name*", type: "text" },
+  { name: "lastName", placeholder: "Last Name*", type: "text" },
+  { name: "email", placeholder: "Your Email ID", type: "email" },
+  { name: "phone", placeholder: "Phone Number", type: "text" },
+];
+
+// Contact Info Cards
+export const CONTACT_INFO = [
+  {
+    title: "Address",
+    content: [
+      "Valentin, Street Road 24, New York, USA - 67452",
+    ],
+  },
+  {
+    title: "Phone / Message",
+    content: [
+      "supportdomin@example.com",
+      "(251) 854-6308",
+    ],
+  },
+  {
+    title: "Working Hours",
+    content: [
+      "Monday to Friday 09:00 to 18:30 Saturday 15:30",
+    ],
+  },
+];
+
 
 //===============================
 // HomeTwo — Footer Data
