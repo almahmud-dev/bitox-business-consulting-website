@@ -1,3 +1,4 @@
+import TeamGrid from "@/components/teamMember/TeamGrid";
 import InnerPageHero from "@/components/ui/InnerPageHero";
 import React from "react";
 
@@ -8,6 +9,7 @@ const Team = () => {
         title="Meet Our Experienced Professionals"
         titleWidth={"lg:!max-w-[650px]"}
       />
+      <TeamGrid/>
     </>
   );
 };

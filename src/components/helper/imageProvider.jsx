@@ -32,6 +32,9 @@ import CommonHeroImages from "../../../public/images/common_images/common-hero-b
 import Home2OurExperts1 from "../../../public/images/home2_ourexperts/experts1.png";
 import Home2OurExperts2 from "../../../public/images/home2_ourexperts/experts2.png";
 import Home2OurExperts3 from "../../../public/images/home2_ourexperts/experts3.png";
+import Home2OurExperts4 from "../../../public/images/home2_ourexperts/experts4.png";
+import Home2OurExperts5 from "../../../public/images/home2_ourexperts/experts5.png";
+import Home2OurExperts6 from "../../../public/images/home2_ourexperts/experts6.png";
 import ourteam from "../../../public/images/home2_ourteam/our_team.png";
 import Home2Blog1 from "../../../public/images/home2_blog/blog1.png";
 import Home2Blog2 from "../../../public/images/home2_blog/blog2.png";
@@ -45,13 +48,11 @@ import FAQSection2 from "../../../public/images/faq/discuss.png";
 import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
 // for about us pages images
-import AboutUsBanner from "../../../public/images/aboutUs/aboutVideo.png"
+import AboutUsBanner from "../../../public/images/aboutUs/aboutVideo.png";
 // for aboutUsVideo pages images
-import AboutUsVideo from "../../../public/images/aboutVideo/aboutvideo-Image.png"
+import AboutUsVideo from "../../../public/images/aboutVideo/aboutvideo-Image.png";
 // for aboutUsVideo pages images
-import AboutTeamBorder from "../../../public/images/aboutTeam/team-page-border.png"
-
-
+import AboutTeamBorder from "../../../public/images/aboutTeam/team-page-border.png";
 
 const allImages = {
   heroIocns: HeroImage,
@@ -144,12 +145,12 @@ const allImages = {
     ],
   ],
   //FAQ Section Images
-FaqSection: {
-  headerImg: FAQSection1,
-  bottomImg: FAQSection2,
-  faq_bg:    FAQSection3,
-  faq_full_bg: FAQSection4,
-},
+  FaqSection: {
+    headerImg: FAQSection1,
+    bottomImg: FAQSection2,
+    faq_bg: FAQSection3,
+    faq_full_bg: FAQSection4,
+  },
   plusImages: PlusWhite,
   processImage: ProcessOne,
   contactImage: ContactImage,
@@ -178,12 +179,21 @@ FaqSection: {
     { id: 2, img: Home2Section2 },
     { id: 3, img: Home2Section3 },
   ],
-  // about us pages images 
+  // about us pages images
   aboutUsBanner: AboutUsBanner,
-   // about us video pages images 
+  // about us video pages images
   aboutUsVideo: AboutUsVideo,
-   // about  team pages images 
+  // about  team pages images
   aboutTeamBorder: AboutTeamBorder,
+  // team pages images || array/obj
+  teamPageMemberArr: [
+    { id: 1, img: Home2OurExperts1 },
+    { id: 2, img: Home2OurExperts2 },
+    { id: 3, img: Home2OurExperts3 },
+    { id: 4, img: Home2OurExperts4 },
+    { id: 5, img: Home2OurExperts5 },
+    { id: 6, img: Home2OurExperts6 },
+  ],
 };
 
 export default allImages;
