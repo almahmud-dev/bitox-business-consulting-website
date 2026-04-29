@@ -1,9 +1,14 @@
-import React from 'react'
+import AboutOverview from "@/components/aboutUs/AboutOverview";
+import InnerPageHero from "@/components/ui/InnerPageHero";
+import React from "react";
 
 const About = () => {
   return (
-    <div>About</div>
-  )
-}
+    <div>
+      <InnerPageHero  />
+      <AboutOverview/>
+    </div>
+  );
+};
 
-export default About
+export default About;
