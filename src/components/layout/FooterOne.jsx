@@ -12,25 +12,30 @@ function ScrollToTop() {
 
   return (
     <button
-      onClick={handleClick}
-      aria-label="Scroll to top"
-      className="w-12 h-12 rounded-to-b-5 bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors duration-300 cursor-pointer"
-    >
-      <svg
-        width="18"
-        height="25"
-        viewBox="0 0 18 25"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M17.6572 9.51453C17.8767 9.30145 18 9.01262 18 8.71147C18 8.41032 17.8767 8.12148 17.6572 7.90841L9.8434 0.332347C9.62363 0.119535 9.32573 0 9.01513 0C8.70453 0 8.40663 0.119535 8.18687 0.332347L0.373044 7.90841C0.257889 8.01245 0.165526 8.13791 0.101466 8.2773C0.0374048 8.4167 0.00295911 8.56718 0.00018241 8.71977C-0.00259429 8.87236 0.026355 9.02392 0.0853041 9.16542C0.144253 9.30693 0.231994 9.43547 0.343292 9.54338C0.45459 9.65129 0.587165 9.73636 0.733109 9.79352C0.879053 9.85067 1.03538 9.87874 1.19275 9.87605C1.35012 9.87336 1.50533 9.83996 1.6491 9.77785C1.79287 9.71574 1.92227 9.62618 2.02958 9.51453L7.84306 3.87794V16.2875C7.84306 17.3679 7.49925 19.0149 6.50065 20.3589C5.54736 21.6438 3.94552 22.7272 1.20131 22.7272C0.890457 22.7272 0.592335 22.8469 0.372529 23.06C0.152722 23.2731 0.0292364 23.5622 0.0292364 23.8636C0.0292364 24.165 0.152722 24.454 0.372529 24.6672C0.592335 24.8803 0.890457 25 1.20131 25C4.70815 25 7.0148 23.5575 8.40409 21.6862C9.74963 19.874 10.1872 17.7315 10.1872 16.2875V3.87794L16.0007 9.51453C16.2205 9.72734 16.5184 9.84688 16.829 9.84688C17.1396 9.84688 17.4375 9.72734 17.6572 9.51453Z"
-          fill="white"
-        />
-      </svg>
-    </button>
+  onClick={handleClick}
+  aria-label="Scroll to top"
+  className="bg-secondary flex items-center justify-center hover:bg-secondary/80 transition-colors duration-300 cursor-pointer"
+  style={{
+    width: "58px",
+    height: "70px",
+    borderRadius: "2px 2px 20px 20px",
+  }}
+>
+  <svg
+    width="18"
+    height="25"
+    viewBox="0 0 18 25"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M17.6572 9.51453C17.8767 9.30145 18 9.01262 18 8.71147C18 8.41032 17.8767 8.12148 17.6572 7.90841L9.8434 0.332347C9.62363 0.119535 9.32573 0 9.01513 0C8.70453 0 8.40663 0.119535 8.18687 0.332347L0.373044 7.90841C0.257889 8.01245 0.165526 8.13791 0.101466 8.2773C0.0374048 8.4167 0.00295911 8.56718 0.00018241 8.71977C-0.00259429 8.87236 0.026355 9.02392 0.0853041 9.16542C0.144253 9.30693 0.231994 9.43547 0.343292 9.54338C0.45459 9.65129 0.587165 9.73636 0.733109 9.79352C0.879053 9.85067 1.03538 9.87874 1.19275 9.87605C1.35012 9.87336 1.50533 9.83996 1.6491 9.77785C1.79287 9.71574 1.92227 9.62618 2.02958 9.51453L7.84306 3.87794V16.2875C7.84306 17.3679 7.49925 19.0149 6.50065 20.3589C5.54736 21.6438 3.94552 22.7272 1.20131 22.7272C0.890457 22.7272 0.592335 22.8469 0.372529 23.06C0.152722 23.2731 0.0292364 23.5622 0.0292364 23.8636C0.0292364 24.165 0.152722 24.454 0.372529 24.6672C0.592335 24.8803 0.890457 25 1.20131 25C4.70815 25 7.0148 23.5575 8.40409 21.6862C9.74963 19.874 10.1872 17.7315 10.1872 16.2875V3.87794L16.0007 9.51453C16.2205 9.72734 16.5184 9.84688 16.829 9.84688C17.1396 9.84688 17.4375 9.72734 17.6572 9.51453Z"
+      fill="white"
+    />
+  </svg>
+</button>
   );
 }
 
@@ -43,7 +48,7 @@ export default function FooterOne() {
       <div className="max-w-[1770px] mx-auto w-full">
 
         {/* ── Top Section */}
-        <div className="pt-16 pb-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 ">
+        <div className="pt-22.5 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 ">
 
           {/* Logo */}
           <div className="shrink-0">
@@ -62,14 +67,14 @@ export default function FooterOne() {
             <div className="flex gap-3">
               
               <a  href={`mailto:${FOOTER_ONE_DATA.email}`}
-                className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md text-sm text-white text-center transition-all duration-200 hover:bg-white/10"
+                className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md text-xl text-white text-center transition-all duration-200 hover:bg-white/10 leading-7.5"
                 style={{ padding: "25px 60px" }}
               >
                 {FOOTER_ONE_DATA.email}
               </a>
               
               <a  href={`tel:${FOOTER_ONE_DATA.phone}`}
-                className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md text-sm text-white text-center transition-all duration-200 hover:bg-white/10"
+                className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md text-xl text-white text-center transition-all duration-200 hover:bg-white/10 leading-7.5"
                 style={{ padding: "25px 60px" }}
               >
                 {FOOTER_ONE_DATA.phone}
@@ -78,8 +83,8 @@ export default function FooterOne() {
 
             {/* Address */}
             <div
-              className="border border-[rgba(255,255,255,0.1)] rounded-md text-sm text-white text-center leading-relaxed"
-              style={{ padding: "47px 126px" }}
+              className="border border-[rgba(255,255,255,0.1)] rounded-md text-xl text-white text-center  leading-7.5"
+              style={{ padding: "47px 120px" }}
             >
               {FOOTER_ONE_DATA.address}
             </div>
@@ -87,14 +92,14 @@ export default function FooterOne() {
         </div>
 
         {/* ── Social Links */}
-        <div className="py-8 flex flex-wrap items-center justify-center gap-5 border-b border-[rgba(255,255,255,0.1)]">
+        <div className="py-22.5 flex flex-wrap items-center justify-center gap-5 border-b border-[rgba(255,255,255,0.1)]">
           {FOOTER_ONE_DATA.socials.map((social) => (
             
              <a key={social.label}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white/20 w-[278px] text-center rounded-full py-2.5 text-sm text-white/80 hover:text-white hover:border-white/50 transition-all duration-200"
+              className="border border-white/20 w-[278px] text-center rounded-full py-2.5 text-[16px] text-white hover:text-white hover:border-white/50 transition-all duration-200 leading-7"
             >
               {social.label}
             </a>
@@ -103,14 +108,14 @@ export default function FooterOne() {
 
         {/* ── Bottom Bar */}
         <div className="py-2.5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-white/50">{FOOTER_ONE_DATA.copyright}</p>
+          <p className="text-[16px] leading-6.5 text-white">{FOOTER_ONE_DATA.copyright}</p>
           <ScrollToTop />
           <div className="flex items-center gap-6">
             {FOOTER_ONE_DATA.bottomLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-sm text-white/50 hover:text-white transition-colors duration-200"
+                className="text-[16px] leading-6.5 text-white hover:text-white/30 transition-colors duration-200"
               >
                 {link.label}
               </Link>
