@@ -6,10 +6,8 @@ import { useState } from "react";
 import headerImg from "../../../../public/images/faq/laptop.png";
 import bottomImg from "../../../../public/images/faq/discuss.png";
 import faq_bg from "../../../../public/images/faq//faq_bg.png";
+import faq_full_bg from "../../../../public/images/faq//faq_full_bg.png";
 import ButtonTwo from "@/components/ui/ButtonTwo";
-
-
-
 
 const faqData = {
   general: [
@@ -125,143 +123,141 @@ const Faq = () => {
   };
 
   return (
-    <section className="bg-[#fff] mt-40  pt-30 pb-34 " style={{
-    backgroundImage: `url(${faq_bg.src})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    backgroundRepeat: "no-repeat",
-  }}>
+    <section>
       <div
-  className="w-[1600px] max-w-full mx-auto "
-  
->
-        {/* Header */}
-        <div className="flex justify-between items-start mb-12">
-          <div>
-            <p className="text-sm font-bold w-fit uppercase text-[#02090f] leading-5  rounded-sm  mb-7.5 border border-[rgba(0,0,0,0.1)] py-2.5 px-3.75">
-              Frequently asked questions
-            </p>
-            <h2 className="text-[50px] font-bold text-[#02090F] leading-[58px] w-[805px] tracking-[0%] underline">
-               Frequently Asked Questions:
-              Clear, Concise Answers
-            </h2>
+        className="bg-[#fff]   pt-30 pb-34 "
+        style={{
+          backgroundImage: `url(${faq_bg.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
+        <div className="w-[1605px]  mx-auto ">
+          {/* Header */}
+          <div className="flex justify-between items-start mb-12">
+            <div>
+              <p className="text-sm font-bold w-fit uppercase text-[#02090f] leading-5  rounded-sm  mb-7.5 border border-[rgba(0,0,0,0.1)] py-2.5 px-3.75">
+                Frequently asked questions
+              </p>
+              <h2 className="text-[50px] font-bold text-[#02090F] leading-[58px] w-[805px] tracking-[0%] underline">
+                Frequently Asked Questions: Clear, Concise Answers
+              </h2>
+            </div>
+
+            <div className="w-[162px] h-[177px] flex-shrink-0">
+              <Image
+                src={headerImg}
+                alt="FAQ illustration"
+                width={162}
+                height={177}
+                className="object-cover rounded-lg w-full h-full"
+              />
+            </div>
           </div>
 
-          <div className="w-[162px] h-[177px] flex-shrink-0">
-            <Image
-              src={headerImg}
-              alt="FAQ illustration"
-              width={162}
-              height={177}
-              className="object-cover rounded-lg w-full h-full"
-            />
-          </div>
-        </div>
-
-        {/* Body */}
-        <div className="flex gap-8.75 ">
-
-          {/* Sidebar */}
-          <div className="flex-shrink-0 flex flex-col gap-[10px] bg-[#E0DED7] pt-9 pl-7.5 rounded-[15px]">
-            {categories.map((cat) => (
-              <button
-                key={cat.key}
-                onClick={() => handleCategoryChange(cat.key)}
-                className={`text-sm text-left transition-colors duration-150 ${
-                  activeCategory === cat.key
-                    ? "bg-[#FF5101] text-white"
-                    : "bg-white text-gray-800 hover:bg-gray-50"
-                }`}
-                style={{
-                  width: "443px",
-                  paddingTop: "27px",
-                  paddingBottom: "27px",
-                  paddingLeft: "35px",
-                  borderRadius: "15px",
-                }}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Right side */}
-          <div className="flex flex-col gap-4 bg-[#E0DED7] ">
-
-            {/* FAQ List */}
-            <div className="w-[1067px] max-w-full flex flex-col gap-[10px]">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-white rounded-lg overflow-hidden"
+          {/* Body */}
+          <div
+            className="flex gap-8.75 h-[965px] "
+            style={{
+              backgroundImage: `url(${faq_full_bg.src})`,
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            {/* Sidebar */}
+            <div className="shrink-0  flex flex-col gap-[10px]  pt-9 pl-7.5 rounded-[15px]">
+              {categories.map((cat) => (
+                <button
+                  key={cat.key}
+                  onClick={() => handleCategoryChange(cat.key)}
+                  className={`text-[20px] text-left  transition-colors duration-150 ${
+                    activeCategory === cat.key
+                      ? "bg-[#FF5101] text-[#FFFFFF]"
+                      : "bg-white text-[#02090F] hover:bg-gray-50"
+                  }`}
+                  style={{
+                    width: "443px",
+                    paddingTop: "27px",
+                    paddingBottom: "27px",
+                    paddingLeft: "35px",
+                    borderRadius: "15px",
+                  }}
                 >
-                  <button
-                    onClick={() => handleToggle(index)}
-                    className="w-full flex items-center gap-[20px] px-[35px] py-[24px] text-left"
-                  >
-                    <span
-                      className={`flex-shrink-0 transition-transform duration-200 ${
-                        openIndex === index ? "rotate-180" : ""
-                      }`}
-                    >
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path d="M3 6l5 5 5-5" />
-                      </svg>
-                    </span>
-                    <span className="text-sm font-medium text-gray-900">
-                      {faq.q}
-                    </span>
-                  </button>
-
-                  {openIndex === index && (
-                    <div
-                      className="text-sm text-gray-500 leading-relaxed"
-                      style={{
-                        paddingLeft: "calc(35px + 16px + 20px)",
-                        paddingRight: "35px",
-                        paddingBottom: "24px",
-                        marginTop: "-8px",
-                      }}
-                    >
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
+                  {cat.label}
+                </button>
               ))}
             </div>
 
-            {/* Bottom CTA */}
-            <div className="w-[1067px] max-w-full bg-white rounded-lg flex items-center justify-between px-10 py-8">
-              <div>
-                <h3 className="text-xl font-medium text-gray-900 mb-3 leading-snug">
-                  Have any questions? we're <br /> here for you.
-                </h3>
-                <p className="text-sm text-gray-500 max-w-[280px] leading-relaxed mb-5">
-                  If you manage high transaction volumes, multiple entities, or
-                  require custom integrations, our team can tailor Makro to your
-                  needs.
-                </p>
-                <ButtonTwo frontText="Get in touch" backText="Get in touch" />
+            {/* Right side */}
+            <div className="flex flex-col gap-4 pt-9 bg-[#E0DED7] rounded-[20px] pb- ">
+              {/* FAQ List */}
+              <div className="w-[1067px] max-w-full flex flex-col gap-[10px]">
+                {faqs.map((faq, index) => (
+                  <div
+                    key={index}
+                    className="bg-white rounded-lg overflow-hidden"
+                  >
+                    <button
+                      onClick={() => handleToggle(index)}
+                      className="w-full flex items-center gap-[20px] px-[35px] py-[24px] text-left"
+                    >
+                      <span
+                        className={`shrink-0 transition-transform duration-200 ${
+                          openIndex === index ? "rotate-180" : ""
+                        }`}
+                      >
+                        <svg width="15" height="9" viewBox="0 0 15 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.25 1.25L7.25 7.25L1.25 1.25" stroke="#02090F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                      </span>
+                      <span className="text-[26px] font-medium text-primary leading-9">
+                        {faq.q}
+                      </span>
+                    </button>
+
+                    {openIndex === index && (
+                      <div
+                        className="text-lg text-tarnary leading-7"
+                        style={{
+                          paddingLeft: "calc(35px + 16px + 20px)",
+                          paddingRight: "35px",
+                          paddingBottom: "24px",
+                          marginTop: "-8px",
+                        }}
+                      >
+                        {faq.a}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
 
-              <div className="w-[412px] h-[344px] flex-shrink-0">
-                <Image
-                  src={bottomImg}
-                  alt="Support illustration"
-                  width={412}
-                  height={344}
-                  className="object-cover rounded-lg w-full h-full"
-                />
+              {/* Bottom CTA */}
+              <div className="w-[1067px] max-w-full bg-white rounded-lg flex items-center justify-between px-10 py-5">
+                <div className="">
+                  <h3 className="text-[30px] font-bold text-primary  max-w-[389px] mb-5 leading-10">
+                    Have any questions? we're <br /> here for you.
+                  </h3>
+                  <p className="text-lg text-tarnary  max-w-[407px] leading-7  mb-7.5">
+                    If you manage high transaction volumes, multiple entities,
+                    or require custom integrations, our team can tailor Makro to
+                    your needs.
+                  </p>
+                  <ButtonTwo frontText="Get in touch" backText="Get in touch" />
+                </div>
+
+                <div className="w-[412px] h-[344px] ">
+                  <Image
+                    src={bottomImg}
+                    alt="Support illustration"
+                    width={412}
+                    height={344}
+                    className="object-cover rounded-lg w-full h-full"
+                  />
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
