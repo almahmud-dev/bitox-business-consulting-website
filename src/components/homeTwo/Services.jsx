@@ -6,8 +6,9 @@ import { Stack } from "../ui/Responsive";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
 import { services } from "../helper/helpers";
-const ServiceCard = ({ service, index }) => {
-const [isHovered, setIsHovered] = useState(false);
+
+export const ServiceCard = ({ service, index }) => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="flex flex-col md:flex-row w-full">
       {/* Left: Image */}
@@ -70,12 +71,12 @@ const [isHovered, setIsHovered] = useState(false);
   );
 };
 
-const Services = () => {
+const Services = ({ targetValue = 0, lastValue = 3 }) => {
   return (
     <section className="w-full">
       <Container size="lg">
         <Stack gap="none">
-          {services.map((service, index) => (
+          {services.slice(targetValue, lastValue).map((service, index) => (
             <ServiceCard key={index} service={service} index={index} />
           ))}
         </Stack>

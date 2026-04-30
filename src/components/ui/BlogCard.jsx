@@ -11,9 +11,9 @@ const BlogCard = ({ batchName, image, itmeText, dateText, description }) => {
           fill
           src={image}
           alt="blogCard-Images"
-          className="rounded-[6px]  object-cover  "
+          className="rounded-[6px] object-cover"
         />
-        <div className="absolute top-5 left-5    px-[15px] py-[6px] flex items-center gap-x-[10px] rounded-[4px] bg-bg-secondaryTwo">
+        <div className="absolute top-5 left-5 px-[15px] py-[6px] flex items-center gap-x-[10px] rounded-[4px] bg-bg-secondaryTwo">
           <Image
             height={16}
             width={16}
