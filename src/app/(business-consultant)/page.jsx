@@ -11,7 +11,6 @@ import ServicesSection from "@/components/homeOne/ServicesSection";
 import TestimonialsSection from "@/components/homeOne/TestimonialsSection";
 import VideoShowcase from "@/components/homeOne/VideoShowcase";
 import InnerPageHero from "@/components/ui/InnerPageHero";
-import React from "react";
 
 const Home1 = () => {
   return (
@@ -27,6 +26,7 @@ const Home1 = () => {
       <PortfolioSection />
       <ProcessSteps />
       <BlogSectionHO />
+
       <ContactSectionHO />
     </>
   );
