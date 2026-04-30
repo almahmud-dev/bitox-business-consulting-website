@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import MarqueeHeroCTA from "../homeTwo/MarqueeHeroCTA";
 
 const AboutContact = () => {
-  return (
-    <div>AboutContact</div>
-  )
-}
+  return <MarqueeHeroCTA />;
+};
 
-export default AboutContact
+export default AboutContact;
