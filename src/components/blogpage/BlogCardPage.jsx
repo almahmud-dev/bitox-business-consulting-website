@@ -4,24 +4,24 @@ import Link from "next/link";
 import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
 import Responsive from "../ui/Responsive";
-import { allBlogData } from "../helper/blogpagehelper";
-
+import { allBlogData, arrowBtn, pageBtn, pages } from "../helper/blogpagehelper";
+import { MdArrowForwardIos } from "react-icons/md";
 const BlogCardPage = () => {
-  console.log(allBlogData);
   return (
-    <section className="py-[70px] lg:py-[120px]">
+    <section className="py-17.5 lg:py-30 bg-bg-secondaryOne">
       <Container size={"lg"}>
-
-        {/* ── Header (BlogSectionHO এর মতো) ── */}
-        <p className="text-center text-sm font-medium text-primary uppercase tracking-widest mb-3">
-          Latest Posts
-        </p>
-        <h2 className="max-w-[800px] text-center mx-auto font-bold text-primary headingTwo">
+        {/* ── Header (BlogSectionHO same) ── */}
+        <div className="flex justify-center">
+          <span className="inline-flex items-center justify-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase mb-3">
+            Latest Posts
+          </span>
+        </div>
+        <h2 className="max-w-200 text-center mx-auto font-bold text-primary headingTwo underline underline-offset-4">
           Insights & Updates: Driving Your Success
         </h2>
 
-        {/* ── 6টা Card Grid ── */}
-        <div className="py-[60px]">
+        {/* ── 6ta Card Grid ── */}
+        <div className="py-15">
           <Responsive.Grid cols={{ base: 1, lg: 3 }} gap="lg">
             {allBlogData.map((item, index) => (
               <Link key={index} href={`/blog/${item.slug}`}>
@@ -38,18 +38,16 @@ const BlogCardPage = () => {
         </div>
 
         {/* ── Pagination ── */}
-        <div className="flex items-center justify-center gap-x-2 mt-[20px] md:mt-[30px] lg:mt-[60px]">
-          <button className="w-10 h-10 flex items-center justify-center rounded-[6px] border border-[#0000001a] text-primary font-medium text-base hover:bg-primary hover:text-white transition-colors">
-            1
-          </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded-[6px] border border-[#0000001a] text-primary font-medium text-base hover:bg-primary hover:text-white transition-colors">
-            2
-          </button>
-          <button className="w-10 h-10 flex items-center justify-center rounded-[6px] bg-primary text-white font-medium text-base">
-            3
+        <div className="flex items-center justify-center gap-x-2.5 bg-white py-5">
+          {pages.map((page) => (
+            <button key={page} className={pageBtn}>
+              {page}
+            </button>
+          ))}
+          <button className={arrowBtn}>
+            <MdArrowForwardIos />
           </button>
         </div>
-
       </Container>
     </section>
   );
