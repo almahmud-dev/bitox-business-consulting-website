@@ -5,10 +5,13 @@ import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Grid, Stack } from "../ui/Responsive";
+import ButtonThree from "../ui/ButtonThree";
 
 const BlogDetailsPage = ({ blog }) => {
   if (!blog) return null;
-
+  const inputClass =
+    "w-full bg-[#F5F5F5] rounded-lg px-5 py-4 text-sm bg-neutral-100 border border-transparent focus:border-neutral-300 focus:outline-none transition-colors placeholder:text-neutral-400";
   return (
     <div className="bg-bg-secondaryOne">
       {/* ── Breadcrumb ── */}
@@ -33,7 +36,7 @@ const BlogDetailsPage = ({ blog }) => {
       <section className="py-17.5 lg:py-25">
         {/* ── Title & Author (inside Container) ── */}
         <Container size={"lg"}>
-          <div className="max-w-[860px] mx-auto">
+          <div className="max-w-215 mx-auto">
             {/* ── Meta Row (static, always same) ── */}
             <div className="flex items-center justify-center gap-2 flex-wrap mb-7.5">
               {["4 min read", "Creative Agency", "20 September 2025"].map(
@@ -88,12 +91,12 @@ const BlogDetailsPage = ({ blog }) => {
         </Container>
 
         {/* ── Hero Image (full-width, outside Container) ── */}
-        <div className="relative w-full h-[360px] sm:h-[480px] lg:h-[600px] 2xl:[800px] mb-15 overflow-hidden">
+        <div className="relative w-full h-90 sm:h-120 lg:h-150 xl:[800px] mb-15 overflow-hidden">
           <Image
             fill
             src={blog.heroImage}
             alt={blog.title}
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
 
@@ -133,8 +136,67 @@ const BlogDetailsPage = ({ blog }) => {
 
             {/* ── Quote Block ── */}
             {blog.quote && (
-              <blockquote className="my-12 px-8 py-8.5 bg-white rounded-[10px] border-primary">
-                <p className="text-base sm:text-lg lg:text-[24px] leading-6 xl:leading-8.5 text-primary font-medium">
+              <blockquote className="relative my-12 px-8 py-8 bg-white rounded-[10px]">
+                {/* Dashed double border - left side */}
+                <svg
+                  style={{
+                    position: "absolute",
+                    top: 25,
+                    left: 10,
+                    width: "6px",
+                    height: "75%",
+                    pointerEvents: "none",
+                  }}
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <line
+                    x1="1"
+                    y1="0"
+                    x2="1"
+                    y2="100%"
+                    stroke="#02090F"
+                    strokeOpacity="0.2"
+                    strokeDasharray="2 2"
+                  />
+                  <line
+                    x1="5"
+                    y1="0"
+                    x2="5"
+                    y2="100%"
+                    stroke="#02090F"
+                    strokeOpacity="0.2"
+                    strokeDasharray="2 2"
+                  />
+                </svg>
+
+                {/* SVG Quote Icon */}
+                <div className="absolute top-6 left-6">
+                  <svg
+                    width="36"
+                    height="29"
+                    viewBox="0 0 70 56"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_quote)">
+                      <path
+                        d="M54 55.5H69.5V23.5H47.5L69.5 0H58L37 23.5L54 55.5Z"
+                        fill="#FF5101"
+                      />
+                      <path
+                        d="M17 55.5H32.5V23.5H10.5L32.5 0H21L0 23.5L17 55.5Z"
+                        fill="#FF5101"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_quote">
+                        <rect width="70" height="56" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+
+                <p className="mt-10 text-base sm:text-lg lg:text-[24px] leading-6 xl:leading-8.5 text-primary font-medium">
                   {blog.quote}
                 </p>
               </blockquote>
@@ -242,17 +304,64 @@ const BlogDetailsPage = ({ blog }) => {
               </div>
             )}
           </div>
+          {/* Leave from */}
+          <div className="w-full mx-auto px-6 bg-white rounded-md mt-15 p-15">
+            <h2 className="text-3xl font-bold underline tracking-tight mb-7">
+              Leave A Comment
+            </h2>
+
+            <Stack gap="md">
+              <Grid cols={{ base: 1, md: 2 }} gap="md">
+                <input type="text" placeholder="Name" className={inputClass} />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className={inputClass}
+                />
+              </Grid>
+
+              <textarea
+                placeholder="Write your message"
+                rows={6}
+                className={`${inputClass} resize-none`}
+              />
+
+              <div className="self-start flex items-center gap-2 bg-secondary text-white text-base font-bold rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-[#e63946] hover:text-white transition-colors group">
+                <ButtonThree
+                  frontText="Submit comment"
+                  backText="Let's Talk."
+                  backgroundColor="transparent"
+                  textColor="#FFFFFF"
+                  fontSize={14}
+                  paddingTop={0}
+                  paddingBottom={0}
+                  paddingLeft={0}
+                  paddingRight={0}
+                />
+                <span className="inline-block transition-transform group-hover:translate-x-1">
+                  <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
+                    <path
+                      d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z"
+                      fill="#FFFFFF"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </Stack>
+          </div>
         </Container>
       </section>
 
       {/* ── Related Posts ── */}
       {blog.relatedPosts?.length > 0 && (
-        <section className="pb-[70px] lg:pb-[120px]">
+        <section className="pb-17.5 lg:pb-30">
           <Container size={"lg"}>
-            <p className="text-center text-sm font-medium text-primary uppercase tracking-widest mb-3">
-              Keep Reading
-            </p>
-            <h2 className="max-w-[600px] text-center mx-auto font-bold text-primary headingTwo mb-12">
+            <div className="flex justify-center">
+              <span className="inline-flex items-center justify-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase mb-3">
+                Keep Reading
+              </span>
+            </div>
+            <h2 className="text-center mx-auto font-bold text-primary headingTwo mb-12">
               Related Posts
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

@@ -14,7 +14,7 @@ const socialLinks = ["Facebook", "Twitter", "LinkedIn"];
 
 export default function OurExperts() {
   return (
-    <section className="bg-bg-secondaryOne py-10 lg:py-[120px]">
+    <section className="bg-bg-secondaryOne py-10 lg:py-30">
       <Container size="lg">
         {/* ── Header Row */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8 mb-10">

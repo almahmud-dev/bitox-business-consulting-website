@@ -57,7 +57,6 @@ export default function AboutSection() {
               {/* CTA Button */}
               <div
                 className="self-start flex items-center gap-2 border border-primary text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group"
-                onClick={() => console.log("clicked")}
               >
                 <ButtonThree
                   frontText="Get started now"
