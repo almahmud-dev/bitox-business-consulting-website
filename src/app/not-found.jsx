@@ -6,7 +6,7 @@ import Button from '@/components/ui/Button'
 export default function NotFound() {
   return (
     <div
-      className='w-full mx-auto text-center py-16 md:py-24 lg:py-30 px-4'
+      className='w-full px-4 py-16 mx-auto text-center md:py-24 lg:py-30'
       style={{
         backgroundImage: `url(${error_bg.src})`,
         backgroundSize: "cover",
