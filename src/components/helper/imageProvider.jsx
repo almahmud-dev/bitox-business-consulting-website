@@ -50,6 +50,8 @@ import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
 import FooterLogo from "../../../public/images/footer_one/footer_logo.png";
 
+import contact_logo from "../../../public/images/contact/contact_logo.png";
+
 // for about us pages images
 import AboutUsBanner from "../../../public/images/aboutUs/aboutVideo.png";
 // for aboutUsVideo pages images
@@ -61,6 +63,8 @@ const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
   footerLogo: FooterLogo,
+  contact_logo: contact_logo,
+  
   featureRound: [
     { id: 1, img: FeatureRoundOne },
     { id: 2, img: FeatureRoundTwo },
