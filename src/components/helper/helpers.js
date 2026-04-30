@@ -1,4 +1,11 @@
-import { BarChart2, Bug, ChevronDown, FlaskConical, Headphones, ShieldCheck } from "lucide-react";
+import {
+  BarChart2,
+  Bug,
+  ChevronDown,
+  FlaskConical,
+  Headphones,
+  ShieldCheck,
+} from "lucide-react";
 import { FaDribbble, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
@@ -61,7 +68,13 @@ export const NAV_LINKS = [
 // Nav Components
 // =================================
 
-export function DropdownMenu({ children, isOpen, onClose, pathname, style = "rounded" }) {
+export function DropdownMenu({
+  children,
+  isOpen,
+  onClose,
+  pathname,
+  style = "rounded",
+}) {
   const base = `absolute top-full left-0 w-52 bg-white py-2 z-50 transition-all duration-200 ${
     isOpen
       ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -106,7 +119,9 @@ export function DesktopNavItem({
     ? hasActiveChild(link.children, pathname)
     : isActiveLink(link.href, pathname);
 
-  const activeClass = isActive ? "text-secondary" : "text-primary hover:text-secondary";
+  const activeClass = isActive
+    ? "text-secondary"
+    : "text-primary hover:text-secondary";
   const heightClass = height === "full" ? "h-[100px] flex items-center" : "";
 
   if (link.children) {
@@ -150,12 +165,20 @@ export function DesktopNavItem({
   );
 }
 
-export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname }) {
+export function MobileNavItem({
+  link,
+  openDropdown,
+  onToggle,
+  onClose,
+  pathname,
+}) {
   const isActive = link.children
     ? hasActiveChild(link.children, pathname)
     : isActiveLink(link.href, pathname);
 
-  const activeClass = isActive ? "text-secondary" : "text-primary hover:text-secondary";
+  const activeClass = isActive
+    ? "text-secondary"
+    : "text-primary hover:text-secondary";
 
   if (link.children) {
     const isOpen = openDropdown === link.label;
@@ -215,20 +238,21 @@ export function MobileNavItem({ link, openDropdown, onToggle, onClose, pathname 
 export const FOOTER_ONE_DATA = {
   email: "infocon@example.com",
   phone: "(+00685689696)",
-  address: "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
+  address:
+    "2400 Market Street, Suite 1200 Philadelphia, PA 19103, United States",
   copyright: "Copyright © 2026 Bitox, All Rights Reserved.",
   socials: [
     { label: "Instagram", href: "#" },
-    { label: "Behance",   href: "#" },
-    { label: "Dribbble",  href: "#" },
-    { label: "LinkedIn",  href: "#" },
-    { label: "Facebook",  href: "#" },
-    { label: "You Tube",  href: "#" },
+    { label: "Behance", href: "#" },
+    { label: "Dribbble", href: "#" },
+    { label: "LinkedIn", href: "#" },
+    { label: "Facebook", href: "#" },
+    { label: "You Tube", href: "#" },
   ],
   bottomLinks: [
-    { label: "Privacy Policy",       href: "/privacy-policy" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms and Conditions", href: "/terms" },
-    { label: "Support",              href: "/support" },
+    { label: "Support", href: "/support" },
   ],
 };
 
@@ -237,13 +261,48 @@ export const FOOTER_ONE_DATA = {
 //==============================================
 
 export const CLIENTS = [
-  { id: "01", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client1.png" },
-  { id: "02", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client2.png" },
-  { id: "03", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client3.png" },
-  { id: "04", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client4.png" },
-  { id: "05", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client5.png" },
-  { id: "06", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client6.png" },
-  { id: "07", name: "Loreipsum", description: "Lorem ipsum dolor sit amet, consectetur.", logo: "/images/home2_Client/client7.png" },
+  {
+    id: "01",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client1.png",
+  },
+  {
+    id: "02",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client2.png",
+  },
+  {
+    id: "03",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client3.png",
+  },
+  {
+    id: "04",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client4.png",
+  },
+  {
+    id: "05",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client5.png",
+  },
+  {
+    id: "06",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client6.png",
+  },
+  {
+    id: "07",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client7.png",
+  },
 ];
 
 //===================================
@@ -251,10 +310,30 @@ export const CLIENTS = [
 //===================================
 
 export const features = [
-  { number: "01.", title: "Information", description: "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success." },
-  { number: "02.", title: "Planning",    description: "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success." },
-  { number: "03.", title: "Strategy",   description: "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success." },
-  { number: "04.", title: "Analysis",   description: "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success." },
+  {
+    number: "01.",
+    title: "Information",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    number: "02.",
+    title: "Planning",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    number: "03.",
+    title: "Strategy",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
+  {
+    number: "04.",
+    title: "Analysis",
+    description:
+      "Enterprise partnerships, built on clarity and craft, are the foundation of sustainable and long-term success.",
+  },
 ];
 
 
@@ -318,16 +397,16 @@ export const serviceLinks = [
 export const legalLinks = ["Privacy Policy", "Terms and Conditions", "Support"];
 
 export const socialLinks = [
-  { icon: FaFacebook,  href: "#" },
-  { icon: FaXTwitter,  href: "#" },
+  { icon: FaFacebook, href: "#" },
+  { icon: FaXTwitter, href: "#" },
   { icon: FaInstagram, href: "#" },
-  { icon: FaDribbble,  href: "#" },
+  { icon: FaDribbble, href: "#" },
 ];
 
-export const MARQUEE_TEXT         = "BUSINESS · CONSULTING · ";
+export const MARQUEE_TEXT = "BUSINESS · CONSULTING · ";
 export const MARQUEE_REPEAT_COUNT = 6;
-export const BUSINESS_HOURS       = "Saturday – Thursday : 8:30 am – 10:45 pm";
-export const COPYRIGHT_TEXT       = "Copyright © 2026 Bitox. All Rights Reserved.";
+export const BUSINESS_HOURS = "Saturday – Thursday : 8:30 am – 10:45 pm";
+export const COPYRIGHT_TEXT = "Copyright © 2026 Bitox. All Rights Reserved.";
 
 // ─── Reusable Arrow SVG
 export const ArrowIcon = ({ color = "#02090F" }) => (
@@ -536,6 +615,14 @@ export const services = [
     number: "03",
     category: "Tax & Vat",
     title: "Vat & Tax Consultancy",
+    description:
+      "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
+    features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
+  },
+  {
+    number: "04",
+    category: " Market Analysis",
+    title: "Competitive Analysis",
     description:
       "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
     features: ["Integrity & Support", "Data Entry", "Growth forecasting"],

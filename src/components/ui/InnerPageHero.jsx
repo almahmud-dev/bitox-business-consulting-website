@@ -8,6 +8,7 @@ const InnerPageHero = ({
   title = "Empowering Growth & Success",
   subtitle = "A reputed consultant agency we've spent 13+ year's",
   navVariant = "homeOne",
+  titleWidth,
 }) => {
   const { commonHeroImages } = allImages;
 
@@ -50,15 +51,19 @@ const InnerPageHero = ({
             1024px → top-[150px], left-1/2, translate-x-[-80%],  max-w-[600px]
           */}
           <h2
-            className="
-              headingTwo font-bold text-bg-secondaryTwo
+            className={`
+              
+               headingTwo font-bold text-bg-secondaryTwo
               absolute
               top-[60px]   left-1/2 -translate-x-1/2 max-w-[280px]  text-center
               xs:top-[80px]  xs:max-w-[340px]
               sm:top-[100px] sm:-translate-x-[60%]  sm:max-w-[420px] sm:text-left
               md:top-[120px] md:-translate-x-[70%]  md:max-w-[500px]
               lg:top-[150px] lg:-translate-x-[80%]  lg:max-w-[600px]
-            "
+
+              ${titleWidth}
+
+              `}
           >
             {title}
           </h2>

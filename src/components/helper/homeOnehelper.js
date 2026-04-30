@@ -222,3 +222,75 @@ export const blogData = [
     description: "Improving operational efficiency for higher profitability",
   },
 ];
+// ===============================================
+// BlogCardPage - BlogCardPage Section Array Object
+// ===============================================
+// এই allBlogData টা homeOnehelper.js এর একদম নিচে add করো
+// blogData তে কোনো change নেই
+
+export const allBlogData = [
+  {
+    slug: "craft-a-fulfilling-career",
+    batchName: "Business",
+    image: "/images/home01/blog/blog1.png",
+    itmeText: "6 min read",
+    dateText: "Mar 12, 2026",
+    description:
+      "Craft a fulfilling career and enjoy the comfort you truly deserve",
+    content:
+      "Building a meaningful career takes more than just landing a job. It requires intentional planning, self-awareness, and a willingness to adapt. In today's competitive market, professionals who invest in their personal development and continuously refine their skills are the ones who thrive. From setting clear goals to embracing lifelong learning, every step you take brings you closer to a career that not only pays the bills but also brings genuine satisfaction and purpose to your everyday life.",
+  },
+  {
+    slug: "building-a-profitable-business-model",
+    batchName: "Business",
+    image: "/images/home01/blog/blog2.png",
+    itmeText: "6 min read",
+    dateText: "Mar 12, 2026",
+    description: "Building a profitable and sustainable business model",
+    content:
+      "A sustainable business model is the backbone of any successful company. It goes beyond simply generating revenue — it's about creating long-term value for customers, employees, and stakeholders. By understanding your target market deeply, optimizing your cost structure, and diversifying revenue streams, you can build a business that remains resilient through economic cycles and continues to grow year after year with confidence.",
+  },
+  {
+    slug: "improving-operational-efficiency",
+    batchName: "Business",
+    image: "/images/home01/blog/blog3.png",
+    itmeText: "6 min read",
+    dateText: "Mar 12, 2026",
+    description: "Improving operational efficiency for higher profitability",
+    content:
+      "Operational efficiency is the key driver behind higher profit margins and faster growth. Companies that streamline their processes, eliminate bottlenecks, and empower their teams with the right tools consistently outperform their competitors. Whether it's automating repetitive tasks, refining supply chain management, or fostering a culture of continuous improvement, the path to higher profitability often runs directly through operational excellence.",
+  },
+  {
+    slug: "strategic-leadership-in-modern-business",
+    batchName: "Business",
+    image: "/images/home01/blog/blog4.png",
+    itmeText: "6 min read",
+    dateText: "Mar 15, 2026",
+    description:
+      "Strategic leadership principles that drive modern business growth",
+    content:
+      "Effective leadership in today's business landscape requires more than authority — it demands vision, empathy, and strategic thinking. Great leaders align their teams around a shared purpose, foster psychological safety, and make data-driven decisions while keeping the human element at the forefront. By developing these skills, leaders can navigate uncertainty, inspire innovation, and build organizations that are both high-performing and resilient.",
+  },
+  {
+    slug: "digital-transformation-for-businesses",
+    batchName: "Business",
+    image: "/images/home01/blog/blog5.png",
+    itmeText: "6 min read",
+    dateText: "Mar 15, 2026",
+    description:
+      "Digital transformation strategies every business needs to adopt",
+    content:
+      "Digital transformation is no longer optional — it's a survival imperative. Businesses that embrace technology to reimagine their operations, customer experiences, and business models are gaining significant competitive advantages. From cloud computing and AI-powered analytics to digital marketing and e-commerce, the tools are available for businesses of all sizes to transform and thrive in the digital age.",
+  },
+  {
+    slug: "financial-planning-for-long-term-success",
+    batchName: "Business",
+    image: "/images/home01/blog/blog6.png",
+    itmeText: "6 min read",
+    dateText: "Mar 15, 2026",
+    description:
+      "Financial planning strategies that secure your long-term success",
+    content:
+      "Sound financial planning is the foundation of lasting business success. Without a clear financial roadmap, even the most innovative companies can find themselves struggling with cash flow, unexpected expenses, or missed growth opportunities. By establishing robust budgeting practices, maintaining healthy reserves, and investing strategically in growth initiatives, businesses can secure their financial future and position themselves to capitalize on opportunities as they arise.",
+  },
+];

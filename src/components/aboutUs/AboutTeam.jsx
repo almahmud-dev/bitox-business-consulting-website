@@ -1,9 +1,6 @@
-import React from 'react'
-
+import OurExperts from "@/components/homeTwo/OurExperts";
 const AboutTeam = () => {
-  return (
-    <div>AboutTeam</div>
-  )
-}
+  return <OurExperts />;
+};
 
-export default AboutTeam
+export default AboutTeam;
