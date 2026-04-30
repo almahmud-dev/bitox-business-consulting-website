@@ -49,10 +49,10 @@ export default function FooterOne() {
           <div className="flex flex-col gap-3 w-full lg:w-[420px] xl:w-[500px] 2xl:w-[580px] 3xl:w-[654px] lg:mt-10 xl:mt-12 3xl:mt-16">
 
             {/* Email + Phone */}
-            <div className="flex flex-col gap-3 sm:flex-row">
+            <div className="flex w-full gap-3">
               
-              <a  href={`mailto:${FOOTER_ONE_DATA.email}`}
-                className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md
+              <a href={`mailto:${FOOTER_ONE_DATA.email}`}
+                className="w-1/2 border border-[rgba(255,255,255,0.1)] rounded-md
                   text-sm md:text-base lg:text-lg 3xl:text-xl
                   text-white text-center transition-all duration-200 hover:bg-white/10 leading-7.5
                   py-3 px-4 sm:py-4 sm:px-5 md:py-5 md:px-6 3xl:py-[25px] 3xl:px-[60px]"
@@ -60,8 +60,8 @@ export default function FooterOne() {
                 {FOOTER_ONE_DATA.email}
               </a>
               
-              <a  href={`tel:${FOOTER_ONE_DATA.phone}`}
-                className="flex-1 border border-[rgba(255,255,255,0.1)] rounded-md
+              <a href={`tel:${FOOTER_ONE_DATA.phone}`}
+                className="w-1/2 border border-[rgba(255,255,255,0.1)] rounded-md
                   text-sm md:text-base lg:text-lg 3xl:text-xl
                   text-white text-center transition-all duration-200 hover:bg-white/10 leading-7.5
                   py-3 px-4 sm:py-4 sm:px-5 md:py-5 md:px-6 3xl:py-[25px] 3xl:px-[60px]"
@@ -85,8 +85,7 @@ export default function FooterOne() {
         {/* ── Social Links */}
         <div className="py-10 sm:py-14 md:py-16 lg:py-18 3xl:py-22.5 flex flex-wrap items-center justify-center gap-3 sm:gap-4 3xl:gap-5 border-b border-[rgba(255,255,255,0.1)]">
           {FOOTER_ONE_DATA.socials.map((social) => (
-            
-             <a key={social.label}
+            <a key={social.label}
               href={social.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -94,7 +93,7 @@ export default function FooterOne() {
                 text-sm md:text-[15px] 3xl:text-[16px]
                 py-2 px-5 sm:py-2.5 sm:px-7 3xl:py-2.5
                 w-full sm:w-auto sm:min-w-[160px] md:min-w-[200px] lg:min-w-[220px] 3xl:w-[278px]
-                text-white hover:text-white hover:border-white/50 hover:bg-secondary hover:border-none  transition-all duration-200 leading-7"
+                text-white hover:text-white hover:border-white/50 hover:bg-secondary hover:border-none transition-all duration-200 leading-7"
             >
               {social.label}
             </a>
