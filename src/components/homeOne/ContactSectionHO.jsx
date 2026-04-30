@@ -2,7 +2,7 @@ import React from "react";
 import Container from "../ui/Container";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
-import ContactForm from "../ui/ContactForm";
+import ContactFormHO from "../ui/ContactFormHO";
 
 const ContactSectionHO = () => {
   const { contactImage } = allImages;
@@ -17,7 +17,7 @@ const ContactSectionHO = () => {
             alt="contact-page-images"
           />
           <div className="absolute top-1/2 translate-y-[-50%] left-[35px]">
-            <ContactForm />
+            <ContactFormHO />
           </div>
         </div>
         <div className=" block lg:hidden  r">
@@ -29,7 +29,7 @@ const ContactSectionHO = () => {
             alt="contact-page-images"
           />
           <div className="mt-10">
-            <ContactForm />
+            <ContactFormHO />
           </div>
         </div>
       </Container>

@@ -2,10 +2,10 @@
 import contact_bg from "../../../public/images/contact/contact-bg.png";
 import contact_logo from "../../../public/images/contact/contact_logo.png";
 import { useState } from "react";
-import Button from "./Button";
 import Image from "next/image";
 
 import { CONTACT_INPUTS, CONTACT_INFO } from "@/components/helper/helpers";
+import Button from "../ui/Button";
 
 const ContactForm = () => {
   const [form, setForm] = useState({
