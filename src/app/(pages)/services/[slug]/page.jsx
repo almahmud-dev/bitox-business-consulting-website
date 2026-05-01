@@ -1,9 +1,12 @@
-import React from 'react'
+import InnerPageHero from "@/components/ui/InnerPageHero";
+import React from "react";
 
 const ServicesDetails = () => {
   return (
-    <div>ServicesDetails</div>
-  )
-}
+    <>
+      <InnerPageHero />
+    </>
+  );
+};
 
-export default ServicesDetails
+export default ServicesDetails;
