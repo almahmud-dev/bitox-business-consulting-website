@@ -1,6 +1,6 @@
     
 
-    const sizeMap = {
+const sizeMap = {
   full: "max-w-full",
   "2xl": "max-w-[1920px]",
   xl: "max-w-[1800px]",

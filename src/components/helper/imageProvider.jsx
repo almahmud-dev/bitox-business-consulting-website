@@ -59,6 +59,10 @@ import AboutUsVideo from "../../../public/images/aboutVideo/aboutvideo-Image.png
 // for aboutUsVideo pages images
 import AboutTeamBorder from "../../../public/images/aboutTeam/team-page-border.png";
 
+ // service details pages imgage
+ import ServivesDetailsIcon from "../../../public/images/service/service-details.png"
+
+
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
@@ -203,6 +207,8 @@ const allImages = {
     { id: 5, img: Home2OurExperts5 },
     { id: 6, img: Home2OurExperts6 },
   ],
+  // service details pages imgage
+  servivesDetailsIcon : ServivesDetailsIcon,
 };
 
 export default allImages;
