@@ -12,7 +12,7 @@ export default async function Layout({ children }) {
 
     
     const isConsulting = getLayoutPath === "consulting-agency";
-    console.log(getLayoutPath);
+   
     
   return (
     <>

@@ -182,17 +182,61 @@ const projectDetails = {
   },
 };
 
+// ✅ CHANGE 1: Static fallback data — slug না থাকলে এটা use হবে
+const fallbackDetail = {
+  service: "Digital Solutions",
+  client: "Our Client",
+  date: "2025",
+  location: "Global",
+  intro:
+    "We craft innovative digital solutions tailored to your business needs. Our team works closely with clients to deliver exceptional, measurable results.",
+  process: {
+    title: "Our Process",
+    description:
+      "We follow a proven, structured process to ensure every project is delivered on time and exceeds client expectations.",
+    steps: [
+      { title: "Discovery & Research",  description: "Understanding your goals, audience, and competitive landscape." },
+      { title: "Strategy & Planning",   description: "Building a clear roadmap aligned with your business objectives." },
+      { title: "Design & Development",  description: "Crafting solutions with precision and attention to detail." },
+      { title: "Launch & Optimise",     description: "Deploying and continuously improving for the best results." },
+    ],
+  },
+  solution: {
+    title: "Our Solution",
+    description:
+      "We deliver tailored strategies and solutions designed to solve real problems and drive sustainable growth for your business.",
+  },
+  results: {
+    title: "Measurable Results",
+    description:
+      "Our work consistently delivers strong, trackable outcomes for every client we partner with.",
+    points: [
+      "Increased brand visibility and market reach.",
+      "Improved user engagement and conversion rates.",
+      "Sustainable long-term growth strategies.",
+    ],
+  },
+};
+
 const ProjectsPortfolioDetails = ({ slug }) => {
   const { projectImages } = allImages;
 
-  // Flatten nested array → single array
   const allProjects = projectImages.flat();
-
-  // Match by slug
   const currentProject = allProjects.find((p) => p.slug === slug);
   const detail = projectDetails[slug];
 
-  // Second hero image — another project from the same row
+  // ✅ CHANGE 2: slug থেকে title বানানো — "my-project" → "My Project"
+  const slugTitle = slug
+    ? slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())
+    : "Project Details";
+
+  // ✅ CHANGE 3: detail না থাকলে fallbackDetail use করো, ?? operator দিয়ে
+  const safeDetail = detail ?? { ...fallbackDetail, title: slugTitle };
+
+  // ✅ CHANGE 4: currentProject না থাকলে projectImages[0][0] এর image fallback হিসেবে use করো
+  const fallbackImg = projectImages[0][0].img;
+  const safeCurrentImg = currentProject?.img ?? fallbackImg;
+
   const secondaryImg = (() => {
     for (const row of projectImages) {
       const found = row.find((p) => p.slug === slug);
@@ -201,16 +245,12 @@ const ProjectsPortfolioDetails = ({ slug }) => {
         return other ? other.img : found.img;
       }
     }
-    return currentProject?.img;
+    return safeCurrentImg;
   })();
 
-  if (!currentProject || !detail) {
-    return (
-      <section className="py-20 text-center">
-        <p className="text-xl font-semibold text-primary">Project not found.</p>
-      </section>
-    );
-  }
+  // ✅ CHANGE 5: এই if block টা সম্পূর্ণ remove করা হয়েছে
+  // আগে: !currentProject || !detail হলে "Project not found" দেখাত
+  // এখন: সবসময় page render হবে, unknown slug এও crash করবে না
 
   return (
     <section className="py-17.5 md:py-20 bg-bg-secondaryTwo">
@@ -219,41 +259,43 @@ const ProjectsPortfolioDetails = ({ slug }) => {
         {/* Hero Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
           <div className="relative w-full h-[260px] md:h-[360px] rounded-sm overflow-hidden">
-            <Image src={currentProject.img} fill alt={currentProject.title} className="object-cover" />
+            {/* ✅ CHANGE 6: currentProject.img → safeCurrentImg (optional chaining crash fix) */}
+            <Image src={safeCurrentImg} fill alt={safeDetail.title} className="object-cover" />
           </div>
           <div className="relative w-full h-[260px] md:h-[360px] rounded-sm overflow-hidden">
-            <Image src={secondaryImg} fill alt={currentProject.title} className="object-cover" />
+            <Image src={secondaryImg} fill alt={safeDetail.title} className="object-cover" />
           </div>
         </div>
 
         {/* Meta Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-5 border-t border-b border-black/10 py-6 mb-12">
-          <MetaItem label="Service" value={detail.service} />
-          <MetaItem label="Client" value={detail.client} />
-          <MetaItem label="Date" value={detail.date} />
-          <MetaItem label="Location" value={detail.location} />
+          {/* ✅ CHANGE 7: detail → safeDetail সব জায়গায় */}
+          <MetaItem label="Service"  value={safeDetail.service}  />
+          <MetaItem label="Client"   value={safeDetail.client}   />
+          <MetaItem label="Date"     value={safeDetail.date}     />
+          <MetaItem label="Location" value={safeDetail.location} />
         </div>
 
         {/* Intro */}
         <div className="mb-14">
           <h2 className="headingTwo text-primary font-bold mb-6 max-w-[820px]">
-            {detail.title}
+            {safeDetail.title}
           </h2>
           <p className="text-base text-primary/70 leading-relaxed max-w-[900px]">
-            {detail.intro}
+            {safeDetail.intro}
           </p>
         </div>
 
         {/* Process */}
         <div className="mb-14">
           <h3 className="headingThree text-primary font-bold mb-4">
-            {detail.process.title}
+            {safeDetail.process.title}
           </h3>
           <p className="text-base text-primary/70 leading-relaxed mb-8 max-w-[900px]">
-            {detail.process.description}
+            {safeDetail.process.description}
           </p>
           <div className="space-y-6">
-            {detail.process.steps.map((step, i) => (
+            {safeDetail.process.steps.map((step, i) => (
               <div key={i} className="pl-5 border-l-2 border-black/10">
                 <h4 className="text-base font-bold text-primary mb-1">{step.title}</h4>
                 <p className="text-sm text-primary/70 leading-relaxed">{step.description}</p>
@@ -265,23 +307,23 @@ const ProjectsPortfolioDetails = ({ slug }) => {
         {/* Solution */}
         <div className="mb-14">
           <h3 className="headingThree text-primary font-bold mb-4">
-            {detail.solution.title}
+            {safeDetail.solution.title}
           </h3>
           <p className="text-base text-primary/70 leading-relaxed max-w-[900px]">
-            {detail.solution.description}
+            {safeDetail.solution.description}
           </p>
         </div>
 
         {/* Results */}
         <div>
           <h3 className="headingThree text-primary font-bold mb-4">
-            {detail.results.title}
+            {safeDetail.results.title}
           </h3>
           <p className="text-base text-primary/70 leading-relaxed mb-6 max-w-[900px]">
-            {detail.results.description}
+            {safeDetail.results.description}
           </p>
           <ul className="space-y-3">
-            {detail.results.points.map((point, i) => (
+            {safeDetail.results.points.map((point, i) => (
               <li key={i} className="flex items-start gap-3 text-sm text-primary/80">
                 <span className="mt-1.5 h-2 w-2 min-w-[8px] rounded-full bg-primary inline-block" />
                 {point}
