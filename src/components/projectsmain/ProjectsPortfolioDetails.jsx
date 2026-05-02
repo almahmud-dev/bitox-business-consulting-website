@@ -44,7 +44,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
       <Container size={"lg"}>
         {/* Hero Images */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-7.5 mb-7.5">
-          <div className="relative w-full h-[260px] lg:h-[600px] rounded-md overflow-hidden">
+          <div className="relative w-full h-65 lg:h-150 rounded-md overflow-hidden">
             {/* CHANGE 6: currentProject.img → safeCurrentImg (optional chaining crash fix) */}
             <Image
               src={safeCurrentImg}
@@ -53,7 +53,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
               className="object-cover"
             />
           </div>
-          <div className="relative w-full h-[260px] lg:h-[600px] rounded-md overflow-hidden">
+          <div className="relative w-full h-65 lg:h-150 rounded-md overflow-hidden">
             <Image
               src={secondaryImg}
               fill
@@ -64,7 +64,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
         </div>
 
         {/* Meta Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-20 xl:gap-[150px] bg-white border-black/10 py-7.5 px-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-20 xl:gap-37.5 bg-white border-black/10 py-7.5 px-8 mb-12">
           {/* CHANGE 7: detail → safeDetail sob jaigai */}
           <MetaItem label="Service" value={safeDetail.service} />
           <MetaItem label="Client" value={safeDetail.client} />
@@ -75,11 +75,11 @@ const ProjectsPortfolioDetails = ({ slug }) => {
       <Container size={"md"}>
         {/* Intro */}
         <div className="mb-14">
-          <h2 className="headingFive text-primary font-bold pb-7.5 underline max-w-[820px]">
+          <h2 className="headingFive text-primary font-bold pb-7.5 underline max-w-205">
             {safeDetail.title}
           </h2>
-          <p className="para-lg text-tarnary pb-7.5 ">{safeDetail.intro}</p>
-          <p className="para-lg text-tarnary">{safeDetail.introtwo}</p>
+          <p className="para-lg text-tarnary pb-7.5 text-justify">{safeDetail.intro}</p>
+          <p className="para-lg text-tarnary text-justify">{safeDetail.introtwo}</p>
         </div>
 
         {/* Process */}
@@ -87,7 +87,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
           <h3 className="headingFive text-primary font-bold underline pb-4">
             {safeDetail.process.title}
           </h3>
-          <p className="para-lg text-tarnary pb-7.5">
+          <p className="para-lg text-tarnary pb-7.5 text-justify">
             {safeDetail.process.description}
           </p>
           <div className="space-y-6">
@@ -97,7 +97,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
                   <span className="w-2 h-2 rounded-full bg-primary mr-2 inline-block align-middle" />
                   {step.title}
                 </h4>
-                <p className="para-lg text-tarnary">{step.description}</p>
+                <p className="para-lg text-tarnary text-justify">{step.description}</p>
               </div>
             ))}
           </div>
@@ -108,7 +108,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
           <h3 className="headingFive text-primary font-bold underline pb-7.5">
             {safeDetail.solution.title}
           </h3>
-          <p className="para-lg text-tarnary">
+          <p className="para-lg text-tarnary text-justify">
             {safeDetail.solution.description}
           </p>
         </div>
@@ -118,12 +118,12 @@ const ProjectsPortfolioDetails = ({ slug }) => {
           <h3 className="headingFive text-primary font-bold pb-4">
             {safeDetail.results.title}
           </h3>
-          <p className="para-lg text-tarnary pb-6">
+          <p className="para-lg text-tarnary pb-6 text-justify">
             {safeDetail.results.description}
           </p>
           <ul className="space-y-5">
             {safeDetail.results.points.map((point, i) => (
-              <li key={i} className="para-lg text-tarnary flex items-start gap-x-5 max-w-[710px]">
+              <li key={i} className="para-lg text-tarnary flex items-start gap-x-5 max-w-177.5">
                 <span className="mt-0.75 shrink-0 bg-[#FFD8C5] w-8 h-8 flex items-center justify-center rounded-[90px] p-2">
                   <svg
                     width="16"
