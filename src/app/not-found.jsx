@@ -2,6 +2,7 @@ import error_bg from "../../public/images/404/404_bg.png";
 import error_img from "../../public/images/404/error_text.png";
 import Image from "next/image";
 import ButtonThree from "@/components/ui/ButtonThree";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -75,14 +76,16 @@ export default function NotFound() {
         </p>
 
         <div className="flex justify-center w-full">
-          <div className="flex items-center gap-2 border border-primary text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group">
+          <Link
+            href="/"
+            className="flex items-center gap-2 border border-primary text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group"
+          >
             <ButtonThree
               frontText="Back to home page"
               backText="Let's Talk."
               backgroundColor="transparent"
               textColor="#02090F"
               fontSize={14}
-              href="/"
               paddingTop={0}
               paddingBottom={0}
               paddingLeft={0}
@@ -97,7 +100,7 @@ export default function NotFound() {
                 />
               </svg>
             </span>
-          </div>
+          </Link>
         </div>
       </div>
     </div>
