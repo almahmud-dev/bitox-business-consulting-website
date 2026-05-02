@@ -20,7 +20,7 @@ const Home1 = () => {
       <FeaturesRound />
       <AboutSectionHO />
       <BrandLogos />
-      <sSection />
+      <ServicesSection />
       <VideoShowcase />
       <TestimonialsSection />
       <PortfolioSection />
