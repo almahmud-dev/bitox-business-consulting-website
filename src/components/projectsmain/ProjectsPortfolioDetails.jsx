@@ -40,11 +40,11 @@ const ProjectsPortfolioDetails = ({ slug }) => {
   // After: Alltime page render hobe, unknown slug ao crash korte hobe
 
   return (
-    <section className="py-17.5 md:py-20 bg-bg-secondaryTwo">
+    <section className="py-15 lg:py-30 bg-bg-secondaryOne">
       <Container size={"lg"}>
         {/* Hero Images */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-10">
-          <div className="relative w-full h-[260px] md:h-[360px] rounded-sm overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7.5 mb-7.5">
+          <div className="relative w-full h-[260px] lg:h-[600px] rounded-md overflow-hidden">
             {/* CHANGE 6: currentProject.img → safeCurrentImg (optional chaining crash fix) */}
             <Image
               src={safeCurrentImg}
@@ -53,7 +53,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
               className="object-cover"
             />
           </div>
-          <div className="relative w-full h-[260px] md:h-[360px] rounded-sm overflow-hidden">
+          <div className="relative w-full h-[260px] lg:h-[600px] rounded-md overflow-hidden">
             <Image
               src={secondaryImg}
               fill
@@ -64,14 +64,15 @@ const ProjectsPortfolioDetails = ({ slug }) => {
         </div>
 
         {/* Meta Bar */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5 border-t border-b border-black/10 py-6 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-20 xl:gap-[150px] bg-white border-black/10 py-7.5 px-8 mb-12">
           {/* CHANGE 7: detail → safeDetail sob jaigai */}
           <MetaItem label="Service" value={safeDetail.service} />
           <MetaItem label="Client" value={safeDetail.client} />
           <MetaItem label="Date" value={safeDetail.date} />
           <MetaItem label="Location" value={safeDetail.location} />
         </div>
-
+        </Container>
+        <Container size={"md"}>
         {/* Intro */}
         <div className="mb-14">
           <h2 className="headingTwo text-primary font-bold mb-6 max-w-[820px]">
