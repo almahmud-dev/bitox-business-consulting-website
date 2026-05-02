@@ -11,18 +11,6 @@ export const aboutStatsTwo = [
     title: "Growth-Focused",
     description: "Growth-focused innovative solutions.",
   },
-  {
-    id: 3,
-    value: "12+",
-    title: "Projects",
-    description: "Successfully delivered projects.",
-  },
-  {
-    id: 4,
-    value: "5+",
-    title: "Years Experience",
-    description: "Years of professional experience.",
-  },
 ];
 
 export const aboutStatsThree = [
