@@ -25,7 +25,7 @@ const ContactForm = () => {
             </div>
 
             {/* Form Card */}
-            <form className="w-full lg:max-w-[1067px] bg-white rounded-2xl p-6 md:p-10 lg:p-15">
+            <form className="w-full lg:max-w-266.75 bg-white rounded-2xl p-6 md:p-10 lg:p-15">
               <div className="
                   grid grid-cols-1 gap-5 mb-5
                   md:grid-cols-2 md:gap-6 md:mb-6
