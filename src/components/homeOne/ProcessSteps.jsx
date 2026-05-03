@@ -87,7 +87,7 @@ const ProcessSteps = () => {
                   {/* Gradient Line — hidden on mobile */}
                   <div className="hidden lg:block">
                     <div className="relative flex items-center">
-                      <div className="w-[533px] h-[2px] bg-gradient-to-l from-white/90 via-white/20 to-transparent" />
+                      <div className="  lg:w-[clamp(100px,17vw,400px)] xl:w-[clamp(200px,25vw,533px)] 2xl:w-[553px] h-[2px] bg-gradient-to-l from-white/90 via-white/20 to-transparent" />
                       <div className="absolute right-0 w-[10px] h-[10px] rounded-full bg-white" />
                     </div>
                   </div>
