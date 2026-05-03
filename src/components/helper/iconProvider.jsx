@@ -4,6 +4,8 @@ import { FiPlus } from "react-icons/fi";
 import { RxTriangleRight } from "react-icons/rx";
 import { RxTriangleLeft } from "react-icons/rx";
 import { GiPlainSquare } from "react-icons/gi";
+import { GoDotFill } from "react-icons/go";
+
 
 export const allIcons = {
   star: <IoStarSharp />,
@@ -12,4 +14,5 @@ export const allIcons = {
   triangleLeft: <RxTriangleLeft />,
   triangleRight: <RxTriangleRight />,
   square: <GiPlainSquare />,
+  dot: <GoDotFill />,
 };
