@@ -9,7 +9,7 @@ const BlogCard = ({ batchName, image, itmeText, dateText, description }) => {
   return (
     <article className="    w-full">
       <div className="relative !h-[250px]  sm:!h-[340px] group  !w-full group rounded-[6px] overflow-hidden">
-        <span className="absolute text-xl px-[13px] py-[10px] rounded-[4px] text-primary bg-bg-secondaryTwo z-10 right-5  bottom-[-50px] z-10  duration-700 ease-in-out group-hover:bottom-5 ">
+        <span className="absolute text-xl px-[13px] py-[10px] rounded-[4px] text-primary bg-bg-secondaryTwo z-10 right-5 bottom-5  md:bottom-[-50px] z-10  duration-700 ease-in-out group-hover:bottom-5 ">
           {chevronRight}
         </span>
         <Image
