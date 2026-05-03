@@ -12,7 +12,7 @@ const ServiceIntroSection = () => {
     <section className="py-[60px] sm:py-[80px] lg:py-[120px]">
       <Container size={"lg"}>
         <div>
-          <Responsive.Grid gap="30px sm:40px lg:58px" cols={{ base: 1, lg: 2 }}>
+          <Responsive.Grid gap="xl" cols={{ base: 1, lg: 2 }}>
             <div className="">
               <h3 className="headingThree text-primary font-bold underline">
                 {" "}

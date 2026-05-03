@@ -12,7 +12,7 @@ const ProjectsPage = () => {
   const extraImages = projectImages[2] ?? [];
 
   return (
-    <main>
+   
       <section className="py-17.5 md:py-30 bg-bg-secondaryOne">
         <Container size={"lg"}>
           <div className="flex justify-center">
@@ -79,8 +79,9 @@ const ProjectsPage = () => {
             See all case studies
           </button>
         </Container>
+        
       </section>
-    </main>
+   
   );
 };
 
