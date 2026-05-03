@@ -17,7 +17,7 @@ const AboutOverview = () => {
   const { aboutUsBanner } = allImages;
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-[120px] bg-bg-secondaryOne  ">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-[120px]   ">
       <Container size={"lg"}>
         <div className="">
           <Responsive.Flex>
