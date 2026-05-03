@@ -1,10 +1,11 @@
 import { allIcons } from "@/components/helper/iconProvider";
 import { servicesDetailProcessSteps } from "@/components/helper/serviceDetailsHelpers";
 import Container from "@/components/ui/Container";
+import Responsive from "@/components/ui/Responsive";
 import React from "react";
 
 const ServiceDescription = () => {
-  const { triangleLeft, triangleRight, dot } = allIcons;
+  const { triangleLeft, triangleRight, dot,target } = allIcons;
   return (
     <section>
       <Container size="lg">
@@ -29,7 +30,7 @@ const ServiceDescription = () => {
             long-term ambitions.
           </p>
         </div>
-        <div className="mt-[60px]">
+        <div className="mt-[60px] hidden lg:block">
           <div className="pb-[90px] relative ">
             <div className="absolute top-[50px] -translate-y-1/2 w-full h-[1px] bg-[#02090f27]">
               <span className="inline-block text-xl text-[#02090f27] absolute top-[-9.5px] left-[-10px]">
@@ -53,7 +54,7 @@ const ServiceDescription = () => {
                       {dot}
                     </span>
                     <span
-                      className={`absolute    w-[1px] bg-[#02090f27] top-full   ${s.id % 2 === 0 ? "h-[130px]" : "h-[70px]"}`}
+                      className={`absolute    w-[1px] bg-[#02090f27] top-full   ${s.id % 2 === 0 ? "h-[100px] xl:h-[130px]" : "h-[70px]"}`}
                     >
                       <span className="absolute  text-[#02090f27] bottom-[-9px] left-[-7.5px] rotate-[-90deg]">
                         {triangleLeft}
@@ -65,7 +66,7 @@ const ServiceDescription = () => {
             </div>
           </div>
 
-          <div className="h-[342px]  flex gap-[60px]">
+          <div className="h-[342px]  flex  gap-[20px] relative z-10 xl:gap-[60px]">
             {servicesDetailProcessSteps.map((step) => (
               <div
                 key={step.id}
@@ -79,6 +80,26 @@ const ServiceDescription = () => {
                 </p>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="mt-[30px] md:mt-[50px] block  lg:hidden">
+          <div className="">
+            <Responsive.Grid cols={{base:1, sm:2}} >
+              {servicesDetailProcessSteps.map((step) => (
+                <div
+                  key={step.id}
+                  className="  group bg-bg-secondaryTwo h-fit  max-w-[355px] px-[38px] py-[30px] even:self-end space-y-[15px] rounded-[10px]"
+                >
+                  <p className="flex gap-3 items-center text-base font-medium text-primary "> <span className="!text-xl text-secondary">{target} </span> {step.step}</p>
+                  <h3 className=" para-TwoXl font-bold text-primary">
+                    {step.title}
+                  </h3>
+                  <p className=" text-tarnary font-normal para-lg">
+                    {step.description}
+                  </p>
+                </div>
+              ))}
+            </Responsive.Grid>
           </div>
         </div>
       </Container>

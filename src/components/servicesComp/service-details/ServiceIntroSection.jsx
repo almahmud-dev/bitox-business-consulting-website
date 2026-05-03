@@ -54,7 +54,7 @@ const ServiceIntroSection = () => {
               </div>
             </div>
             <div>
-              <div className="relative w-full h-[260px] sm:h-[360px] md:h-[460px] lg:h-full">
+              <div className="relative w-full h-[260px] sm:h-[360px] md:h-[460px] lg:h-full mt-7 md:mt-9 lg:mt-0">
                 <Image
                   src={home2Section[1].img}
                   alt="ServiceIntroSection-right-part-images"
