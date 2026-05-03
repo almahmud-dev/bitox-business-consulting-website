@@ -7,7 +7,7 @@ import React from "react";
 const ServicesDetails = () => {
   return (
     <>
-      <InnerPageHero />
+      <InnerPageHero title="Trusted High Quality Services" titleWidth={"!w-[300px] sm:!w-auto"} />
       <ServiceIntroSection />
       <ServiceDescription />
       <ServiceImage />

@@ -57,7 +57,7 @@ const InnerPageHero = ({
               
                headingTwo font-bold text-bg-secondaryTwo
               absolute
-              top-[60px]   left-1/2 -translate-x-1/2 max-w-[280px]  text-center
+              top-[60px]   left-1/2 -translate-x-1/2 max-w-[280px]  md:text-center
               xs:top-[80px]  xs:max-w-[340px]
               sm:top-[100px] sm:-translate-x-[60%]  sm:max-w-[420px] sm:text-left
               md:top-[120px] md:-translate-x-[70%]  md:max-w-[500px]
