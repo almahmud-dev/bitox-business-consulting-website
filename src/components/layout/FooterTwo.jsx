@@ -135,7 +135,7 @@ export default function FooterTwo() {
         {/* Hours + Appointment Bar */}
         <div className="w-full border-b border-white/10">
           <div className="mx-auto max-w-[1265px] flex flex-col sm:flex-row">
-            <div className="bg-secondary flex items-center justify-center px-8 py-4 sm:flex-1 lg:pl-[480px] xl:pl-[500px]">
+            <div className="bg-secondary flex items-center justify-center px-8 py-4 sm:flex-1 lg:ml-[340px] lg:pl-[140px] xl:ml-[300px] xl:pl-[300px]">
               <p className="text-sm text-white font-medium text-center">
                 {BUSINESS_HOURS}
               </p>
@@ -193,7 +193,7 @@ export default function FooterTwo() {
               </div>
 
               {/* Copyright */}
-              <p className="text-[16px] text-white text-center md:text-right whitespace-nowrap">
+              <p className="text-[16px] text-white text-center md:text-right ">
                 {COPYRIGHT_TEXT}
               </p>
             </div>
@@ -201,8 +201,8 @@ export default function FooterTwo() {
         </div>
 
         {/* Desktop: card overlapping footer */}
-        <div className="hidden lg:block absolute top-23 z-10 pointer-events-none right-[65%]">
-          <div className="pointer-events-auto inline-block -translate-y-[calc(50%-40px)]">
+        <div className="hidden lg:block absolute top-[-75px] z-10 pointer-events-none right-[65%]">
+          <div className="pointer-events-auto inline-block ">
             <ContactCard />
           </div>
         </div>

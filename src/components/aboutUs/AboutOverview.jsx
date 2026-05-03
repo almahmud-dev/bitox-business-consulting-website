@@ -38,7 +38,7 @@ const AboutOverview = () => {
         </h1>
         <div>
           <Responsive.Grid gap="xl" cols={{ base: 1, lg: 2 }}>
-            <h3 className="headingThree text-primary font-bold flex-1 text-center lg:text-start ">
+            <h3 className="headingThree text-primary font-bold flex-1 text-center lg:text-start  underline">
               A reputed consultant agency with 15+ years helping businesses grow
               worldwide.
             </h3>

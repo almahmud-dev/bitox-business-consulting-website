@@ -17,7 +17,7 @@ export default async function Layout({ children }) {
   return (
     <>
       {isConsulting ? <NavbarTwo /> : <NavbarOne />}
-      <main className="bg-bg-secondaryOne">{children}</main>
+      <main className={` bg-bg-secondaryOne ${isConsulting ?  "pt-[100px]"  : "pt-[110px]"}`}>{children}</main>
       {isConsulting ? <BusinessFooterSection /> : <FooterOne />}
     </>
   );
