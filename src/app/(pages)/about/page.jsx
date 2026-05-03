@@ -7,13 +7,13 @@ import React from "react";
 
 const About = () => {
   return (
-    <div>
+    <>
       <InnerPageHero />
       <AboutOverview />
       <AboutVideo />
       <AboutTeam />
       <AboutContact />
-    </div>
+    </>
   );
 };
 

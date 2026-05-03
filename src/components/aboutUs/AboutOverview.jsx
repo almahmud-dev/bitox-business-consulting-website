@@ -36,7 +36,7 @@ const AboutOverview = () => {
         <h1 className="font-bold text-[clamp(2.5rem,10vw,140px)]  text-primary text-center py-[60px]">
           Established in 2013
         </h1>
-        <div>
+        <div> 
           <Responsive.Flex
             justify="space-between"
             align={"flex-start"}
