@@ -17,7 +17,7 @@ export default async function Layout({ children }) {
   return (
     <>
       {isConsulting ? <NavbarTwo /> : <NavbarOne />}
-      {children}
+      <main className="bg-bg-secondaryOne">{children}</main>
       {isConsulting ? <BusinessFooterSection /> : <FooterOne />}
     </>
   );

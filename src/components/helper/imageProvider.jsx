@@ -59,16 +59,16 @@ import AboutUsVideo from "../../../public/images/aboutVideo/aboutvideo-Image.png
 // for aboutUsVideo pages images
 import AboutTeamBorder from "../../../public/images/aboutTeam/team-page-border.png";
 
- // service details pages imgage
- import ServivesDetailsIcon from "../../../public/images/service/service-details.png"
-
+// service details pages imgage
+import ServivesDetailsIcon from "../../../public/images/service/service-details.png";
+import ServivesDetailsBannaer from "../../../public/images/service/services-detail-banner.png";
 
 const allImages = {
   heroIocns: HeroImage,
   heroBanner: HeroBanner,
   footerLogo: FooterLogo,
   contact_logo: contact_logo,
-  
+
   featureRound: [
     { id: 1, img: FeatureRoundOne },
     { id: 2, img: FeatureRoundTwo },
@@ -208,7 +208,8 @@ const allImages = {
     { id: 6, img: Home2OurExperts6 },
   ],
   // service details pages imgage
-  servivesDetailsIcon : ServivesDetailsIcon,
+  servivesDetailsIcon: ServivesDetailsIcon,
+  servivesDetailsBannaer: ServivesDetailsBannaer,
 };
 
 export default allImages;

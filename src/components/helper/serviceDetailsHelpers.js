@@ -12,3 +12,34 @@ export const serviceDheckListItems = [
     text: "By carefully evaluating these factors, we identify opportunities and potential challenges that may impact your financial future.",
   },
 ];
+
+export const servicesDetailProcessSteps = [
+  {
+    id: 1,
+    step: "STEP-01",
+    title: "Understand Your Financial Goals",
+    description:
+      "Our experts design a personalized financial strategy including savings, and risk management.",
+  },
+  {
+    id: 2,
+    step: "STEP-02",
+    title: "Create a Strategic Financial Plan",
+    description:
+      "Our experts design a personalized financial strategy including savings, and risk management.",
+  },
+  {
+    id: 3,
+    step: "STEP-03",
+    title: "Implement the Right Financial Solutions",
+    description:
+      "Our experts design a personalized financial strategy including savings, and risk management.",
+  },
+  {
+    id: 4,
+    step: "STEP-04",
+    title: "Monitor & Optimize Performance",
+    description:
+      "Our experts design a personalized financial strategy including savings, and risk management.",
+  },
+];
