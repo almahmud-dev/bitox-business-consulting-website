@@ -7,10 +7,10 @@ import { featuresteam } from "../helper/helpers";
 export default function OurTeamSection() {
   return (
     <section className="w-full overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-150">
         
         {/* Left: Image - full bleed */}
-        <div className="relative w-full h-full min-h-[420px] lg:min-h-[600px]">
+        <div className="relative w-full h-full min-h-105 lg:min-h-150">
           <Image
             src={allImages.home2ourteam}
             alt="Our team collaboration"

@@ -3,15 +3,15 @@ import { CLIENTS } from "../helper/helpers";
 
 function OurClients() {
   return (
-    <section className="bg-bg-secondaryOne px-2 py-[80px] xl:py-[120px]">
+    <section className="bg-bg-secondaryOne px-2 py-20 xl:py-30">
       {/* Header */}
 
-      <div className="relative mb-[40px] lg:mb-[120px]">
+      <div className="relative mb-10 lg:mb-30">
         {/* Badge + Heading — same left alignment */}
-        <div className="text-center md:text-left md:pl-[160px] xl:pl-[550px]">
+        <div className="text-center md:text-left md:pl-40 xl:pl-137.5">
           {/* Badge */}
           <div className="mb-7.5">
-            <span className="inline-flex items-center border border-black/10 rounded-[4px] py-1 px-[15px] text-xs font-bold uppercase tracking-widest">
+            <span className="inline-flex items-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest">
               Our Clients
             </span>
           </div>
@@ -32,7 +32,7 @@ function OurClients() {
         {CLIENTS.map((client) => (
           <div key={client.id} className="flex flex-col">
             {/* Image box */}
-            <div className="border border-black/10 bg-white flex flex-col p-4 rounded-[10px] h-[180px] sm:h-[200px]">
+            <div className="border border-black/10 bg-white flex flex-col p-4 rounded-[10px] h-45 sm:h-50">
               <span className="text-[12px] text-center text-primary">
                 ({client.id})
               </span>
@@ -42,7 +42,7 @@ function OurClients() {
                   alt={client.name}
                   width={120}
                   height={50}
-                  className="object-contain max-h-[53px]"
+                  className="object-contain max-h-13.25"
                 />
               </div>
             </div>

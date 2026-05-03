@@ -10,9 +10,10 @@ export default async function Layout({ children }) {
   const getLayoutPath =
     cookieStore.get("pathname")?.value || "business-consultant";
 
-  const isConsulting = getLayoutPath === "consulting-agency";
-  console.log(getLayoutPath);
-
+    
+    const isConsulting = getLayoutPath === "consulting-agency";
+   
+    
   return (
     <>
       {isConsulting ? <NavbarTwo /> : <NavbarOne />}

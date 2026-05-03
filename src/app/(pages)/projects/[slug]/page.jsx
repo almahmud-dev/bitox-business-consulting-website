@@ -1,8 +1,9 @@
 import InnerPageHero from "@/components/ui/InnerPageHero";
 import ProjectsPortfolioDetails from "@/components/projectsmain/ProjectsPortfolioDetails";
 
-const ProjectsDetails = ({ params }) => {
-  const { slug } = params;
+const ProjectsDetails = async ({ params }) => {
+  const { slug } =  await params;
+  
   return (
     <>
       <InnerPageHero

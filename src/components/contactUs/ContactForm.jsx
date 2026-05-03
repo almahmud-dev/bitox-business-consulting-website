@@ -1,171 +1,179 @@
 "use client";
-import contact_bg from "../../../public/images/contact/contact-bg.png";
 import contact_logo from "../../../public/images/contact/contact_logo.png";
-import { useState } from "react";
 import Image from "next/image";
-
-import { CONTACT_INPUTS, CONTACT_INFO } from "@/components/helper/helpers";
-import Button from "../ui/Button";
+import ButtonThree from "../ui/ButtonThree";
+import { ClockIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 
 const ContactForm = () => {
-  const [form, setForm] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
-
-  const validate = () => {
-    const newErrors = {};
-
-    if (!form.firstName.trim()) newErrors.firstName = "First name is required";
-    if (!form.lastName.trim()) newErrors.lastName = "Last name is required";
-
-    if (!form.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = "Enter a valid email";
-    }
-
-    if (!form.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^\+?[0-9\s\-()]{7,15}$/.test(form.phone)) {
-      newErrors.phone = "Enter a valid phone number";
-    }
-
-    if (!form.message.trim()) newErrors.message = "Message is required";
-
-    return newErrors;
-  };
-
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    if (errors[e.target.name]) {
-      setErrors({ ...errors, [e.target.name]: "" });
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
-    setErrors({});
-    setSubmitted(true);
-    console.log(form);
-  };
-
   return (
-    <div style={{ backgroundImage: `url(${contact_bg.src})` }}>
-      <div className="w-[1583px] mx-auto my-30">
-        <div className="flex justify-between">
-          <div>
-            <h2 className="w-103.75 text-[50px] leading-14.5 font-bold text-primary underline mb-[305px]">
-              Reach out for inquiries, collaborations, or just to say
-              hello.We&apos;re eager to connect!
-            </h2>
-            <Image width={391} height={117} alt="Bitox" src={contact_logo} />
-          </div>
+    <div className="bg-bg-secondaryOne">
+      <div className="bg-[#f0ede6] min-h-screen py-10 lg:py-30 px-4 md:px-6">
+        <div className="max-w-400 mx-auto flex flex-col gap-10">
+          {/* Top Section */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-start">
+            {/* Headline */}
+            <div className="w-full lg:max-w-97.75 lg:w-full lg:shrink-0">
+              <h1
+                className="
+                text-[26px] font-bold leading-9 underline text-primary
+                md:text-[34px] lg:text-[43px]
+                md:leading-12 lg:leading-14.5 "
+              >
+                Reach out for inquiries, collaborations, or just to say hello.
+                We're eager to connect!
+              </h1>
+            </div>
 
-          <div>
-            <form
-              onSubmit={handleSubmit}
-              className="bg-white py-15 px-15 rounded-[15px] mb-7.5"
-            >
-              <div className="flex flex-col gap-7.5">
-                {submitted && (
-                  <p className="text-sm font-medium text-center text-green-500">
-                    Message sent successfully!
-                  </p>
-                )}
+            {/* Form Card */}
+            <form className="w-full lg:max-w-266.75 bg-white rounded-2xl p-6 md:p-10 lg:p-15">
+              <div className="
+                  grid grid-cols-1 gap-5 mb-5
+                  md:grid-cols-2 md:gap-6 md:mb-6
+                  lg:gap-7.5 lg:mb-7.5">
+                <input
+                  type="text"
+                  placeholder="First Name*"
+                  className="
+                  bg-[#F5F5F5] rounded-md px-5 py-4 text-base
+                  lg:px-6.25 lg:py-5 text-tarnary outline-none
+                  placeholder:text-gray-400 w-full"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name*"
+                  className="
+                  bg-[#F5F5F5] rounded-md px-5 py-4
+                  lg:px-6.25 lg:py-5 text-base text-tarnary outline-none
+                  placeholder:text-gray-400 w-full"
+                />
+              </div>
 
-                {/* Inputs (from array) */}
-                {[0, 2].map((start) => (
-                  <div key={start} className="flex gap-[30px]">
-                    {CONTACT_INPUTS.slice(start, start + 2).map((field) => (
-                      <div key={field.name} className="flex flex-col gap-1">
-                        <input
-                          type={field.type}
-                          name={field.name}
-                          placeholder={field.placeholder}
-                          value={form[field.name]}
-                          onChange={handleChange}
-                          className={`w-[458px] h-[60px] py-5 px-6.25 bg-[#F5F5F5] rounded-md outline-none text-md text-tarnary ${
-                            errors[field.name] ? "ring-1 ring-red-400" : ""
-                          }`}
-                        />
-                        {errors[field.name] && (
-                          <p className="pl-1 text-xs text-red-400">
-                            {errors[field.name]}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                ))}
+              <div className="
+                  grid grid-cols-1 gap-5 mb-5
+                  md:grid-cols-2 md:gap-6 md:mb-6
+                  lg:gap-7.5 lg:mb-7.5">
+                <input
+                  type="email"
+                  placeholder="Your Email ID"
+                  className="
+                  bg-[#F5F5F5] rounded-md px-5 py-4 text-base
+                  lg:px-6.25 lg:py-5 text-tarnary outline-none
+                  placeholder:text-gray-400 w-full"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="bg-[#F5F5F5] rounded-md px-5 py-4
+                  lg:px-6.25 lg:py-5 text-base text-tarnary
+                  outline-none placeholder:text-gray-400 w-full"
+                />
+              </div>
 
-                {/* Textarea */}
-                <div className="flex flex-col gap-1">
-                  <textarea
-                    name="message"
-                    placeholder="Write your message"
-                    value={form.message}
-                    onChange={handleChange}
-                    className={`w-[946px] h-[176px] py-5 px-6.25 bg-[#F5F5F5] rounded-md outline-none text-md text-tarnary ${
-                      errors.message ? "ring-1 ring-red-400" : ""
-                    }`}
+              <textarea
+                placeholder="Write your message"
+                rows={5}
+                className="bg-[#F5F5F5] rounded-md px-5 py-4
+                text-base text-tarnary resize-none
+                outline-none placeholder:text-gray-400 w-full
+                mb-5 md:mb-6 lg:mb-7.5 lg:px-6.25 lg:py-5"
+              />
+
+              <div className="flex justify-center">
+                <div className="self-start flex items-center gap-2 text-white text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer bg-secondary transition-colors group">
+                  <ButtonThree
+                    frontText="Submit message"
+                    backText="Let's Talk."
+                    backgroundColor="transparent"
+                    textColor="#FFFFFF"
+                    fontSize={14}
+                    paddingTop={0}
+                    paddingBottom={0}
+                    paddingLeft={0}
+                    paddingRight={0}
                   />
-                  {errors.message && (
-                    <p className="pl-1 text-xs text-red-400">
-                      {errors.message}
-                    </p>
-                  )}
-                </div>
-
-                <div className="flex justify-center">
-                  <Button
-                    label="Submit message"
-                    bgColor="#f97316"
-                    textColor="#ffffff"
-                    showIcon={true}
-                  />
+                  <span className="inline-block transition-transform group-hover:translate-x-1">
+                    <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
+                      <path
+                        d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z"
+                        fill="#FFFFFF"
+                      />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </form>
+          </div>
 
-            {/* Info Cards (from array) */}
-            <div className="flex gap-[30px]">
-              {CONTACT_INFO.map((card, index) => (
-                <div
-                  key={index}
-                  className="w-[335px] py-[35px] pl-8.75 pr-4 bg-white rounded-md"
-                >
-                  <h4 className="mb-5 font-bold leading-8.5 text-2xl text-primary">
-                    {card.title}
-                  </h4>
-                  {card.content.map((text, i) => (
-                    <p
-                      key={i}
-                      className="text-lg text-tarnary font-normal leading-6.5"
-                    >
-                      {text}
-                    </p>
-                  ))}
+          {/* Bottom Section */}
+          <div className="flex flex-col lg:flex-row items-start gap-8">
+            {/* Logo */}
+            <div className="shrink-0">
+              <Image
+                src={contact_logo}
+                alt="Bitox Logo"
+                className="w-45 md:w-65 lg:w-97.75"
+              />
+            </div>
+
+            {/* Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 flex-1 w-full">
+              {/* Address */}
+              <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <MapPinIcon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="para-TwoXl font-bold text-primary">Address</h3>
                 </div>
-              ))}
+                <p className="para-lg text-tarnary leading-relaxed">
+                  Valentin, Street Road 24, New York, USA – 67452
+                </p>
+              </div>
+
+              {/* Phone / Message */}
+              <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <PhoneIcon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="para-TwoXl font-bold text-primary">
+                    Phone / Message
+                  </h3>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="para-lg text-tarnary">
+                    supportadmin@example.com
+                  </p>
+                  <p className="para-lg text-tarnary">(255) 864-6308</p>
+                </div>
+              </div>
+
+              {/* Working Hours */}
+              <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <ClockIcon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="para-TwoXl font-bold text-primary">
+                    Working Hours
+                  </h3>
+                </div>
+                <div className="flex flex-col gap-1">
+                  <p className="para-lg text-tarnary">
+                    Monday – Friday: 09:00 – 18:30
+                  </p>
+                  <p className="para-lg text-tarnary">Saturday: until 15:30</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Map */}
-      <div className="w-400 h-[690px] rounded-md overflow-hidden mx-auto mb-30">
+      <div className="w-full max-w-400 h-75 rounded-md overflow-hidden mx-auto mb-16
+      md:h-125 md:mb-20 md:px-6
+      lg:h-172.5 lg:mb-30 px-4 lg:px-0">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.036955468959!2d90.36556226218187!3d23.747049949764218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka%201205!5e0!3m2!1sen!2sbd!4v1777483156468!5m2!1sen!2sbd"
           width="100%"

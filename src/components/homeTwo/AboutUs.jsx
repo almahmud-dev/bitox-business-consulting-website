@@ -4,11 +4,10 @@ import Image from "next/image";
 import { Grid } from "@/components/ui/Responsive";
 import Container from "@/components/ui/Container";
 import ButtonThree from "../ui/ButtonThree";
-
 export default function AboutSection() {
   return (
     <section className="w-full overflow-hidden bg-white">
-      <Container size="2xl" className="!px-0">
+      <Container size="2xl" className="px-0!">
         <Grid cols="830px_1fr" gap="none" align="stretch">
           {/* ── LEFT: Big Image */}
           <div className="relative w-full overflow-hidden">
@@ -27,7 +26,7 @@ export default function AboutSection() {
           <div className="flex flex-col justify-center px-6 md:px-8 lg:px-10 py-12 gap-5">
             {/* Eyebrow label */}
             <div className="mb-7.5">
-              <span className="inline-flex items-center border border-black/10 rounded-[4px] py-1 px-[15px] text-xs font-bold uppercase tracking-widest">
+              <span className="inline-flex items-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest">
                 about us
               </span>
             </div>
@@ -82,7 +81,7 @@ export default function AboutSection() {
 
             {/* Small image */}
             <div className="mt-5 lg:mt-10 flex">
-              <div className="ml-auto relative w-[160px] h-[110px] md:w-[425px] md:h-[227px] flex-shrink-0 overflow-hidden rounded-sm shadow-md">
+              <div className="ml-auto relative w-40 h-27.5 md:w-[425px] md:h-[227px] shrink-0 overflow-hidden rounded-sm shadow-md">
                 <Image
                   src="/images/home2_aboutus/about2.png"
                   alt="Team at work"

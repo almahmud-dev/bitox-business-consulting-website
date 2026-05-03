@@ -29,7 +29,7 @@ export default function OurExperts() {
           </div>
 
           {/* Right: stat box */}
-          <div className="max-w-[392px] p-4 shrink-0 relative">
+          <div className="max-w-98 p-4 shrink-0 relative">
             {/* Left double dashed border */}
             <svg
               style={{
@@ -109,7 +109,7 @@ export default function OurExperts() {
         <Grid cols={{ base: 1, md: 3 }} gap={30}>
           {allImages.home2OurExperts.map((expert, index) => (
             <div key={expert.id} className="bg-white">
-              <div className="relative w-full aspect-[3/4]">
+              <div className="relative w-full aspect-3/4">
                 <Image
                   src={expert.img}
                   alt={experts[index]?.name ?? "Expert"}
@@ -117,7 +117,7 @@ export default function OurExperts() {
                   className="object-cover"
                 />
               </div>
-              <div className="px-4 md:px-6 xl:px-[80px] py-[30px] border-t border-neutral-200">
+              <div className="px-4 md:px-6 xl:px-20 py-7.5 border-t border-neutral-200">
                 <p className="text-[26px] font-bold text-center text-primary mb-4.5">
                   {experts[index]?.name}
                 </p>

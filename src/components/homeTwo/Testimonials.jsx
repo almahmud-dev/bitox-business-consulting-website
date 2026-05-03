@@ -18,9 +18,9 @@ function StarRating({ count = 5 }) {
 function TestimonialCard({ item }) {
   if (item.type === "video") {
     return (
-      <div className="bg-white rounded-[6px] p-7 lg:py-[46px]  lg:px-[30px] overflow-hidden shadow-sm border border-white flex flex-col">
+      <div className="bg-white rounded-md p-7 lg:py-11.5  lg:px-7.5 overflow-hidden shadow-sm border border-white flex flex-col">
         {/* Video Thumbnail */}
-        <div className="relative w-full h-[200px] mb-5">
+        <div className="relative w-full h-50 mb-5">
           <Image
             src={item.videoThumbnail}
             alt="Video thumbnail"
@@ -34,7 +34,7 @@ function TestimonialCard({ item }) {
         </div>
         {/* Author */}
         <div className="flex items-center gap-3">
-          <div className="relative w-12 h-12 rounded-[6px] overflow-hidden shrink-0">
+          <div className="relative w-12 h-12 rounded-md overflow-hidden shrink-0">
             <Image
               src={item.authorImg}
               alt={item.authorName}
@@ -54,17 +54,17 @@ function TestimonialCard({ item }) {
   }
 
   return (
-    <div className="bg-white rounded-[6px] py-[46px] px-[30px] shadow-sm border border-gray-100 flex flex-col gap-4">
+    <div className="bg-white rounded-md py-11.25 px-7.5 shadow-sm border border-gray-100 flex flex-col gap-4">
       <StarRating count={item.rating} />
-      <h3 className="font-bold text-primary text-[24px] leading-[34px] underline underline-offset-2 pr-7">
+      <h3 className="font-bold text-primary text-[24px] leading-8.5 underline underline-offset-2 pr-7">
         {item.title}
       </h3>
-      <p className="text-tarnary text-[15px] leading-[20px]">
+      <p className="text-tarnary text-[15px] leading-5">
         {item.description}
       </p>
       {/* Author */}
       <div className="flex items-center gap-3 pt-2">
-        <div className="relative w-12 h-12 rounded-[6px] overflow-hidden shrink-0">
+        <div className="relative w-12 h-12 rounded-md overflow-hidden shrink-0">
           <Image
             src={item.authorImg}
             alt={item.authorName}
@@ -85,11 +85,11 @@ function TestimonialCard({ item }) {
 
 function Testimonials() {
   return (
-    <section className="py-10 lg:py-[120px] bg-bg-secondaryOne">
+    <section className="py-10 lg:py-30 bg-bg-secondaryOne">
       <Container size="lg">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="inline-flex items-center border border-black/10 rounded-[4px] py-1 px-[15px] text-xs font-bold uppercase tracking-widest mb-5">
+          <span className="inline-flex items-center border border-black/10 rounded-sm py-1 px-3.75 text-xs font-bold uppercase tracking-widest mb-5">
             Testimonials
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-primary underline underline-offset-4">
