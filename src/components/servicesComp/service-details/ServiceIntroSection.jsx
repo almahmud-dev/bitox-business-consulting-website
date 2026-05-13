@@ -6,7 +6,7 @@ import Image from "next/image";
 import React from "react";
 
 const ServiceIntroSection = ({ serviceItems }) => {
-  console.log(serviceItems);
+  
 
   const { servivesDetailsIcon, home2Section } = allImages;
 

@@ -1,5 +1,5 @@
 import { allBlogDetailsData } from "@/components/helper/blogpagehelper";
-import BlogDetailsPage from "@/components/blogpage/blogDetailsPage";
+import BlogDetailsPage from "@/components/blogpage/BlogDetailsPage";
 
 const BlogDetails = async ({ params }) => {
   const { slug } = await params;
