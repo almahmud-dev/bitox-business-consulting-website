@@ -73,7 +73,7 @@ function ContactCard() {
             frontText="Send Message"
             backText="Let's Talk."
             textColor="#ffffff"
-            onClick={() => console.log("send message")}
+           
           />
         </div>
       </Stack>
@@ -146,7 +146,7 @@ export default function FooterTwo() {
                 frontText="Call for an appointment"
                 backText="Let's Talk."
                 textColor="#ffffff"
-                onClick={() => console.log("appointment")}
+               
               />
             </div>
           </div>
