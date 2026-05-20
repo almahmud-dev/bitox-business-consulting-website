@@ -8,13 +8,13 @@ export default function OurTeamSection() {
   return (
     <section className="w-full overflow-hidden">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-150">
-        
         {/* Left: Image - full bleed */}
         <div className="relative w-full h-full min-h-105 lg:min-h-150">
           <Image
             src={allImages.home2ourteam}
             alt="Our team collaboration"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
         </div>
@@ -27,11 +27,9 @@ export default function OurTeamSection() {
           </span>
 
           {/* Heading */}
-          <h2
-            className="text-white font-bold text-[20px] md:text-[40px] mb-7 lg:mb-13"
-          >
-            Our team brings more than 16 years of expertise, leading the way
-            in digital design
+          <h2 className="text-white font-bold text-[20px] md:text-[40px] mb-7 lg:mb-13">
+            Our team brings more than 16 years of expertise, leading the way in
+            digital design
           </h2>
 
           {/* Features List */}
@@ -51,9 +49,7 @@ export default function OurTeamSection() {
                   >
                     {feature.title}
                   </h3>
-                  <p
-                    className="text-[#999999] text-[18px] leading-relaxed"
-                  >
+                  <p className="text-[#999999] text-[18px] leading-relaxed">
                     {feature.description}
                   </p>
                 </div>

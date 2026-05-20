@@ -48,7 +48,7 @@ const BlogInsight = () => {
             return (
               <div
                 key={post.id}
-                className={`bg-white rounded-md flex flex-col items-center text-center gap-3 ${
+                className={`bg-white rounded-md flex flex-col items-center text-center gap-3 group ${
                   isRectangle ? "overflow-hidden" : "px-9 py-7.5"
                 }`}
               >
@@ -58,21 +58,23 @@ const BlogInsight = () => {
                   style={isRectangle ? {} : { minHeight: "180px" }}
                 >
                   {imgSrc && (
-                    <Image
-                      src={imgSrc}
-                      alt={post.title}
-                      width={isRectangle ? 377 : 160}
-                      height={isRectangle ? 250 : 160}
-                      style={
-                        isRectangle
-                          ? {
-                              width: "377px",
-                              height: "200px",
-                              objectFit: "cover",
-                            }
-                          : clipStyles[post.clipShape]
-                      }
-                    />
+                    <Link href={"/blog"}>
+                      <Image
+                        src={imgSrc}
+                        alt={post.title}
+                        width={isRectangle ? 377 : 160}
+                        height={isRectangle ? 250 : 160}
+                        style={
+                          isRectangle
+                            ? {
+                                width: "377px",
+                                height: "200px",
+                                objectFit: "cover",
+                              }
+                            : clipStyles[post.clipShape]
+                        }
+                      />
+                    </Link>
                   )}
                 </div>
 
@@ -83,9 +85,11 @@ const BlogInsight = () => {
                   <p className="text-sm text-primary font-medium">
                     {post.readTime} &bull; {post.date}
                   </p>
-                  <h3 className="text-[19px] font-bold underline underline-offset-2 md:no-underline md:hover:underline">
-                    {post.title}
-                  </h3>
+                  <Link className="inline-block" href="/blog">
+                    <h3 className="text-[19px] font-bold group-hover:text-secondary  duration-500 ease-in-out">
+                      {post.title}
+                    </h3>
+                  </Link>
                   <p className="text-sm text-tarnary font-normal">
                     {post.excerpt}
                   </p>

@@ -152,8 +152,9 @@ export default function NavbarOne() {
               openDropdown={openDropdown}
               onEnter={handleMouseEnter}
               onLeave={handleMouseLeave}
+              height="auto"
               pathname={pathname}
-              dropdownStyle="rounded"
+              dropdownStyle="flat"
             />
           ))}
         </nav>
@@ -174,7 +175,7 @@ export default function NavbarOne() {
           >
             <ButtonThree
               frontText="Let's Talk."
-              backText="Get started now"
+              backText="Let's Talk."
               backgroundColor="transparent"
               fontSize={14}
               paddingTop={0}
@@ -271,30 +272,40 @@ export default function NavbarOne() {
         }`}
       >
         {/* dark backdrop */}
-        <div onClick={closeSearch} className="absolute inset-0 bg-black/60" />
-
-        {/* X button — top-right corner */}
-        <button
-          onClick={closeSearch}
-          aria-label="Close search"
-          className="absolute top-6 right-6 w-11 h-11 flex items-center justify-center bg-primary text-white rounded-full hover:opacity-90 transition-opacity cursor-pointer z-10"
-        >
-          <X size={20} />
-        </button>
+        <div onClick={closeSearch} className="absolute inset-0 bg-black/60 " />
 
         {/* search bar — perfectly centered */}
-        <div className="absolute inset-0 flex items-center justify-center px-4">
-          <div className="w-full max-w-[820px] flex items-center bg-white/[0.07] border border-white/10 rounded-full p-1.5">
+        <div
+          className="absolute inset-0 flex items-center justify-center px-4"
+          onClick={closeSearch}
+        >
+          <div
+            className="w-full max-w-[820px] flex items-center bg-white/[0.07] border border-white/10 rounded-full p-1.5"
+            onClick={(e) => e.stopPropagation()}
+          >
             <input
               ref={searchInputRef}
               type="text"
               placeholder="Search here.."
               className="flex-1 min-w-0 h-[52px] px-4 sm:px-6 text-base text-white outline-none bg-transparent placeholder:text-white/40"
             />
-            <button className="flex items-center gap-2 h-[52px] px-4 sm:px-7 bg-primary text-white text-sm sm:text-base font-medium rounded-full transition-opacity hover:opacity-90 cursor-pointer flex-shrink-0 whitespace-nowrap">
-              <Search size={18} />
-              <span className="hidden sm:inline">Search</span>
-            </button>
+            <div className="flex items-center  gap-x-3">
+              <button
+                className="flex items-center gap-2 h-[52px] px-4 sm:px-7 bg-primary text-white text-sm sm:text-base font-medium rounded-full transition-opacity hover:opacity-90 cursor-pointer flex-shrink-0 whitespace-nowrap"
+                onClick={closeSearch}
+              >
+                <Search size={18} />
+                <span className="hidden sm:inline">Search</span>
+              </button>
+              {/* X button — top-right corner */}
+              <button
+                onClick={closeSearch}
+                aria-label="Close search"
+                className=" w-11 h-11 flex items-center justify-center bg-primary text-white rounded-full hover:opacity-90 cursor-pointer z-10 transition duration-300 ease-in-out hover:bg-red-600"
+              >
+                <X size={20} />
+              </button>
+            </div>
           </div>
         </div>
       </div>

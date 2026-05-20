@@ -59,7 +59,7 @@ const ButtonThree = ({
       color: textColor,
       position: "absolute",
       whiteSpace: "nowrap",
-      transition: "transform 0.1s ease, opacity 0.1s ease",
+      transition: "transform 0.3s ease, opacity 0.1s ease-in-out",
       userSelect: "none",
     },
     front: {
@@ -86,10 +86,11 @@ const ButtonThree = ({
       onMouseEnter={() => setInternalHovered(true)}   
       onMouseLeave={() => setInternalHovered(false)}
       onClick={onClick}
+      className="!flex !items-center"
     >
-      <span style={style.sizer}>{sizerText}</span>
-      <span style={{ ...style.textBase, ...style.front }}>{frontText}</span>
-      <span style={{ ...style.textBase, ...style.back }}>{resolvedBackText}</span>
+      <span  className="inline-block" style={style.sizer}>{sizerText}</span>
+      <span  className="inline-block" style={{ ...style.textBase, ...style.front }}>{frontText}</span>
+      <span  className="inline-block" style={{ ...style.textBase, ...style.back }}>{resolvedBackText}</span>
     </button>
   );
 };

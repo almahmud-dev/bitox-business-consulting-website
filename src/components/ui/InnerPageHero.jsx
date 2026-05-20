@@ -22,10 +22,10 @@ const InnerPageHero = ({
       ?.replace(/-/g, " ")
       ?.replace(/\b\w/g, (c) => c.toUpperCase()) || "Home";
 
-      // className={navVariant === "homeTwo" ? "pt-[100px]" : "pt-[70px]"}
+  // className={navVariant === "homeTwo" ? "pt-[100px]" : "pt-[70px]"}
 
   return (
-    <section >
+    <section>
       {/* 
         Height breakdown:
         320px  → h-[320px]
@@ -39,6 +39,7 @@ const InnerPageHero = ({
           src={commonHeroImages}
           fill
           alt="commonHeroImages"
+          sizes="100vw"
           className="object-cover z-0"
           priority
         />

@@ -1,7 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import allImages from "../helper/imageProvider";
+import Link from "next/link";
 const WhyChooseUs = () => {
+  const { whyChooseUsImg } = allImages;
+
   return (
     <section className="pt-10 lg:pt-30 bg-black overflow-hidden">
       {/* ai 2ta container er vitore thakbe */}
@@ -22,6 +26,7 @@ const WhyChooseUs = () => {
               alt="Why Choose Us Icon"
               fill
               className="object-contain"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -33,6 +38,7 @@ const WhyChooseUs = () => {
           alt="Team Meeting"
           fill
           className="object-cover"
+          sizes="(max-width: 1024px) 100vw, 50vw"
         />
         <div className="absolute inset-0 bg-black/30" />
         {/* Floating Card */}
@@ -44,15 +50,23 @@ const WhyChooseUs = () => {
                 bg-white flex flex-col shadow-2xl z-10"
         >
           <div className="py-11.25 pl-8.75 pr-13.5 max-[640px]:py-5 max-[640px]:pl-4 max-[640px]:pr-5">
-            <div className="flex items-center mb-7.5 max-[640px]:mb-4">
-              <div className="relative w-40.5 h-15 max-[640px]:w-28 max-[640px]:h-10">
-                <Image
-                  src="/images/home2_whychoose/whychoose3.png"
-                  alt="Team Members"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="flex relative items-center mb-[89px]  ">
+              {whyChooseUsImg.map((items) => {
+                return (
+                  <div
+                    className={`absolute h-[58.72px] border-2 border-white w-[58.72px] rounded-full overflow-hidden ${items.other}`}
+                    key={items.id}
+                  >
+                    <Image
+                      src={items.img}
+                      alt="Team Members"
+                      fill
+                      className="object-cover "
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </div>
+                );
+              })}
             </div>
 
             <div>
@@ -65,7 +79,7 @@ const WhyChooseUs = () => {
             </div>
           </div>
 
-          <button
+          <Link href={"/contact"}
             className="flex items-center justify-between w-full bg-red-500 hover:bg-red-600 
                      transition-colors text-white px-6 py-4 text-sm font-medium
                      max-[640px]:px-4 max-[640px]:py-3 max-[640px]:text-xs"
@@ -80,7 +94,7 @@ const WhyChooseUs = () => {
               height="28"
               viewBox="0 0 28 28"
               fill="none"
-              className="max-[640px]:w-5 max-[640px]:h-5"
+              className="max-[640px]:w-5 max-[640px]:h-5 "
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
@@ -91,7 +105,7 @@ const WhyChooseUs = () => {
                 strokeLinejoin="round"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
     </section>

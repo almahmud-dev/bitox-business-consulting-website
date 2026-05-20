@@ -22,7 +22,7 @@ const HeroSection = () => {
   useEffect(() => {
     heroBanner.slice(1).forEach((banner) => {
       const img = new window.Image();
-      img.src = banner.img;
+      img.src = banner.img.src;
     });
   }, []);
 
@@ -79,7 +79,7 @@ const HeroSection = () => {
                 Business <RotatingBadge size="lg" />
               </span>
             </span>
-            <span className="block font-medium lg:pl-[360px] xl:pl-[470px] 2xl:pl-[520px]">
+            <span className="block font-medium lg:pl-[363px] xl:pl-[479px] 2xl:pl-[520px]">
               Strategy
             </span>
           </h1>
@@ -115,6 +115,8 @@ const HeroSection = () => {
             alt="herobanner-images"
             className="rounded-[6px] object-cover"
             fill
+            sizes="100vw"
+            loading="eager"
             priority={currentID === 0}
           />
 
@@ -130,6 +132,8 @@ const HeroSection = () => {
                 alt="herobanner-images"
                 className="rounded-[6px] object-cover"
                 fill
+                sizes="100vw"
+                loading="eager"
                 priority={false}
               />
             </div>
@@ -154,9 +158,9 @@ const HeroSection = () => {
                 <Image
                   height={153}
                   width={153}
-                  className="object-cover hover:scale-[1.1] transition duration-400 ease-in-out  !h-[80px] !w-[80px] sm:!h-[100px] sm:!w-[100px] md:!h-[120px] md:!w-[120px] lg:!h-[135px] lg:!w-[135px] xl:!h-[150px] xl:!w-[153px]"
+                  className="object-cover hover:scale-[1.1] transition duration-400 ease-in-out !h-[80px] !w-[80px] sm:!h-[100px] sm:!w-[100px] md:!h-[120px] md:!w-[120px] lg:!h-[135px] lg:!w-[135px] xl:!h-[153px] xl:!w-[153px]"
                   src={items.img}
-                  alt={items.img}
+                  alt={`hero-banner-${items.id}`}
                 />
               </li>
             );
@@ -176,19 +180,19 @@ const HeroSection = () => {
             <li
               key={index}
               className="
-          flex-1 min-w-0
-          flex items-center justify-center
-          py-[19px] px-[20px]
-          xl:py-[19px] xl:px-[20px]
-          lg:py-[16px] lg:px-[16px]
-          md:py-[13px] md:px-[12px]
-          sm:py-[10px] sm:px-[10px]
-          border border-[#0000001a]
-          text-primary font-medium
-          rounded-[6px]
-          text-center
-          whitespace-nowrap
-        "
+            flex-1 min-w-0
+            flex items-center justify-center
+            py-[19px] px-[20px]
+            xl:py-[19px] xl:px-[20px]
+            lg:py-[16px] lg:px-[16px]
+            md:py-[13px] md:px-[12px]
+            sm:py-[10px] sm:px-[10px]
+            border border-[#0000001a]
+            text-primary font-medium
+            rounded-[6px]
+            text-center
+            whitespace-nowrap
+          "
             >
               {items.title}
             </li>
@@ -208,11 +212,11 @@ const HeroSection = () => {
             <li
               key={index}
               className="py-[19px] px-[77px] border border-[#0000001a] text-primary font-medium rounded-[6px]
-              lg:py-[16px] lg:px-[77px]
-              md:py-[13px] md:px-[30px]
-              sm:py-[10px] sm:px-[15px]
-             
-              "
+                lg:py-[16px] lg:px-[77px]
+                md:py-[13px] md:px-[30px]
+                sm:py-[10px] sm:px-[15px]
+              
+                "
             >
               {items.title}
             </li>

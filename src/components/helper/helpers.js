@@ -16,7 +16,7 @@ import imageProvider from "@/components/helper/imageProvider";
 
 export function isActiveLink(href, pathname) {
   if (href === "/") return pathname === "/";
-  return  pathname === href;
+  return pathname === href;
 }
 
 export function hasActiveChild(children, pathname) {
@@ -115,14 +115,15 @@ export function DesktopNavItem({
   dropdownStyle = "rounded",
   height = "auto",
 }) {
-  const isActive = link.children
-    ? false
-    : isActiveLink(link.href, pathname);
-// hasActiveChild(link.children, pathname)
+  const isActive = link.children ? false : isActiveLink(link.href, pathname);
+  // hasActiveChild(link.children, pathname)
   const activeClass = isActive
     ? "text-secondary"
     : "text-primary hover:text-secondary";
-  const heightClass = height === "full" ? "h-[100px] flex items-center" : "";
+  const heightClass =
+    height === "full"
+      ? "h-[100px] flex items-center"
+      : "h-[71px] flex items-center";
 
   if (link.children) {
     return (
@@ -172,10 +173,8 @@ export function MobileNavItem({
   onClose,
   pathname,
 }) {
-  const isActive = link.children
-    ? false
-    : isActiveLink(link.href, pathname);
-// 
+  const isActive = link.children ? false : isActiveLink(link.href, pathname);
+  //
   const activeClass = isActive
     ? "text-secondary"
     : "text-primary hover:text-secondary";
@@ -305,6 +304,36 @@ export const CLIENTS = [
     description: "Lorem ipsum dolor sit amet, consectetur.",
     logo: "/images/home2_Client/client7.png",
   },
+  {
+    id: "08",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client1.png",
+  },
+  {
+    id: "09",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client2.png",
+  },
+  {
+    id: "10",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client3.png",
+  },
+  {
+    id: "11",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client4.png",
+  },
+  {
+    id: "12",
+    name: "Loreipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur.",
+    logo: "/images/home2_Client/client5.png",
+  },
 ];
 
 //===================================
@@ -370,8 +399,6 @@ export const CONTACT_INFO = [
 // HomeTwo — Footer Data
 //===============================
 
-
-
 export const companyLinks = [
   { id: 0, label: "Who We Are?", slug: "/about" },
   { id: 1, label: "Our Services", slug: "/services" },
@@ -391,10 +418,10 @@ export const serviceLinks = [
 export const legalLinks = ["Privacy Policy", "Terms and Conditions", "Support"];
 
 export const socialLinks = [
-  { icon: FaFacebook, href: "#" },
-  { icon: FaXTwitter, href: "#" },
-  { icon: FaInstagram, href: "#" },
-  { icon: FaDribbble, href: "#" },
+ { icon: FaFacebook, href: "https://facebook.com" },
+  { icon: FaXTwitter, href: "https://x.com" },
+  { icon: FaInstagram, href: "https://instagram.com" },
+  { icon: FaDribbble, href: "https://dribbble.com" },
 ];
 
 export const MARQUEE_TEXT = "BUSINESS · CONSULTING · ";
@@ -632,5 +659,109 @@ export const services = [
     description:
       "Developing smarts, data-driven strategies & practical business plans that turn ideas into profitable scalable outcomes worldwide.",
     features: ["Integrity & Support", "Data Entry", "Growth forecasting"],
+  },
+];
+
+// for home2 testimoial slider arr-obj
+
+export const testimonialsDataHomeTwo = [
+  {
+    id: 1,
+    type: "text",
+    rating: 5,
+    title: "Remarkable Growth and Results",
+    description:
+      "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
+    authorImg: imageProvider.home2Testimonials[0].img,
+    authorName: "Sophia Rahman",
+    authorRole: "BrightEdge",
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 2,
+    type: "video",
+    authorImg: imageProvider.home2Testimonials[2].img,
+    authorName: "Michael Torres",
+    authorRole: "CEO, TechNova",
+    videoThumbnail: imageProvider.home2Testimonials[1].img,
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 3,
+    type: "text",
+    rating: 5,
+    title: "Creative Strategies That Stand Out",
+    description:
+      "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
+    authorImg: imageProvider.home2Testimonials[3].img,
+    authorName: "Michael Hayes",
+    authorRole: "CEO, TechNova",
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 4,
+    type: "text",
+    rating: 5,
+    title: "Exceptional ROI Within 3 Months",
+    description:
+      "Their strategic approach transformed how we handle client acquisition. The team's dedication and deep market understanding helped us scale faster than we ever anticipated.",
+    authorImg: imageProvider.home2Testimonials[0].img,
+    authorName: "Aisha Karim",
+    authorRole: "Founder, NexaWave",
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 5,
+    type: "video",
+    authorImg: imageProvider.home2Testimonials[2].img,
+    authorName: "David Chen",
+    authorRole: "CMO, PulseVentures",
+    videoThumbnail: imageProvider.home2Testimonials[1].img,
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 6,
+    type: "text",
+    rating: 5,
+    title: "A Partner That Truly Delivers",
+    description:
+      "From day one, the Consult team understood our vision. Their frameworks and insights have been instrumental in driving consistent, measurable growth across all channels.",
+    authorImg: imageProvider.home2Testimonials[3].img,
+    authorName: "Elena Russo",
+    authorRole: "Director, SkyCraft Inc.",
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 7,
+    type: "text",
+    rating: 4,
+    title: "Clarity, Speed, and Real Results",
+    description:
+      "We needed a team that could move fast without sacrificing quality. Consult delivered a complete go-to-market strategy in record time, and the results have been outstanding.",
+    authorImg: imageProvider.home2Testimonials[0].img,
+    authorName: "James Okafor",
+    authorRole: "VP Growth, Stackline",
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 8,
+    type: "video",
+    authorImg: imageProvider.home2Testimonials[2].img,
+    authorName: "Priya Nair",
+    authorRole: "CEO, Luminary Labs",
+    videoThumbnail: imageProvider.home2Testimonials[1].img,
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
+  },
+  {
+    id: 9,
+    type: "text",
+    rating: 5,
+    title: "Strategic Thinking at Its Best",
+    description:
+      "The level of expertise and care Consult brings is unmatched. They helped us redesign our entire client funnel and the impact was visible within the first few weeks.",
+    authorImg: imageProvider.home2Testimonials[3].img,
+    authorName: "Lucas Fernandez",
+    authorRole: "COO, BrightPath",
+    videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
 ];

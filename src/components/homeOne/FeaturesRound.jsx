@@ -26,7 +26,7 @@ const FeaturesRound = () => {
         <div className="mt-[60px] flex justify-center">
           <Link href={"/about"} className="inline-block">
             {" "}
-            <ButtonTwo frontText={"Learn about us"} />
+            <ButtonTwo frontText={"Learn about us"} backText={"Learn about us"} />
           </Link>
         </div>
         <Image

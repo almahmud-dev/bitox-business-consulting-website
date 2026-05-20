@@ -15,6 +15,7 @@ const ContactSectionHO = () => {
             src={contactImage}
             className="object-cover "
             alt="contact-page-images"
+            sizes="(max-width: 1024px) 100vw, 1280px"
           />
           <div className="absolute top-1/2 translate-y-[-50%] left-[35px]">
             <ContactFormHO />

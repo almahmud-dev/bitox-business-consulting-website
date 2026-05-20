@@ -10,10 +10,11 @@ import { prcessStepsArr } from "../helper/processStepsArrObj";
 const ProcessSteps = () => {
   // for images and manage state
   const { plusImages, processImage } = allImages;
-  const [showStep, setShowStep] = useState('Step 1');
+  const [showStep, setShowStep] = useState("Step 1");
 
-  const stepValue = prcessStepsArr.find((sValue) => sValue.stepLabel === showStep);
-
+  const stepValue = prcessStepsArr.find(
+    (sValue) => sValue.stepLabel === showStep,
+  );
 
   return (
     <section className="py-[60px] md:py-[80px] lg:py-[120px] bg-primary">
@@ -30,7 +31,7 @@ const ProcessSteps = () => {
                 return (
                   <li
                     key={step.id}
-                    className={`py-[12px] md:py-[15px] lg:py-[19px] text-bg-secondaryTwo text-center rounded-[6px] flex-1 border border-[#ffffff1b] hover:bg-secondary hover:border-transparent transition duration-400 ease-in-out text-xs sm:text-sm lg:text-base cursor-pointer  ${showStep === step.stepLabel ?  " bg-secondary" :""} `}
+                    className={`py-[12px] md:py-[15px] lg:py-[19px] text-bg-secondaryTwo text-center rounded-[6px] flex-1 border border-[#ffffff1b] hover:bg-secondary hover:border-transparent transition duration-400 ease-in-out text-xs sm:text-sm lg:text-base cursor-pointer  ${showStep === step.stepLabel ? " bg-secondary" : ""} `}
                     onClick={() => setShowStep(step.stepLabel)}
                   >
                     {step.title}
@@ -91,7 +92,7 @@ const ProcessSteps = () => {
                         height={372}
                         src={stepValue.image}
                         alt="prcess-step"
-                        className="w-full h-auto lg:!h-[372px] lg:!w-[493px] object-cover rounded-[6px]"
+                        className="rounded-[6px] object-cover w-full lg:w-[493px] h-auto"
                       />
                     </div>
                   </div>
@@ -114,7 +115,7 @@ const ProcessSteps = () => {
                         alt="services-icon"
                         width={20}
                         height={20}
-                        className="!w-5 !h-5 lg:w-10 lg:h-10 shrink-0"
+                        className="!w-5 !h-5 lg:!w-10 lg:!h-10 shrink-0"
                       />
                       <h3 className="para-lg font-semibold text-[#999999] lg:whitespace-nowrap">
                         Analyze your goals, challenges, & long-term vision
@@ -126,7 +127,7 @@ const ProcessSteps = () => {
                         alt="services-icon"
                         width={20}
                         height={20}
-                        className="!w-5 !h-5 lg:w-10 lg:h-10 shrink-0"
+                        className="!w-5 !h-5 lg:!w-10 lg:!h-10 shrink-0"
                       />
                       <h3 className="para-lg font-semibold text-[#999999] lg:whitespace-nowrap">
                         Review current operations and performance
@@ -138,7 +139,7 @@ const ProcessSteps = () => {
                         alt="services-icon"
                         width={20}
                         height={20}
-                        className="!w-5 !h-5 lg:w-10 lg:h-10 shrink-0"
+                         className="!w-5 !h-5 lg:!w-10 lg:!h-10 shrink-0"
                       />
                       <h3 className="para-lg font-semibold text-[#999999] lg:whitespace-nowrap">
                         This helps us align our services with exact needs

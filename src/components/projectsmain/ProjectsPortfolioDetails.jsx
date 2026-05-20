@@ -51,6 +51,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
               fill
               alt={safeDetail.title}
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
           <div className="relative w-full h-65 lg:h-150 rounded-md overflow-hidden">
@@ -59,6 +60,7 @@ const ProjectsPortfolioDetails = ({ slug }) => {
               fill
               alt={safeDetail.title}
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -78,8 +80,12 @@ const ProjectsPortfolioDetails = ({ slug }) => {
           <h2 className="headingFive text-primary font-bold pb-7.5 underline max-w-205">
             {safeDetail.title}
           </h2>
-          <p className="para-lg text-tarnary pb-7.5 text-justify">{safeDetail.intro}</p>
-          <p className="para-lg text-tarnary text-justify">{safeDetail.introtwo}</p>
+          <p className="para-lg text-tarnary pb-7.5 text-justify">
+            {safeDetail.intro}
+          </p>
+          <p className="para-lg text-tarnary text-justify">
+            {safeDetail.introtwo}
+          </p>
         </div>
 
         {/* Process */}
@@ -97,7 +103,9 @@ const ProjectsPortfolioDetails = ({ slug }) => {
                   <span className="w-2 h-2 rounded-full bg-primary mr-2 inline-block align-middle" />
                   {step.title}
                 </h4>
-                <p className="para-lg text-tarnary text-justify">{step.description}</p>
+                <p className="para-lg text-tarnary text-justify">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>
@@ -123,7 +131,10 @@ const ProjectsPortfolioDetails = ({ slug }) => {
           </p>
           <ul className="space-y-5">
             {safeDetail.results.points.map((point, i) => (
-              <li key={i} className="para-lg text-tarnary flex items-start gap-x-5 max-w-177.5">
+              <li
+                key={i}
+                className="para-lg text-tarnary flex items-start gap-x-5 max-w-177.5"
+              >
                 <span className="mt-0.75 shrink-0 bg-[#FFD8C5] w-8 h-8 flex items-center justify-center rounded-[90px] p-2">
                   <svg
                     width="16"

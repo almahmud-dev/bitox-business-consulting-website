@@ -14,25 +14,28 @@ import {
 import ButtonThree from "../ui/ButtonThree";
 import Container from "../ui/Container";
 import { Flex, Stack } from "../ui/Responsive";
+import { useState } from "react";
 
 // ─── Shared CTA Button
 function CTAButton({ frontText, backText, textColor = "#02090F", onClick }) {
   return (
     <div
-      className="inline-flex items-center gap-2.5 cursor-pointer group"
+      className="flex items-center  justify-between w-full gap-2.5  group"
       onClick={onClick}
     >
-      <ButtonThree
-        frontText={frontText}
-        backText={backText}
-        backgroundColor="transparent"
-        textColor={textColor}
-        fontSize={14}
-        paddingTop={0}
-        paddingBottom={0}
-        paddingLeft={0}
-        paddingRight={0}
-      />
+      <Link href={`${frontText === "Send Message" ? "#" : "/contact"}`}>
+        <ButtonThree
+          frontText={frontText}
+          backText={backText}
+          backgroundColor="transparent"
+          textColor={textColor}
+          fontSize={14}
+          paddingTop={0}
+          paddingBottom={0}
+          paddingLeft={0}
+          paddingRight={0}
+        />
+      </Link>
       <span className="inline-block transition-transform group-hover:translate-x-1">
         <ArrowIcon color={textColor === "#ffffff" ? "#ffffff" : "#02090F"} />
       </span>
@@ -41,7 +44,78 @@ function CTAButton({ frontText, backText, textColor = "#02090F", onClick }) {
 }
 
 // ─── Contact Form Card
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function FieldError({ message }) {
+  if (!message) return null;
+  return (
+    <p className="text-[11px] mt-1 text-secondary flex items-center gap-1">
+      <svg
+        width="11"
+        height="11"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      {message}
+    </p>
+  );
+}
 function ContactCard() {
+  const [fields, setFields] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+
+  function validate(data) {
+    return {
+      name: data.name.trim() ? "" : "Name is required",
+      email: !data.email.trim()
+        ? "Email is required"
+        : !EMAIL_REGEX.test(data.email)
+          ? "Enter a valid email"
+          : "",
+      message: data.message.trim() ? "" : "Message cannot be empty",
+    };
+  }
+
+  function handleChange(field, value) {
+    const updated = { ...fields, [field]: value };
+    setFields(updated);
+    if (touched[field])
+      setErrors((e) => ({ ...e, [field]: validate(updated)[field] }));
+  }
+
+  function handleBlur(field) {
+    setTouched((t) => ({ ...t, [field]: true }));
+    setErrors((e) => ({ ...e, [field]: validate(fields)[field] }));
+  }
+
+  function handleSubmit() {
+    setTouched({ name: true, email: true, message: true });
+    const newErrors = validate(fields);
+    setErrors(newErrors);
+    if (Object.values(newErrors).some(Boolean)) return;
+    //  submit logic here
+  }
+
+  const fieldClass = (field) =>
+    `border-b outline-none py-2.5 text-sm text-primary placeholder:text-tarnary bg-transparent transition-colors w-full ${
+      errors[field]
+        ? "border-secondary"
+        : "border-primary/10 focus:border-secondary"
+    }`;
+
   return (
     <div className="bg-bg-secondaryFore shadow-xl px-[38px] xl:px-[52px] py-[30px] xl:py-[45px] w-full lg:max-w-[390px] xl:max-w-[430px]">
       <Stack gap="md">
@@ -50,29 +124,47 @@ function ContactCard() {
         </p>
 
         <Stack gap="sm">
-          {[
-            { type: "text", placeholder: "Name" },
-            { type: "email", placeholder: "Email" },
-          ].map(({ type, placeholder }) => (
+          <div>
             <input
-              key={placeholder}
-              type={type}
-              placeholder={placeholder}
-              className="border-b border-primary/10 outline-none py-2.5 text-sm text-primary placeholder:text-tarnary bg-transparent focus:border-secondary transition-colors"
+              type="text"
+              placeholder="Name"
+              value={fields.name}
+              onChange={(e) => handleChange("name", e.target.value)}
+              onBlur={() => handleBlur("name")}
+              className={fieldClass("name")}
             />
-          ))}
-          <textarea
-            placeholder="Message"
-            rows={3}
-            className="border-b border-primary/10 outline-none py-2.5 text-sm text-primary placeholder:text-tarnary bg-transparent resize-none focus:border-secondary transition-colors"
-          />
+            <FieldError message={errors.name} />
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="Email"
+              value={fields.email}
+              onChange={(e) => handleChange("email", e.target.value)}
+              onBlur={() => handleBlur("email")}
+              className={fieldClass("email")}
+            />
+            <FieldError message={errors.email} />
+          </div>
+          <div>
+            <textarea
+              placeholder="Message"
+              rows={3}
+              value={fields.message}
+              onChange={(e) => handleChange("message", e.target.value)}
+              onBlur={() => handleBlur("message")}
+              className={fieldClass("message") + " resize-none"}
+            />
+            <FieldError message={errors.message} />
+          </div>
         </Stack>
 
         <div className="self-start bg-secondary rounded-[90px] px-6 py-3 hover:bg-secondary/90 transition-colors mt-1">
           <CTAButton
             frontText="Send Message"
-            backText="Let's Talk."
+            backText="Send Message"
             textColor="#ffffff"
+            onClick={handleSubmit}
           />
         </div>
       </Stack>
@@ -134,24 +226,24 @@ export default function FooterTwo() {
       <div className="bg-bg-secondaryThree text-white rounded-tl-[15px]">
         {/* Hours + Appointment Bar */}
         <div className="w-full border-b border-white/10">
-          <div className="mx-auto max-w-[1265px] flex flex-col sm:flex-row">
-            <div className="bg-secondary flex items-center justify-center px-8 py-4 sm:flex-1 lg:ml-[340px] lg:pl-[140px] xl:ml-[300px] xl:pl-[300px]">
+          <div className="flex flex-col sm:flex-row">
+            <div className="  bg-secondary  flex items-center justify-center px-8 py-4 sm:flex-1 lg:ml-[340px] lg:pl-[140px] xl:ml-[300px] xl:pl-[300px]  ">
               <p className="text-sm text-white font-medium text-center">
                 {BUSINESS_HOURS}
               </p>
             </div>
-            <div className="flex items-center justify-between gap-2.5 px-7 py-4 hover:bg-white/5 transition-colors border-t border-white/10 sm:border-t-0 sm:border-l sm:border-white/10 sm:flex-1">
+            <div className="flex items-center justify-between gap-2.5 px-7 py-4  transition-colors  border-t border-white/10 sm:border-t-0 sm:border-l sm:border-white/10 sm:flex-1 bg-bg-secondaryFore ">
               <CTAButton
                 frontText="Call for an appointment"
-                backText="Let's Talk."
-                textColor="#ffffff"
+                backText="Call for an appointment"
+                textColor="#02090f"
               />
             </div>
           </div>
         </div>
 
         {/* Footer Links + Newsletter */}
-        <Container size="">
+        <Container size="2xl">
           <div className="py-8 lg:py-16 ">
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-[minmax(0,35%)_1fr_1fr_1fr] gap-5 xl:pl-[25px] 2xl:pl-[100]">
               <div className="hidden lg:block " />
@@ -185,6 +277,7 @@ export default function FooterTwo() {
                   <a
                     key={i}
                     href={href}
+                    target="_blank"
                     className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-secondary hover:text-white hover:border-transparent transition-all duration-300"
                   >
                     <Icon size={18} />
@@ -201,7 +294,7 @@ export default function FooterTwo() {
         </div>
 
         {/* Desktop: card overlapping footer */}
-        <div className="hidden lg:block absolute top-[-75px] z-10 pointer-events-none right-[65%]">
+        <div className="hidden lg:block absolute top-[-75px] z-10 pointer-events-none lg:right-[65%]  2xl:right-[68%] ">
           <div className="pointer-events-auto inline-block ">
             <ContactCard />
           </div>

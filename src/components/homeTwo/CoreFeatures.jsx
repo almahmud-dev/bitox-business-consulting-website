@@ -46,10 +46,10 @@ const CoreFeatures = () => {
 
           {/* Right: Discover more button */}
           <div className="self-center sm:self-end mb-1.5 sm:mb-1.5 inline-flex items-center gap-2.5 border border-primary text-primary text-sm font-medium rounded-[90px] px-7 py-3.5 cursor-pointer hover:bg-black/5 transition-colors shrink-0 group">
-            <Link href={"/services"}>
+            <Link href={"/contact"}>
               <ButtonThree
                 frontText="Get started now"
-                backText="Let's Talk."
+                backText="Get started now"
                 backgroundColor="transparent"
                 textColor="#02090F"
                 fontSize={14}

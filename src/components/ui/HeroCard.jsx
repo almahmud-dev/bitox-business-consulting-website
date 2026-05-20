@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import allImages from "../helper/imageProvider";
@@ -10,7 +9,7 @@ const HeroCard = () => {
   return (
     <div>
       {/* 2xl */}
-      <div className="max-w-[430px] p-[35px] bg-bg-secondaryTwo rounded-[6px] hidden  2xl:block">
+      <div className="max-w-[470px] p-[35px] bg-bg-secondaryTwo rounded-[6px] hidden  2xl:block">
         <h4 className="headingFour font-bold ">
           Building the right foundation of your business
         </h4>
@@ -28,12 +27,7 @@ const HeroCard = () => {
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
           </Link>
-          <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-[100%]"
-          >
+          <Link href="/video" className="block w-[100%]">
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -59,12 +53,12 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* xl */}
-      <div className="max-w-[430px] p-[35px] bg-bg-secondaryTwo rounded-[6px] hidden xl:block  2xl:hidden">
+      <div className="max-w-[440px] p-[30px] bg-bg-secondaryTwo rounded-[6px] hidden xl:block  2xl:hidden ">
         <h4 className="headingFour font-bold ">
           Building the right foundation of your business
         </h4>
@@ -82,12 +76,7 @@ const HeroCard = () => {
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
           </Link>
-          <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-[100%]"
-          >
+          <Link href="/video" className="block w-[100%]">
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -113,12 +102,12 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* lg devices */}
-      <div className="max-w-[340px] p-[25px] bg-bg-secondaryTwo rounded-[6px] hidden lg:block xl:hidden">
+      <div className="max-w-[340px] p-[25px] bg-bg-secondaryTwo rounded-[6px] hidden lg:block xl:hidden ">
         <h4 className="headingFour font-bold ">
           Building the right foundation of your business
         </h4>
@@ -136,12 +125,7 @@ const HeroCard = () => {
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
           </Link>
-          <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-[100%]"
-          >
+          <Link href="/video" className="block w-[100%]">
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -167,7 +151,7 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
       {/* py-4 px-[25px] bg-primary text-start text-bg-secondaryTwo w-[100%]   rounded-[6px] */}
@@ -190,12 +174,7 @@ const HeroCard = () => {
               className={"!w-full !py-[18px] !justify-start !pr-[60px]"}
             />
           </Link>
-          <a
-            href="https://youtu.be/l6shgiK9Z-k?si=fMjmxKVUJythzBZ5"
-            target="_blank"
-            rel="noopener noreferrer"
-            className=""
-          >
+          <Link href="/video" className="block w-[100%]">
             {/* Wave circle */}
             <div className="absolute top-0 right-[3.5px] h-full flex items-center justify-center">
               <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -221,7 +200,7 @@ const HeroCard = () => {
                 />
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

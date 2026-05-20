@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import { Grid } from "../ui/Responsive";
 import ButtonThree from "../ui/ButtonThree";
 import { PLANS } from "../helper/helpers";
+import Link from "next/link";
 
 function PricingCard({ plan }) {
   const isLight = plan.variant === "light";
@@ -81,7 +82,7 @@ function PricingCard({ plan }) {
 
 export default function PricingSection() {
   return (
-    <section className="py-12 md:py-20">
+    <section className="py-12 md:py-20 lg:mb-13 2xl:mb-18">
       <Container size="lg">
         {/* Header */}
         <div className="flex justify-center mb-4">
@@ -96,7 +97,9 @@ export default function PricingSection() {
         {/* Cards Grid */}
         <Grid cols={{ base: 1, md: 2 }} gap="lg">
           {PLANS.map((plan) => (
-            <PricingCard key={plan.id} plan={plan} />
+            <Link key={plan.id} href={"/pricing"} className="inline-block">
+            <PricingCard  plan={plan} />
+            </Link>
           ))}
         </Grid>
       </Container>

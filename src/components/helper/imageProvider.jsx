@@ -51,6 +51,10 @@ import FAQSection2 from "../../../public/images/faq/discuss.png";
 import FAQSection3 from "../../../public/images/faq/faq_bg.png";
 import FAQSection4 from "../../../public/images/faq/faq_full_bg.png";
 import FooterLogo from "../../../public/images/footer_one/footer_logo.png";
+import Man1 from "../../../public/images/home2_whychoose/man1.jpg";
+import Man2 from "../../../public/images/home2_whychoose/man2.jpg";
+import Man3 from "../../../public/images/home2_whychoose/man3.jpg";
+import Man4 from "../../../public/images/home2_whychoose/man4.jpg";
 
 import contact_logo from "../../../public/images/contact/contact_logo.png";
 
@@ -213,9 +217,150 @@ const allImages = {
     { id: 5, img: Home2OurExperts5 },
     { id: 6, img: Home2OurExperts6 },
   ],
+  expertsTeamInfo: [
+    {
+      id: 1,
+      name: "Julian Hayes",
+      image: Home2OurExperts1,
+      socials: [
+        {
+          id: "fb-1",
+          platform: "Facebook",
+          url: "https://facebook.com",
+        },
+        {
+          id: "tw-1",
+          platform: "Twitter",
+          url: "https://twitter.com",
+        },
+        {
+          id: "li-1",
+          platform: "LinkedIn",
+          url: "https://linkedin.com",
+        },
+      ],
+    },
+    {
+      id: 2,
+      name: "Jamie Rivers",
+      image: Home2OurExperts2,
+      socials: [
+        {
+          id: "fb-2",
+          platform: "Facebook",
+          url: "https://facebook.com",
+        },
+        {
+          id: "tw-2",
+          platform: "Twitter",
+          url: "https://twitter.com",
+        },
+        {
+          id: "li-2",
+          platform: "LinkedIn",
+          url: "https://linkedin.com",
+        },
+      ],
+    },
+    {
+      id: 3,
+      name: "Avery Blake",
+      image: Home2OurExperts3,
+      socials: [
+        {
+          id: "fb-3",
+          platform: "Facebook",
+          url: "https://facebook.com",
+        },
+        {
+          id: "tw-3",
+          platform: "Twitter",
+          url: "https://twitter.com",
+        },
+        {
+          id: "li-3",
+          platform: "LinkedIn",
+          url: "https://linkedin.com",
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "Warren Buffett",
+      image: Home2OurExperts4,
+      socials: [
+        {
+          id: "fb-4",
+          platform: "Facebook",
+          url: "https://facebook.com",
+        },
+        {
+          id: "tw-4",
+          platform: "Twitter",
+          url: "https://twitter.com",
+        },
+        {
+          id: "li-4",
+          platform: "LinkedIn",
+          url: "https://linkedin.com",
+        },
+      ],
+    },
+    {
+      id: 5,
+      name: "Elon Musk",
+      image: Home2OurExperts5,
+      socials: [
+        {
+          id: "fb-5",
+          platform: "Facebook",
+          url: "https://facebook.com",
+        },
+        {
+          id: "tw-5",
+          platform: "Twitter",
+          url: "https://twitter.com",
+        },
+        {
+          id: "li-5",
+          platform: "LinkedIn",
+          url: "https://linkedin.com",
+        },
+      ],
+    },
+    {
+      id: 6,
+      name: "Richard Branson",
+      image: Home2OurExperts6,
+      socials: [
+        {
+          id: "fb-6",
+          platform: "Facebook",
+          url: "https://facebook.com",
+        },
+        {
+          id: "tw-6",
+          platform: "Twitter",
+          url: "https://twitter.com",
+        },
+        {
+          id: "li-6",
+          platform: "LinkedIn",
+          url: "https://linkedin.com",
+        },
+      ],
+    },
+  ],
   // service details pages imgage
   servivesDetailsIcon: ServivesDetailsIcon,
   servivesDetailsBannaer: ServivesDetailsBannaer,
+  // home2 pages imgage for why choose us component
+  whyChooseUsImg: [
+    { id: 1, img: Man1, other: "left-0 top-0 z-0 " },
+    { id: 2, img: Man2, other: "left-[35px] top-0 z-10 " },
+    { id: 3, img: Man3, other: "left-[70px] top-0 z-20 " },
+    { id: 4, img: Man4, other: "left-[105px] top-0 z-30 " },
+  ],
 };
 
 export default allImages;

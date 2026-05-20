@@ -29,6 +29,7 @@ const AboutVideo = () => {
           fill
           alt="aboutUsVideo"
           className="object-cover"
+          sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 440px, (max-width: 1536px) 560px, 919px"
         />
         <div className="absolute w-full top-0 z-10 left-0 h-full flex items-center justify-center">
           <div className="relative flex items-center justify-center w-[52px] h-[52px]">
@@ -96,7 +97,7 @@ const AboutVideo = () => {
             collaborations that drives innovation
           </p>
 
-          <Link href={"/team"}>
+          <Link href={"/contact"}>
             <Button
               label={"Get started now"}
               textColor={"primary"}

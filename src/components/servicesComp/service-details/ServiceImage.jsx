@@ -13,6 +13,7 @@ const ServiceImage = () => {
             className="object-cover rounded-[6px] z-0 transition-transform duration-700 ease-in-out group-hover:scale-105"
             fill
             src={servivesDetailsBannaer}
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
 
           {/* Dark overlay on hover */}
