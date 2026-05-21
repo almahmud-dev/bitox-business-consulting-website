@@ -418,7 +418,7 @@ export const serviceLinks = [
 export const legalLinks = ["Privacy Policy", "Terms and Conditions", "Support"];
 
 export const socialLinks = [
- { icon: FaFacebook, href: "https://facebook.com" },
+  { icon: FaFacebook, href: "https://facebook.com" },
   { icon: FaXTwitter, href: "https://x.com" },
   { icon: FaInstagram, href: "https://instagram.com" },
   { icon: FaDribbble, href: "https://dribbble.com" },
@@ -672,18 +672,19 @@ export const testimonialsDataHomeTwo = [
     title: "Remarkable Growth and Results",
     description:
       "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-    authorImg: imageProvider.home2Testimonials[0].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[0].img,
     authorName: "Sophia Rahman",
     authorRole: "BrightEdge",
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[0].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
     id: 2,
     type: "video",
-    authorImg: imageProvider.home2Testimonials[2].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[1].img,
     authorName: "Michael Torres",
     authorRole: "CEO, TechNova",
-    videoThumbnail: imageProvider.home2Testimonials[1].img,
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[1].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
@@ -693,9 +694,10 @@ export const testimonialsDataHomeTwo = [
     title: "Creative Strategies That Stand Out",
     description:
       "We are dedicated to guiding you on your financial journey with expertise integrity, & a personalized business non-stop solution with true professional from Consult agency.",
-    authorImg: imageProvider.home2Testimonials[3].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[2].img,
     authorName: "Michael Hayes",
     authorRole: "CEO, TechNova",
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[2].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
@@ -705,18 +707,19 @@ export const testimonialsDataHomeTwo = [
     title: "Exceptional ROI Within 3 Months",
     description:
       "Their strategic approach transformed how we handle client acquisition. The team's dedication and deep market understanding helped us scale faster than we ever anticipated.",
-    authorImg: imageProvider.home2Testimonials[0].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[3].img,
     authorName: "Aisha Karim",
     authorRole: "Founder, NexaWave",
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[3].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
     id: 5,
     type: "video",
-    authorImg: imageProvider.home2Testimonials[2].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[4].img,
     authorName: "David Chen",
     authorRole: "CMO, PulseVentures",
-    videoThumbnail: imageProvider.home2Testimonials[1].img,
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[4].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
@@ -726,9 +729,10 @@ export const testimonialsDataHomeTwo = [
     title: "A Partner That Truly Delivers",
     description:
       "From day one, the Consult team understood our vision. Their frameworks and insights have been instrumental in driving consistent, measurable growth across all channels.",
-    authorImg: imageProvider.home2Testimonials[3].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[5].img,
     authorName: "Elena Russo",
     authorRole: "Director, SkyCraft Inc.",
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[5].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
@@ -738,18 +742,19 @@ export const testimonialsDataHomeTwo = [
     title: "Clarity, Speed, and Real Results",
     description:
       "We needed a team that could move fast without sacrificing quality. Consult delivered a complete go-to-market strategy in record time, and the results have been outstanding.",
-    authorImg: imageProvider.home2Testimonials[0].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[6].img,
     authorName: "James Okafor",
     authorRole: "VP Growth, Stackline",
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[6].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
     id: 8,
     type: "video",
-    authorImg: imageProvider.home2Testimonials[2].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[7].img,
     authorName: "Priya Nair",
     authorRole: "CEO, Luminary Labs",
-    videoThumbnail: imageProvider.home2Testimonials[1].img,
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[7].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
   {
@@ -759,9 +764,10 @@ export const testimonialsDataHomeTwo = [
     title: "Strategic Thinking at Its Best",
     description:
       "The level of expertise and care Consult brings is unmatched. They helped us redesign our entire client funnel and the impact was visible within the first few weeks.",
-    authorImg: imageProvider.home2Testimonials[3].img,
+    authorImg: imageProvider.home2TestimonialsVersioTwo[8].img,
     authorName: "Lucas Fernandez",
     authorRole: "COO, BrightPath",
+    videoThumbnail: imageProvider.home2TestimonialsVersioTwo[8].img,
     videoSrc: "https://youtu.be/NhcQuWNo-OM?si=QDr-nGr-3ZuAvfWx",
   },
 ];

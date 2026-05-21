@@ -68,6 +68,16 @@ import AboutTeamBorder from "../../../public/images/aboutTeam/team-page-border.p
 // service details pages imgage
 import ServivesDetailsIcon from "../../../public/images/service/service-details.png";
 import ServivesDetailsBannaer from "../../../public/images/service/services-detail-banner.png";
+// home 2 testimonials pages imgage
+import Home2TestimonialsV1 from "../../../public/images/home2_Testimonials/testimonialMan1.avif";
+import Home2TestimonialsV2 from "../../../public/images/home2_Testimonials/testimonialMan2.avif";
+import Home2TestimonialsV3 from "../../../public/images/home2_Testimonials/testimonialMan3.avif";
+import Home2TestimonialsV4 from "../../../public/images/home2_Testimonials/testimonialMan4.avif";
+import Home2TestimonialsV5 from "../../../public/images/home2_Testimonials/testimonialMan5.avif";
+import Home2TestimonialsV6 from "../../../public/images/home2_Testimonials/testimonialMan6.jpg";
+import Home2TestimonialsV7 from "../../../public/images/home2_Testimonials/testimonialMan7.avif";
+import Home2TestimonialsV8 from "../../../public/images/home2_Testimonials/testimonialMan8.avif";
+import Home2TestimonialsV9 from "../../../public/images/home2_Testimonials/testimonialMan9.avif";
 
 const allImages = {
   heroIocns: HeroImage,
@@ -182,6 +192,17 @@ const allImages = {
     { id: 2, img: Home2Testimonials2 },
     { id: 3, img: Home2Testimonials3 },
     { id: 4, img: Home2Testimonials4 },
+  ],
+  home2TestimonialsVersioTwo: [
+    { id: 1, img: Home2TestimonialsV1 },
+    { id: 2, img: Home2TestimonialsV2 },
+    { id: 3, img: Home2TestimonialsV3 },
+    { id: 4, img: Home2TestimonialsV4 },
+    { id: 5, img: Home2TestimonialsV5 },
+    { id: 6, img: Home2TestimonialsV6 },
+    { id: 7, img: Home2TestimonialsV7 },
+    { id: 8, img: Home2TestimonialsV8 },
+    { id: 9, img: Home2TestimonialsV9 },
   ],
   commonHeroImages: CommonHeroImages,
   home2OurExperts: [
