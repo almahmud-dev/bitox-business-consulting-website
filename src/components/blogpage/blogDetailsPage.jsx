@@ -1,17 +1,78 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import Container from "../ui/Container";
 import BlogCard from "../ui/BlogCard";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Grid, Stack } from "../ui/Responsive";
 import ButtonThree from "../ui/ButtonThree";
-
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+function FieldError({ message }) {
+  if (!message) return null;
+  return (
+    <p className="text-[11px] mt-1 text-secondary flex items-center gap-1">
+      <svg
+        width="11"
+        height="11"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      {message}
+    </p>
+  );
+}
 const BlogDetailsPage = ({ blog }) => {
   if (!blog) return null;
   const inputClass =
     "w-full bg-[#F5F5F5] rounded-lg px-5 py-4 text-sm bg-neutral-100 border border-transparent focus:border-neutral-300 focus:outline-none transition-colors placeholder:text-neutral-400";
+  // ── Comment Form State ──  ← এটা যোগ করো
+  const [fields, setFields] = useState({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    message: false,
+  });
+
+  function validate(data) {
+    return {
+      name: data.name.trim() ? "" : "Name is required",
+      email: !data.email.trim()
+        ? "Email is required"
+        : !EMAIL_REGEX.test(data.email)
+          ? "Enter a valid email"
+          : "",
+      message: data.message.trim() ? "" : "Message cannot be empty",
+    };
+  }
+  function handleChange(field, value) {
+    const updated = { ...fields, [field]: value };
+    setFields(updated);
+    if (touched[field])
+      setErrors((e) => ({ ...e, [field]: validate(updated)[field] }));
+  }
+  function handleBlur(field) {
+    setTouched((t) => ({ ...t, [field]: true }));
+    setErrors((e) => ({ ...e, [field]: validate(fields)[field] }));
+  }
+  function handleSubmit() {
+    setTouched({ name: true, email: true, message: true });
+    const newErrors = validate(fields);
+    setErrors(newErrors);
+    if (Object.values(newErrors).some(Boolean)) return;
+    // submit logic
+  }
   return (
     <div className="bg-bg-secondaryOne">
       {/* ── Breadcrumb ── */}
@@ -97,7 +158,7 @@ const BlogDetailsPage = ({ blog }) => {
             src={blog.heroImage}
             alt={blog.title}
             className="object-cover object-top"
-             sizes="100vw"
+            sizes="100vw"
           />
         </div>
 
@@ -311,27 +372,51 @@ const BlogDetailsPage = ({ blog }) => {
             <h2 className="text-3xl font-bold underline tracking-tight mb-7">
               Leave A Comment
             </h2>
-
             <Stack gap="md">
               <Grid cols={{ base: 1, md: 2 }} gap="md">
-                <input type="text" placeholder="Name" className={inputClass} />
-                <input
-                  type="email"
-                  placeholder="Email"
-                  className={inputClass}
-                />
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    value={fields.name}
+                    onChange={(e) => handleChange("name", e.target.value)}
+                    onBlur={() => handleBlur("name")}
+                    className={inputClass}
+                  />
+                  <FieldError message={errors.name} />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    value={fields.email}
+                    onChange={(e) => handleChange("email", e.target.value)}
+                    onBlur={() => handleBlur("email")}
+                    className={inputClass}
+                  />
+                  <FieldError message={errors.email} />
+                </div>
               </Grid>
 
-              <textarea
-                placeholder="Write your message"
-                rows={6}
-                className={`${inputClass} resize-none`}
-              />
+              <div>
+                <textarea
+                  placeholder="Write your message"
+                  rows={6}
+                  value={fields.message}
+                  onChange={(e) => handleChange("message", e.target.value)}
+                  onBlur={() => handleBlur("message")}
+                  className={`${inputClass} resize-none`}
+                />
+                <FieldError message={errors.message} />
+              </div>
 
-              <div className="self-start flex items-center gap-2 bg-secondary text-white text-base font-bold rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-[#e63946] hover:text-white transition-colors group">
+              <div
+                onClick={handleSubmit}
+                className="self-start flex items-center gap-2 bg-secondary text-white text-base font-bold rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-[#e63946] hover:text-white transition-colors group"
+              >
                 <ButtonThree
                   frontText="Submit comment"
-                  backText="Let's Talk."
+                  backText="Submit comment"
                   backgroundColor="transparent"
                   textColor="#FFFFFF"
                   fontSize={14}
