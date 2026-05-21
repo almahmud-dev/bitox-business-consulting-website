@@ -1,11 +1,11 @@
 import React from "react";
 import allImages from "../helper/imageProvider";
 import Image from "next/image";
-import Button from "../ui/Button";
+
 import { allIcons } from "../helper/iconProvider";
-import ButtonThree from "../ui/ButtonThree";
-import ButtonTwo from "../ui/ButtonTwo";
+
 import Link from "next/link";
+import ButtonThree from "../ui/ButtonThree";
 
 const AboutVideo = () => {
   const { aboutUsVideo } = allImages;
@@ -97,13 +97,36 @@ const AboutVideo = () => {
             collaborations that drives innovation
           </p>
 
-          <Link href={"/contact"}>
-            <Button
-              label={"Get started now"}
-              textColor={"primary"}
-              showIcon={true}
-            />
-          </Link>
+          
+          <div className="self-start flex items-center w-fit gap-2 border border-primary text-primary text-sm sm:text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-4 cursor-pointer hover:bg-white/90 transition-colors group">
+            <Link href={"/contact"} className="inline-block">
+              <ButtonThree
+                frontText="Get started now"
+                backText="Get started now"
+                backgroundColor="transparent"
+                textColor="#02090F"
+                fontSize={14}
+                paddingTop={0}
+                paddingBottom={0}
+                paddingLeft={0}
+                paddingRight={0}
+              />
+            </Link>
+            <span className="inline-block transition-transform group-hover:translate-x-1">
+              <svg
+                width="9"
+                height="12"
+                viewBox="0 0 9 12"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M0.77735 0.0848229C0.445073 -0.136695 0 0.1015 0 0.500848V10.6323C0 11.0317 0.445073 11.2699 0.77735 11.0484L8.37596 5.98261C8.67283 5.7847 8.67283 5.34848 8.37596 5.15056L0.77735 0.0848229Z"
+                  fill="#02090F"
+                />
+              </svg>
+            </span>
+          </div>
         </div>
       </div>
     </section>
