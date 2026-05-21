@@ -109,7 +109,7 @@ html {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee 10s linear infinite;
+  animation: marquee 25s linear infinite;
 }
 
 .animate-marquee:hover {
@@ -157,4 +157,20 @@ html {
 
 .animate-wave2sm {
   animation: wave2sm 3.4s ease-out infinite;
+}
+
+/* home two  about section vertical marquee */
+@keyframes marquee-vertical {
+  0%   { transform: translateY(0%); }
+  100% { transform: translateY(-33.33%); }
+}
+
+.animate-marquee-vertical {
+  display: flex;
+  flex-direction: column;
+  animation: marquee-vertical 14s linear infinite;
+}
+
+.animate-marquee-vertical:hover {
+  animation-play-state: paused;
 }

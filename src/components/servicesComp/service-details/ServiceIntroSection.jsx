@@ -87,6 +87,7 @@ const ServiceIntroSection = ({ serviceItems }) => {
                   alt="ServiceIntroSection-right-part-images"
                   className="object-cover rounded-[6px]"
                   fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>

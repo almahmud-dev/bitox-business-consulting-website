@@ -28,7 +28,7 @@ const Home1 = () => {
       <ProcessSteps />
       <BlogSectionHO />
       <ContactSectionHO />
-      <HomeFaqSection/>
+      <HomeFaqSection />
     </>
   );
 };

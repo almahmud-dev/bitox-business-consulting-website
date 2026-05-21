@@ -97,6 +97,7 @@ const BlogDetailsPage = ({ blog }) => {
             src={blog.heroImage}
             alt={blog.title}
             className="object-cover object-top"
+             sizes="100vw"
           />
         </div>
 
@@ -215,6 +216,7 @@ const BlogDetailsPage = ({ blog }) => {
                       src={img}
                       alt={`blog-detail-img-${i + 1}`}
                       className="object-cover object-top"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 ))}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Plus } from "lucide-react";
 import ButtonThree from "../ui/ButtonThree";
 import allImages from "../helper/imageProvider";
+import Link from "next/link";
 
 const PLUS_POSITIONS = [
   // Top row
@@ -31,6 +32,7 @@ const Herotwo = () => {
       <Image
         src={allImages.home2heroBanner}
         alt="Hero Background"
+        sizes="100vw"
         fill
         priority
         className="object-cover object-center"
@@ -141,17 +143,19 @@ const Herotwo = () => {
           </p>
 
           <div className="self-start flex items-center gap-2 bg-bg-secondaryOne text-primary font-medium rounded-[90px] px-4 py-2 sm:px-7 sm:py-4 cursor-pointer hover:bg-white/90 transition-colors group">
-            <ButtonThree
-              frontText="Get started now"
-              backText="Let's Talk."
-              backgroundColor="transparent"
-              textColor="#02090F"
-              fontSize={14}
-              paddingTop={0}
-              paddingBottom={0}
-              paddingLeft={0}
-              paddingRight={0}
-            />
+            <Link href={"/contact"}>
+              <ButtonThree
+                frontText="Get started now"
+                backText="Get started now"
+                backgroundColor="transparent"
+                textColor="#02090F"
+                fontSize={14}
+                paddingTop={0}
+                paddingBottom={0}
+                paddingLeft={0}
+                paddingRight={0}
+              />
+            </Link>
             <span className="inline-block transition-transform group-hover:translate-x-1">
               <svg width="9" height="12" viewBox="0 0 9 12" fill="none">
                 <path

@@ -27,16 +27,17 @@ export default function NotFound() {
           width={777}
           height={350}
           alt="404 error"
+          priority
           className="
-            w-[55vw]
-            sm:w-[45vw]
-            md:w-95
-            lg:w-120
-            xl:w-145
-            2xl:w-162.5
-            h-auto
-            max-h-[25vh]
-            object-contain
+    w-[55vw]
+    sm:w-[45vw]
+    md:w-95
+    lg:w-120
+    xl:w-145
+    2xl:w-162.5
+    h-auto
+    max-h-[25vh]
+    object-contain
           "
         />
       </div>

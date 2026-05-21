@@ -39,7 +39,7 @@ const ButtonTwo = ({
       color: "#FFFFFF",
       position: "absolute",
       whiteSpace: "nowrap",
-      transition: "transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s",
+      transition: "transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease-in-out",
       userSelect: "none",
     },
     front: {

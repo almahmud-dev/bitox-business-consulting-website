@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../ui/Container";
 import Responsive from "../ui/Responsive";
 import Image from "next/image";
@@ -24,6 +23,7 @@ const AboutSectionHO = () => {
                 alt="about-section"
                 className="object-cover"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
@@ -38,9 +38,9 @@ const AboutSectionHO = () => {
                 guidance, analysis and targeted coaching,{" "}
               </p>
 
-              <Link href={"/about"} className="inline-block">
+              <Link href={"/contact"} className="inline-block">
                 {" "}
-                <ButtonTwo frontText={"Get in touch"} />
+                <ButtonTwo frontText={"Get in touch"} backText={"Get in touch"} />
               </Link>
 
               {/* Animated Progress Bars */}
@@ -96,6 +96,7 @@ const AboutSectionHO = () => {
                 alt="about-section"
                 className="object-cover"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </Responsive.Grid>

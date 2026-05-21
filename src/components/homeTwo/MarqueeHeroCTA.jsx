@@ -17,7 +17,7 @@ function CTAButton({ frontText, backText, textColor = "#02090F", onClick }) {
       className="inline-flex items-center gap-2.5 cursor-pointer group"
       onClick={onClick}
     >
-      <Link href={"/pricing"}>
+      <Link href={"/contact"}>
         <ButtonThree
           frontText={frontText}
           backText={backText}
@@ -61,7 +61,7 @@ function HeroCTA() {
         <div className="border border-primary rounded-[90px] px-7 py-3.5 hover:bg-black/5 transition-colors mb-10 lg:mb-[140px]">
           <CTAButton
             frontText="Let's build together"
-            backText="Let's Talk."
+            backText="Let's build together"
             textColor="#02090F"
           />
         </div>

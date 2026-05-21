@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -64,7 +63,8 @@ const BrandLogos = () => {
                   alt={items.alt || "brand logo"}
                   width={120}
                   height={36}
-                  className="h-[24px] w-auto sm:h-[28px] md:h-[32px] lg:h-[36px] object-contain"
+                  className="h-[24px] sm:h-[28px] md:h-[32px] lg:h-[36px] object-contain"
+                  style={{ width: "auto", height: "auto" }} 
                 />
               </div>
             </SwiperSlide>

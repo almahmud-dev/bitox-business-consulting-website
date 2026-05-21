@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "../ui/Container";
 import { allIcons } from "../helper/iconProvider";
 import TestimonialsSlider from "../ui/TestimonialsSlider";
@@ -13,45 +12,54 @@ const TestimonialsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-4">
           {/* Left Info Panel */}
           <div className="bg-secondary flex flex-col justify-between">
-            <div className="p-[20px] sm:p-[25px] lg:p-[30px]">
-              {/* ✅ CountUpStat for 4.9 rating */}
-              <CountUpStat
-                value="4.9"
-                className="text-center [&>p:first-child]:headingOne [&>p:first-child]:text-bg-secondaryTwo [&>p:first-child]:font-bold [&>p:first-child]:text-center"
-                textClassName="headingOne text-bg-secondaryTwo font-bold text-center"
-                hideLabel
-              />
+            <div className="p-4 sm:px-5 sm:py-[30px] xl:p-[30px]">
+              <div className="max-w-[290px]  mx-auto">
+                {/* CountUpStat for 4.9 rating */}
+                <CountUpStat
+                  value="4.9"
+                  statTextClass="headingOne font-bold text-bg-secondaryTwo text-center"
+                  textClassName="headingOne text-bg-secondaryTwo font-bold text-center"
+                  hideLabel
+                />
 
-              <ul className="flex gap-[2px] justify-center lg:justify-end mt-[10px] lg:mr-[55px]">
-                {[...new Array(5)].map((_, index) => (
-                  <li key={index} className="text-bg-secondaryTwo text-lg sm:text-xl">
-                    {star}
-                  </li>
-                ))}
-              </ul>
+                <ul className="flex gap-[2px] justify-center lg:justify-end mt-[10px] ">
+                  {[...new Array(5)].map((_, index) => (
+                    <li
+                      key={index}
+                      className="text-bg-secondaryTwo text-lg sm:text-xl"
+                    >
+                      {star}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <h3 className="headingFour mt-[20px] lg:mt-[30px] text-center text-bg-secondaryTwo font-bold">
                 Real stories. Real impact.
               </h3>
             </div>
 
-            {/* ✅ CountUpStat for bottom stats */}
+            {/*  CountUpStat for bottom stats */}
             <div className="border-t border-b border-[#ffffff1b]">
-              <div className="flex items-center justify-between p-[20px] sm:p-[25px] lg:p-[30px]">
-                <CountUpStat
-                  value="99%"
-                  label="Satisfaction Rate"
-                  duration={1800}
-                  statTextClass="headingSix font-bold text-bg-secondaryTwo"
-                  labelClass="text-sm sm:text-base pt-1 font-medium text-bg-secondaryTwo"
-                />
-                <CountUpStat
-                  value="70+"
-                  label="Companies Automated"
-                  duration={1800}
-                  statTextClass="headingSix font-bold text-bg-secondaryTwo"
-                  labelClass="text-sm sm:text-base pt-1 font-medium text-bg-secondaryTwo"
-                  className="text-end sm:text-start"
-                />
+              <div className="flex items-center  justify-between gap-4    p-4 sm:px-5 sm:py-[30px] xl:p-[30px]  w-full">
+                <div>
+                  <CountUpStat
+                    value="99%"
+                    label="Satisfaction Rate"
+                    duration={1800}
+                    statTextClass="headingSix font-bold text-bg-secondaryTwo"
+                    labelClass="text-sm sm:text-base pt-1 font-medium text-bg-secondaryTwo"
+                  />
+                </div>
+                <div className=" ">
+                  <CountUpStat
+                    value="70+"
+                    label="Companies Automated"
+                    duration={1800}
+                    statTextClass="headingSix font-bold text-bg-secondaryTwo"
+                    labelClass="text-sm sm:text-base pt-1 font-medium text-bg-secondaryTwo"
+                    className="text-end sm:text-start"
+                  />
+                </div>
               </div>
             </div>
           </div>

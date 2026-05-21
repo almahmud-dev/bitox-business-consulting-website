@@ -5,7 +5,11 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, X, Menu } from "lucide-react";
-import { NAV_LINKS, DesktopNavItem, MobileNavItem } from "@/components/helper/helpers";
+import {
+  NAV_LINKS,
+  DesktopNavItem,
+  MobileNavItem,
+} from "@/components/helper/helpers";
 
 // --- Logic ---
 function useNavbar() {
@@ -30,7 +34,9 @@ function useNavbar() {
 
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [mobileOpen]);
 
   const handleMouseEnter = useCallback((label) => {
@@ -46,7 +52,10 @@ function useNavbar() {
     setOpenMobileDropdown((prev) => (prev === label ? null : label));
   }, []);
 
-  const toggleMobileMenu = useCallback(() => setMobileOpen((prev) => !prev), []);
+  const toggleMobileMenu = useCallback(
+    () => setMobileOpen((prev) => !prev),
+    [],
+  );
   const closeMobileMenu = useCallback(() => setMobileOpen(false), []);
 
   return {
@@ -114,9 +123,12 @@ export default function NavbarTwo() {
           <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
             <Phone size={18} className="text-white" />
           </div>
-          <span className="text-base font-semibold text-primary tracking-wide">
-            9 500 212 09 88
-          </span>
+          <a
+            href="tel:+79500212098"
+            className="text-base font-semibold text-primary inline-block"
+          >
+            7 950 021 20 98
+          </a>
         </div>
       </header>
       {/* ── Mobile Navbar */}
@@ -174,9 +186,12 @@ export default function NavbarTwo() {
             <div className="w-9 h-9 rounded-full bg-secondary flex items-center justify-center">
               <Phone size={16} className="text-white" />
             </div>
-            <span className="text-base font-semibold text-primary">
-              9 500 212 09 88
-            </span>
+            <a
+              href="tel:+79500212098"
+              className="text-base font-semibold text-primary inline-block"
+            >
+              7 950 021 20 98
+            </a>
           </div>
         </nav>
       </div>

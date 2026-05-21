@@ -1,4 +1,3 @@
-import React from "react";
 import Herotwo from "@/components/homeTwo/Herotwo";
 import OurClients from "@/components/homeTwo/OurClients";
 import AboutUs from "@/components/homeTwo/AboutUs";
@@ -25,7 +24,7 @@ const page = () => {
       <WhyChooseUs />
       <TestimonialsClient />
       <PricingPlan />
-      <OurExperts />
+      <OurExperts /> 
       <OurTeam />
       <BlogInsight />
       <MarqueeHeroCTA/>

@@ -21,12 +21,13 @@ const ProjectCard = ({
       </span>
       <Image
         src={image}
+        sizes="(max-width: 1024px) 100vw, 50vw"
         fill
         alt="project cart "
         className="z-[0] object-cover group-hover:scale-[1.1] duration-700 ease-in-out  "
       />
       <div className=" bottom-5 group-hover:bottom-5    duration-700 ease-in-out  absolute md:bottom-[-210px] left-1/2 -translate-x-1/2 bottom-5 bg-bg-secondaryTwo w-[280px] h-[140px] md:w-[400px] md:h-[200px] z-[10] rounded-t-full flex  flex-col items-center justify-center">
-        <h6 className="headingSixAlter text-primary font-bold pb-[6px]">
+        <h6 className="headingSixAlter text-primary font-bold pb-[6px] transition duration-500 ease-in-out hover:text-secondary">
           {title}
         </h6>{" "}
         <p className="text-sm  font-medium flex items-center gap-x-[10px]">

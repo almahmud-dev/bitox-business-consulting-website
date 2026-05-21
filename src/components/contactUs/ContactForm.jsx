@@ -171,7 +171,7 @@ const ContactForm = () => {
                 >
                   <ButtonThree
                     frontText="Submit message"
-                    backText="Let's Talk."
+                    backText="Submit message"
                     backgroundColor="transparent"
                     textColor="#FFFFFF"
                     fontSize={14}
@@ -203,18 +203,18 @@ const ContactForm = () => {
               />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6 flex-1 w-full">
-              <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-xl p-6 lg:p-5 xl:p-8 shadow-sm border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <MapPinIcon className="w-5 h-5 text-primary" />
                   </div>
                   <h3 className="para-TwoXl font-bold text-primary">Address</h3>
                 </div>
-                <p className="para-lg text-tarnary leading-relaxed">
+                <p className="para-lg text-tarnary leading-relaxed break-all">
                   Valentin, Street Road 24, New York, USA – 67452
                 </p>
               </div>
-              <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-xl p-6 lg:p-5 xl:p-8 shadow-sm border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <PhoneIcon className="w-5 h-5 text-primary" />
@@ -224,13 +224,13 @@ const ContactForm = () => {
                   </h3>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <p className="para-lg text-tarnary">
+                  <p className="para-lg text-tarnary break-all">
                     supportadmin@example.com
                   </p>
                   <p className="para-lg text-tarnary">(255) 864-6308</p>
                 </div>
               </div>
-              <div className="bg-white rounded-xl p-6 lg:p-8 shadow-sm border border-gray-100">
+              <div className="bg-white rounded-xl p-6 lg:p-5 xl:p-8 shadow-sm border border-gray-100">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                     <ClockIcon className="w-5 h-5 text-primary" />
@@ -240,10 +240,12 @@ const ContactForm = () => {
                   </h3>
                 </div>
                 <div className="flex flex-col gap-1">
-                  <p className="para-lg text-tarnary">
+                  <p className="para-lg text-tarnary break-all">
                     Monday – Friday: 09:00 – 18:30
                   </p>
-                  <p className="para-lg text-tarnary">Saturday: until 15:30</p>
+                  <p className="para-lg text-tarnary break-all">
+                    Saturday: until 15:30
+                  </p>
                 </div>
               </div>
             </div>

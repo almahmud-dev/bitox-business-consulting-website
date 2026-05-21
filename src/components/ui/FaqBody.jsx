@@ -58,15 +58,18 @@ const FaqBody = () => {
           <div className="  bg-white rounded-lg flex flex-col sm:flex-row  md:flex-col lg:flex-row items-center justify-between gap-6 sm:gap-4 px-5 sm:px-8 lg:px-10 py-5 sm:py-6 md:ml-2">
             <div className="w-full sm:flex-1">
               <h3 className="text-xl sm:text-2xl lg:text-[30px] font-bold text-primary max-w-full sm:max-w-[389px] mb-3 sm:mb-4 lg:mb-5 leading-snug lg:leading-10 ">
-                Have any questions? we're <br className="hidden sm:block md:hidden lg:block" />{" "}
-                here for you.
+                Have any questions? we're{" "}
+                <br className="hidden sm:block md:hidden lg:block" /> here for
+                you.
               </h3>
               <p className="text-sm sm:text-base lg:text-lg text-tarnary max-w-full sm:max-w-[407px] leading-6 sm:leading-7 mb-5 sm:mb-6 lg:mb-7.5">
                 If you manage high transaction volumes, multiple entities, or
                 require custom integrations, our team can tailor Makro to your
                 needs.
               </p>
-              <Link href={"/faq"}><ButtonTwo frontText="Get in touch" backText="Get in touch" /></Link>
+              <Link href={"/contact"}>
+                <ButtonTwo frontText="Get in touch" backText="Get in touch" />
+              </Link>
             </div>
 
             {/* CTA illustration — hidden on mobile, shown sm+ */}
@@ -76,7 +79,8 @@ const FaqBody = () => {
                 alt="Support illustration"
                 width={412}
                 height={344}
-                className="object-cover rounded-lg   w-[260px] h-[218px] md:w-[320px] md:h-[268px] lg:w-[412px] lg:h-[344px]"
+                className="object-cover rounded-lg w-[260px] h-[218px] md:w-[320px] md:h-[268px] lg:w-[412px] lg:h-[344px]"
+                style={{ height: "auto" }}
               />
             </div>
           </div>

@@ -25,14 +25,15 @@ export const metadata = {
     "Bitox is a global business consulting and finance firm helping companies achieve measurable growth and long-term strategic success.",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, modal }) {
   return (
     <html
       lang="en"
       className={`${spaceGrotesk.variable} ${dmSans.variable} ${bebasNeue.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-          {children}
+        {children}
+        {modal}
       </body>
     </html>
   );
