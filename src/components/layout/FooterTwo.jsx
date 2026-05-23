@@ -117,7 +117,7 @@ function ContactCard() {
     }`;
 
   return (
-    <div className="bg-bg-secondaryFore shadow-xl px-[38px] xl:px-[52px] py-[30px] xl:py-[45px] w-full lg:max-w-[390px] xl:max-w-[430px]">
+    <div className="bg-bg-secondaryFore shadow-xl px-[38px] xl:px-[48px] py-[30px] xl:py-[38px] w-full lg:max-w-[390px] xl:max-w-[430px]">
       <Stack gap="md">
         <p className="headingFive font-bold text-primary leading-snug">
           Have questions? Get in touch now!

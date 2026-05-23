@@ -31,7 +31,10 @@ const AboutVideo = () => {
           className="object-cover"
           sizes="(max-width: 1024px) 100vw, (max-width: 1280px) 440px, (max-width: 1536px) 560px, 919px"
         />
-        <div className="absolute w-full top-0 z-10 left-0 h-full flex items-center justify-center">
+        <Link
+          href={"/aboutVideo"}
+          className="absolute w-full top-0 z-10 left-0 h-full flex items-center justify-center"
+        >
           <div className="relative flex items-center justify-center w-[52px] h-[52px]">
             {/* for  under sm */}
             <span
@@ -66,7 +69,7 @@ const AboutVideo = () => {
               <span className="relative !z-20 text-white text-xl">{play}</span>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       {/* Content box */}
@@ -97,7 +100,6 @@ const AboutVideo = () => {
             collaborations that drives innovation
           </p>
 
-          
           <div className="self-start flex items-center w-fit gap-2 border border-primary text-primary text-sm sm:text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-4 cursor-pointer hover:bg-white/90 transition-colors group">
             <Link href={"/contact"} className="inline-block">
               <ButtonThree

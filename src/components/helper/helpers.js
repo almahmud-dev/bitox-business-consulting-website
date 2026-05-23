@@ -53,11 +53,20 @@ export const NAV_LINKS = [
   {
     label: "Pages",
     children: [
+      { label: "Business Consultant", href: "/" },
+      { label: "Consulting Agency", href: "/consulting-agency" },
+      { label: "About Us", href: "/about" },
       { label: "Team", href: "/team" },
+      { label: "Services", href: "/services" },
+      { label: "Service Details", href: "/services/details" },
+      { label: "Projects", href: "/projects" },
+      { label: "Project Details", href: "/projects/details" },
       { label: "Blog", href: "/blog" },
       { label: "Blog Details", href: "/blog/details" },
       { label: "Pricing", href: "/pricing" },
       { label: "FAQ", href: "/faq" },
+      { label: "Contact", href: "/contact" },
+
       { label: "404", href: "/not-found" },
     ],
   },
@@ -75,7 +84,7 @@ export function DropdownMenu({
   pathname,
   style = "rounded",
 }) {
-  const base = `absolute top-full left-0 w-52 bg-white  py-2 z-50 transition-all duration-200 ${
+  const base = `absolute top-full left-0 w-52  bg-white   py-2 z-50 transition-all duration-200 ${
     isOpen
       ? "opacity-100 translate-y-0 pointer-events-auto"
       : "opacity-0 -translate-y-2 pointer-events-none"
@@ -87,21 +96,23 @@ export function DropdownMenu({
   };
 
   return (
-    <div className={`${base} ${styles[style]}`}>
-      {children.map((child) => (
-        <Link
-          key={child.href}
-          href={child.href}
-          onClick={onClose}
-          className={`block px-5 py-2.5 text-[16px] transition-colors  duration-200 ${
-            isActiveLink(child.href, pathname)
-              ? "text-secondary font-medium bg-secondary/5"
-              : "text-primary hover:text-secondary hover:bg-secondary/5"
-          }`}
-        >
-          {child.label}
-        </Link>
-      ))}
+    <div className={`${base} ${styles[style]} `}>
+      <div className="max-h-[70vh] overflow-y-auto">
+        {children.map((child) => (
+          <Link
+            key={child.href}
+            href={child.href}
+            onClick={onClose}
+            className={`block px-5 py-2.5 text-[16px] transition-colors  duration-200 ${
+              isActiveLink(child.href, pathname)
+                ? "text-secondary font-medium bg-secondary/5"
+                : "text-primary hover:text-secondary hover:bg-secondary/5"
+            }`}
+          >
+            {child.label}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
@@ -185,7 +196,7 @@ export function MobileNavItem({
       <div>
         <button
           onClick={() => onToggle(link.label)}
-          className={`flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
+          className={`  flex items-center justify-between w-full py-3.5 border-b border-primary/10 transition-colors duration-200 ${activeClass}`}
         >
           <span className="text-base font-medium font-heading">
             {link.label}
@@ -197,24 +208,26 @@ export function MobileNavItem({
         </button>
         <div
           className={`overflow-hidden transition-all duration-300 ${
-            isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            isOpen ? "max-h-none opacity-100" : "max-h-0 opacity-0" // ✅ max-h-96 → max-h-none
           }`}
         >
-          <div className="flex flex-col gap-1 py-2 pl-4">
-            {link.children.map((child) => (
-              <Link
-                key={child.href}
-                href={child.href}
-                onClick={onClose}
-                className={`py-2 text-[16px] transition-colors duration-200 ${
-                  isActiveLink(child.href, pathname)
-                    ? "text-secondary font-medium"
-                    : "text-primary/70 hover:text-secondary"
-                }`}
-              >
-                {child.label}
-              </Link>
-            ))}
+          <div className="max-h-[40vh] overflow-y-auto">
+            <div className="flex flex-col gap-1 py-2 pl-4">
+              {link.children.map((child) => (
+                <Link
+                  key={child.href}
+                  href={child.href}
+                  onClick={onClose}
+                  className={`py-2 text-[16px] transition-colors duration-200 ${
+                    isActiveLink(child.href, pathname)
+                      ? "text-secondary font-medium"
+                      : "text-primary/70 hover:text-secondary"
+                  }`}
+                >
+                  {child.label}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </div>

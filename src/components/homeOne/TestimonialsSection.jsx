@@ -39,7 +39,7 @@ const TestimonialsSection = () => {
             </div>
 
             {/*  CountUpStat for bottom stats */}
-            <div className="border-t border-b border-[#ffffff1b]">
+            <div className="border-t border-b border-[#ffffff1b] h-[144.8px]">
               <div className="flex items-center  justify-between gap-4    p-4 sm:px-5 sm:py-[30px] xl:p-[30px]  w-full">
                 <div>
                   <CountUpStat

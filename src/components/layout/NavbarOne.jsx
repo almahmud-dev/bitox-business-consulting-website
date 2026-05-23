@@ -20,7 +20,7 @@ function useNavbar() {
   const [openMobileDropdown, setOpenMobileDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false); // ← NEW
+  const [searchOpen, setSearchOpen] = useState(false); 
   const closeTimer = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 

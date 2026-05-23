@@ -38,7 +38,7 @@ const TestimonialCard = ({
       </div>
 
       {/*  Bottom stats using CountUpStat */}
-      <div className="border-y border-[#0000001a]">
+      <div className="border-y border-[#0000001a]  lg:h-[144.8px]">
         <div className="p-4 md:p-[30px] flex gap-x-[20px] sm:gap-x-0 2xl:gap-x-4 justify-between">
           <CountUpStat
             value={tashNumOne}
