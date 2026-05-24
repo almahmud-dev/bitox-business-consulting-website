@@ -79,11 +79,11 @@ export default function NotFound() {
         <div className="flex justify-center w-full">
           <Link
             href="/"
-            className="flex items-center gap-2 border border-primary text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer hover:bg-white/90 transition-colors group"
+            className="flex items-center gap-2 border border-primary text-primary text-base font-medium rounded-[90px] px-4 py-2 sm:px-7.5 sm:py-5 cursor-pointer  transition-colors group"
           >
             <ButtonThree
               frontText="Back to home page"
-              backText="Let's Talk."
+              backText="Back to home page"
               backgroundColor="transparent"
               textColor="#02090F"
               fontSize={14}
