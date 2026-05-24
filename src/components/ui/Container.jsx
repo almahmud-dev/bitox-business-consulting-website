@@ -7,12 +7,12 @@ const sizeMap = {
   sm: "max-w-[1024px]",
 };
 
-export default function Container({ children, size = "lg", className = "" }) {
+export default function Container({ children, size = "lg", className = "", noPadding = false  }) {
   return (
     <div
       className={`
         mx-auto w-full
-        px-4 sm:px-6 md:px-10 lg:px-16 2xl:px-20
+        ${!noPadding && "px-4 sm:px-6 md:px-10 lg:px-16 2xl:px-20"}
         ${sizeMap[size]}
         ${className}
       `}
