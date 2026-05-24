@@ -18,7 +18,6 @@ export const ServiceCardImage = ({ service, index }) => {
         width={800}
         height={465}
         className="w-full h-65 sm:h-85 md:h-[465px] object-cover md:rounded-tl-md md:rounded-bl-md transition-transform duration-300 transform-gpu"
-        style={{ width: "100%", height: "auto" }}
       />
     </div>
   );
