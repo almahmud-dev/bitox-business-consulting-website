@@ -53,8 +53,6 @@ export const NAV_LINKS = [
   {
     label: "Pages",
     children: [
-      { label: "Business Consultant", href: "/" },
-      { label: "Consulting Agency", href: "/consulting-agency" },
       { label: "About Us", href: "/about" },
       { label: "Team", href: "/team" },
       { label: "Services", href: "/services" },
