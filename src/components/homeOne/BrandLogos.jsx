@@ -13,7 +13,7 @@ const BrandLogos = () => {
 
   return (
     <section className="pt-[30px] pb-[60px] md:pt-[40px] md:pb-[80px] xl:pt-[60px] xl:pb-[120px]">
-      <Container size="2xl">
+      <Container size="2xl" noPadding className="px-[25px]">
         <Swiper
           slidesPerView={7}
           spaceBetween={20}
@@ -63,8 +63,7 @@ const BrandLogos = () => {
                   alt={items.alt || "brand logo"}
                   width={120}
                   height={36}
-                  className="h-[24px] sm:h-[28px] md:h-[32px] lg:h-[36px] object-contain"
-                  style={{ width: "auto", height: "auto" }} 
+                  className="h-[35px] sm:h-[40px] md:h-[45px] lg:h-[36px] w-auto object-contain"
                 />
               </div>
             </SwiperSlide>
